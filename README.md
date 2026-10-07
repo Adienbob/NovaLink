@@ -131,3 +131,181 @@ create type payment_status as enum (
   'failed',
   'refunded'
 );
+
+create table public.cart_items (
+  id uuid primary key default gen_random_uuid(),
+
+  user_id uuid not null
+    references public.users(id)
+    on delete cascade,
+
+  product_variant_id uuid not null
+    references public.product_variants(id)
+    on delete cascade,
+
+  quantity integer not null
+    check (quantity > 0),
+
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+
+  unique (user_id, product_variant_id)
+);
+
+create table public.activity_logs (
+  id uuid primary key default gen_random_uuid(),
+
+  user_id uuid
+    references public.users(id)
+    on delete set null,
+
+  action text not null,
+
+  entity_type text not null,
+
+  entity_id uuid,
+
+  metadata jsonb,
+
+  created_at timestamptz not null default now()
+);
+
+create table public.addresses (
+  id uuid primary key default gen_random_uuid(),
+
+  user_id uuid not null
+    references public.users(id)
+    on delete cascade,
+
+  label text,
+  recipient_name text not null,
+  phone text not null,
+
+  governorate_id uuid not null
+    references public.governorates(id)
+    on delete restrict,
+
+  city text not null,
+  area text not null,
+  street text not null,
+
+  building text,
+  floor text,
+  apartment text,
+  landmark text,
+  notes text,
+
+  is_default boolean not null default false,
+
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create table public.orders (
+  id uuid primary key default gen_random_uuid(),
+
+  user_id uuid not null
+    references public.users(id)
+    on delete restrict,
+
+  address_id uuid
+    references public.addresses(id)
+    on delete set null,
+
+  status text not null default 'pending_confirmation'
+    check (
+      status in (
+        'pending_confirmation',
+        'confirmed',
+        'processing',
+        'shipped',
+        'delivered',
+        'cancelled',
+        'returned',
+        'return_requested'
+      )
+    ),
+
+  payment_method text not null
+    check (
+      payment_method in (
+        'cod',
+        'paymob',
+        'fawry'
+      )
+    ),
+
+  subtotal numeric(12,2) not null
+    check (subtotal >= 0),
+
+  shipping_fee numeric(12,2) not null default 0
+    check (shipping_fee >= 0),
+
+  total numeric(12,2) not null
+    check (total >= 0),
+
+  notes text,
+
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create table public.order_items (
+  id uuid primary key default gen_random_uuid(),
+
+  order_id uuid not null
+    references public.orders(id)
+    on delete cascade,
+
+  product_variant_id uuid
+    references public.product_variants(id)
+    on delete set null,
+
+  product_name text not null,
+  variant_name text,
+
+  unit_price numeric(12,2) not null
+    check (unit_price >= 0),
+
+  quantity integer not null
+    check (quantity > 0),
+
+  line_total numeric(12,2) not null
+    check (line_total >= 0),
+
+  created_at timestamptz not null default now()
+);
+
+create table public.payment_transactions (
+  id uuid primary key default gen_random_uuid(),
+
+  order_id uuid not null
+    references public.orders(id)
+    on delete cascade,
+
+  provider text not null
+    check (
+      provider in (
+        'paymob',
+        'fawry'
+      )
+    ),
+
+  provider_transaction_id text,
+
+  amount numeric(12,2) not null
+    check (amount >= 0),
+
+  status text not null default 'pending'
+    check (
+      status in (
+        'pending',
+        'paid',
+        'failed',
+        'refunded'
+      )
+    ),
+
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
