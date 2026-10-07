@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/localizations": "^4.22.0",
+    "@clerk/nextjs": "^7.9.11",
     "@supabase/supabase-js": "^2.117.2",
     "next": "16.3.8",
     "next-intl": "^4.14.9",

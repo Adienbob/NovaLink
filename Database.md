@@ -309,3 +309,21 @@ create table public.payment_transactions (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+
+create or replace function public.decrement_stock(
+  p_variant_id uuid,
+  p_quantity integer
+)
+returns boolean
+language plpgsql
+as $$
+begin
+  update public.product_variants
+  set stock_quantity = stock_quantity - p_quantity
+  where id = p_variant_id
+    and stock_quantity >= p_quantity;
+
+  return found;
+end;
+$$;
+
