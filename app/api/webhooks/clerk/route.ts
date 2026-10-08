@@ -2,89 +2,83 @@ import { NextRequest } from "next/server";
 import { verifyWebhook } from "@clerk/nextjs/webhooks";
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 
-const STAFF_ROLES = ["viewer", "delivery", "admin", "owner"] as const;
-
 export async function POST(req: NextRequest) {
    const evt = await verifyWebhook(req);
 
-   if (evt.type === "user.created") {
-      const user = evt.data;
+   switch (evt.type) {
+      case "user.created": {
+         const email = evt.data.email_addresses[0]?.email_address;
 
-      const primaryEmail =
-         user.email_addresses.find(
-         (email) => email.id === user.primary_email_address_id
-         )?.email_address ?? null;
-
-      const primaryPhone =
-         user.phone_numbers.find(
-         (phone) => phone.id === user.primary_phone_number_id
-         )?.phone_number ?? null;
-
-      const fullName =
-         [user.first_name, user.last_name].filter(Boolean).join(" ") || null;
-
-      const metadataRole = user.public_metadata?.role;
-
-      const role = STAFF_ROLES.includes(
-         metadataRole as (typeof STAFF_ROLES)[number]
-      )
-         ? (metadataRole as (typeof STAFF_ROLES)[number])
-         : null;
-
-      if (!primaryEmail) {
-         return new Response("User email is required", { status: 400 });
-      }
-
-      const { error } = await supabaseAdmin
-         .from("users")
-         .upsert(
-         {
-            clerk_id: user.id,
-            email: primaryEmail,
-            phone: primaryPhone,
-            full_name: fullName,
-            role,
-         },
-         {
-            onConflict: "clerk_id",
+         if (!email) {
+            throw new Error("USER_EMAIL_REQUIRED");
          }
-         );
 
-      if (error) {
-         console.error("Failed to create Supabase user:", error);
+         const fullName =
+         `${evt.data.first_name ?? ""} ${evt.data.last_name ?? ""}`.trim();
 
-         return new Response("Failed to create user", { status: 500 });
+         const role =
+         (evt.data.public_metadata?.role as
+            | "viewer"
+            | "delivery"
+            | "admin"
+            | "owner"
+            | undefined) ?? null;
+
+         const { error } = await supabaseAdmin.from("users").insert({
+         clerk_id: evt.data.id,
+         email,
+         full_name: fullName || null,
+         role,
+         });
+
+         if (error) {
+         throw new Error("USER_CREATE_FAILED");
+         }
+
+         break;
       }
-   }
 
-   if (evt.type === "user.updated") {
-      const user = evt.data;
+      case "user.updated": {
+         const email = evt.data.email_addresses[0]?.email_address;
 
-      const primaryEmail =
-         user.email_addresses.find(
-            (email) => email.id === user.primary_email_address_id
-         )?.email_address ?? null;
+         if (!email) {
+            throw new Error("USER_EMAIL_REQUIRED");
+         }
 
-      const fullName =
-         [user.first_name, user.last_name].filter(Boolean).join(" ") || null;
+         const fullName = `${evt.data.first_name ?? ""} ${evt.data.last_name ?? ""}`.trim();
 
-      if (!primaryEmail) {
-         return new Response("User email is required", { status: 400 });
-      }
-
-      const { error } = await supabaseAdmin
+         const { error } = await supabaseAdmin
          .from("users")
          .update({
-            email: primaryEmail,
-            full_name: fullName,
+            email,
+            full_name: fullName || null,
          })
-         .eq("clerk_id", user.id);
+         .eq("clerk_id", evt.data.id);
 
-      if (error) {
-         console.error("Failed to update Supabase user:", error);
+         if (error) {
+            throw new Error("USER_UPDATE_FAILED");
+         }
 
-         return new Response("Failed to update user", { status: 500 });
+         break;
       }
+
+      case "user.deleted": {
+         const { error } = await supabaseAdmin
+         .from("users")
+         .update({
+            clerk_deleted_at: new Date().toISOString(),
+         })
+         .eq("clerk_id", evt.data.id);
+
+         if (error) {
+            throw new Error("USER_DELETE_SYNC_FAILED");
+         }
+
+         break;
+      }
+
+      default:
+         break;
    }
 
    return new Response("Webhook received", { status: 200 });

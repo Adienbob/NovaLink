@@ -5,7 +5,25 @@ import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-export default clerkMiddleware((_, req) => {
+export default clerkMiddleware(async (auth, req) => {
+   const pathname = req.nextUrl.pathname;
+
+   const pathnameWithoutLocale = pathname.startsWith("/en")
+      ? pathname.slice(3) || "/"
+      : pathname;
+
+   const isProtected =
+      pathnameWithoutLocale === "/account" ||
+      pathnameWithoutLocale.startsWith("/account/") ||
+      pathnameWithoutLocale === "/admin" ||
+      pathnameWithoutLocale.startsWith("/admin/") ||
+      pathnameWithoutLocale === "/delivery" ||
+      pathnameWithoutLocale.startsWith("/delivery/");
+
+   if (isProtected) {
+      await auth.protect();
+   }
+
    return intlMiddleware(req);
 });
 
