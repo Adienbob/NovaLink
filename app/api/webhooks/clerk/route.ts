@@ -63,6 +63,11 @@ export async function POST(req: NextRequest) {
       }
 
       case "user.deleted": {
+
+         if (!evt.data.id) {
+            return new Response("Missing Clerk user ID", { status: 400 });
+         }
+
          const { error } = await supabaseAdmin
          .from("users")
          .update({
