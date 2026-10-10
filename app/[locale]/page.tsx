@@ -1,3 +1,4 @@
+import { SearchBar } from "@/features/search/components/search-bar";
 import { InviteStaffForm } from "@/features/staff/components/invite-staff-form";
 import { SignInButton } from "@clerk/nextjs";
 import Image from "next/image";
@@ -12,6 +13,8 @@ export default function Home() {
         <div>
           <SignInButton />
         </div>
+
+        <SearchBar />
       </main>
     </div>
   );

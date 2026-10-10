@@ -2,6 +2,8 @@ import { IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { arSA } from "@clerk/localizations";
@@ -28,13 +30,21 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const messages = await getMessages();
+
+
+
   const font = locale === "ar" ? arabicFont : englishFont;
   const clerkLocalization = locale === "ar" ? arSA : undefined;
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <ClerkProvider localization={clerkLocalization}>
-        <body className={font.className}>{children}</body>
+        <body className={font.className}>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </body>
       </ClerkProvider>
     </html>
   );
