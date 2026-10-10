@@ -11,30 +11,24 @@ export async function getSearchSuggestions(
    if (normalizedQuery.length < 2) {
       return [];
    }
+   
 
    const [
       brandsResult,
       categoriesResult,
       productsResult,
    ] = await Promise.all([
-      supabaseAdmin
-         .from("brands")
-         .select("id, name")
-         .ilike("name", `%${normalizedQuery}%`)
-         .limit(10),
+      supabaseAdmin.rpc("search_brands_fuzzy", {
+         search_query: normalizedQuery,
+      }),
 
-      supabaseAdmin
-         .from("categories")
-         .select("id, name")
-         .ilike("name", `%${normalizedQuery}%`)
-         .limit(10),
+      supabaseAdmin.rpc("search_categories_fuzzy", {
+         search_query: normalizedQuery,
+      }),
 
-      supabaseAdmin
-         .from("products")
-         .select("name")
-         .eq("is_active", true)
-         .ilike("name", `%${normalizedQuery}%`)
-         .limit(10),
+      supabaseAdmin.rpc("search_suggestions_fuzzy", {
+         search_query: normalizedQuery,
+      }),
    ]);
 
    if (brandsResult.error) {
@@ -55,56 +49,47 @@ export async function getSearchSuggestions(
       );
    }
 
+   const categoryIds = categoriesResult.data.map(
+   (category) => category.id
+);
+
+   const { data: categoryProducts, error: categoryProductsError } =
+      categoryIds.length > 0
+         ? await supabaseAdmin
+            .from("products")
+            .select("name")
+            .in("category_id", categoryIds)
+            .eq("is_active", true)
+            .limit(10)
+         : { data: [], error: null };
+
+   if (categoryProductsError) {
+      throw new Error(
+         `Failed to fetch category products: ${categoryProductsError.message}`
+      );
+   }
+
    const suggestions = new Set<string>();
 
-   // Add matching brands.
-   for (const brand of brandsResult.data) {
-      suggestions.add(brand.name);
-   }
+// Add matching brands.
+for (const brand of brandsResult.data) {
+   suggestions.add(brand.name);
+}
 
-   // Add matching categories.
-   for (const category of categoriesResult.data) {
-      suggestions.add(category.name);
-   }
+// Add matching categories first.
+for (const category of categoriesResult.data) {
+   suggestions.add(category.name);
+}
 
-   // Add matching product names.
-   for (const product of productsResult.data) {
-      suggestions.add(product.name);
-   }
+// Add products from matching categories.
+for (const product of categoryProducts ?? []) {
+   suggestions.add(product.name);
+}
 
-   // Find categories associated with matching brands.
-   const brandIds = brandsResult.data.map((brand) => brand.id);
-
-   if (brandIds.length > 0) {
-      const { data: brandProducts, error } = await supabaseAdmin
-         .from("products")
-         .select(`
-            brand_id,
-            brand:brands (
-               name
-            ),
-            category:categories (
-               name
-            )
-         `)
-         .in("brand_id", brandIds)
-         .eq("is_active", true)
-         .limit(50);
-
-      if (error) {
-         throw new Error(
-            `Failed to fetch brand categories: ${error.message}`
-         );
-      }
-
-      for (const product of brandProducts ?? []) {
-         if (product.brand && product.category) {
-            suggestions.add(
-               `${product.brand.name} ${product.category.name}`
-            );
-         }
-      }
-   }
+// Add matching product names.
+for (const product of productsResult.data) {
+   suggestions.add(product.name);
+}
 
    return [...suggestions]
       .slice(0, MAX_SUGGESTIONS)

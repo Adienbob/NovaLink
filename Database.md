@@ -327,3 +327,141 @@ begin
 end;
 $$;
 
+CREATE OR REPLACE FUNCTION public.search_products_fuzzy(search_query text)
+RETURNS TABLE (
+    id uuid,
+    name text,
+    slug text,
+    description text,
+    base_price numeric,
+    brand_name text,
+    brand_slug text,
+    category_name text,
+    category_slug text
+)
+LANGUAGE sql
+STABLE
+AS $$
+    SELECT
+        p.id,
+        p.name,
+        p.slug,
+        p.description,
+        p.base_price,
+        b.name AS brand_name,
+        b.slug AS brand_slug,
+        c.name AS category_name,
+        c.slug AS category_slug
+    FROM public.products p
+    LEFT JOIN public.brands b ON b.id = p.brand_id
+    LEFT JOIN public.categories c ON c.id = p.category_id
+    WHERE p.is_active = true
+      AND length(trim(search_query)) >= 2
+      AND (
+    p.name ILIKE '%' || trim(search_query) || '%'
+    OR extensions.similarity(p.name, trim(search_query)) >= 0.15
+    OR EXISTS (
+        SELECT 1
+        FROM public.categories c2
+        WHERE c2.id = p.category_id
+          AND (
+                        c2.name ILIKE '%' || trim(search_query) || '%'
+                        OR extensions.similarity(c2.name, trim(search_query)) >= 0.15
+                    )
+                )
+            )
+    ORDER BY
+        CASE
+            WHEN p.name ILIKE '%' || trim(search_query) || '%' THEN 0
+            ELSE 1
+        END,
+        extensions.similarity(p.name, trim(search_query)) DESC,
+        p.name
+    LIMIT 24;
+$$;
+
+CREATE OR REPLACE FUNCTION public.search_suggestions_fuzzy(
+    search_query text
+)
+RETURNS TABLE (
+    name text
+)
+LANGUAGE sql
+STABLE
+AS $$
+    SELECT p.name
+    FROM public.products p
+    WHERE p.is_active = true
+      AND length(trim(search_query)) >= 2
+      AND (
+          p.name ILIKE '%' || trim(search_query) || '%'
+          OR extensions.similarity(p.name, trim(search_query)) >= 0.15
+      )
+    ORDER BY
+        CASE
+            WHEN p.name ILIKE '%' || trim(search_query) || '%' THEN 0
+            ELSE 1
+        END,
+        extensions.similarity(p.name, trim(search_query)) DESC,
+        p.name
+    LIMIT 10;
+$$;
+
+CREATE OR REPLACE FUNCTION public.search_brands_fuzzy(
+    search_query text
+)
+RETURNS TABLE (
+    id uuid,
+    name text
+)
+LANGUAGE sql
+STABLE
+AS $$
+    SELECT
+        b.id,
+        b.name
+    FROM public.brands b
+    WHERE length(trim(search_query)) >= 2
+      AND (
+          b.name ILIKE '%' || trim(search_query) || '%'
+          OR extensions.similarity(b.name, trim(search_query)) >= 0.15
+      )
+    ORDER BY
+        CASE
+            WHEN b.name ILIKE '%' || trim(search_query) || '%' THEN 0
+            ELSE 1
+        END,
+        extensions.similarity(b.name, trim(search_query)) DESC,
+        b.name
+    LIMIT 10;
+$$;
+
+
+CREATE OR REPLACE FUNCTION public.search_categories_fuzzy(
+    search_query text
+)
+RETURNS TABLE (
+    id uuid,
+    name text
+)
+LANGUAGE sql
+STABLE
+AS $$
+    SELECT
+        c.id,
+        c.name
+    FROM public.categories c
+    WHERE length(trim(search_query)) >= 2
+      AND (
+          c.name ILIKE '%' || trim(search_query) || '%'
+          OR extensions.similarity(c.name, trim(search_query)) >= 0.15
+      )
+    ORDER BY
+        CASE
+            WHEN c.name ILIKE '%' || trim(search_query) || '%' THEN 0
+            ELSE 1
+        END,
+        extensions.similarity(c.name, trim(search_query)) DESC,
+        c.name
+    LIMIT 10;
+$$;
