@@ -1,7 +1,9 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
-import { Product } from "../types/product";
+import type { Product } from "@/features/catalog/products/types/product";
 
-export async function getProductBySlug(slug: string): Promise<Product | null> {
+export async function getProductsByCategory(
+   categorySlug: string
+): Promise<Product[]> {
    const { data, error } = await supabaseAdmin
       .from("products")
       .select(`
@@ -24,7 +26,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          slug,
          parent_id
          ),
-         variants:product_variants (
+         variants:product_variants!inner (
          id,
          sku,
          variant_name,
@@ -44,18 +46,18 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          product_id
          )
       `)
-      .eq("slug", slug)
+      .eq("category.slug", categorySlug)
       .eq("is_active", true)
       .eq("variants.is_active", true)
       .order("sort_order", {
          referencedTable: "product_images",
          ascending: true,
-      })
-      .maybeSingle();
+      });
 
    if (error) {
-      throw new Error(`Failed to fetch product: ${error.message}`);
+      throw new Error(`Failed to fetch category products: ${error.message}`);
    }
+
    return data;
 }
 

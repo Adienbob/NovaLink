@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProductsByCategory } from "@/features/products/queries/get-product-by-category";
+import { getProductsByCategory } from "@/features/catalog/categories/queries/get-products-by-category";
 
 type CategoryPageProps = {
    params: Promise<{

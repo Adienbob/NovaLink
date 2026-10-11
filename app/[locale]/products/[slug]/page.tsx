@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug } from "@/features/products/queries/get-product-by-slug";
+import { getProductBySlug } from "@/features/catalog/products/queries/get-products-by-slug";
 import ProductVariantSelector from "@/features/products/components/product-variant-selector";
 
 type ProductPageProps = {
