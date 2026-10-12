@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import type { ProductVariant } from "@/features/products/types/product";
+import { ProductVariant } from "../types/product";
+import { AddToCartButton } from "../../shared/components/add-to-cart-button";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
 type ProductVariantSelectorProps = {
    variants: ProductVariant[];
@@ -21,6 +23,11 @@ export default function ProductVariantSelector({
    if (variants.length === 0) {
       return <p>No variants available.</p>;
    }
+
+
+
+     const { isSignedIn } = useUser();
+   
 
    return (
       <section>
@@ -50,8 +57,20 @@ export default function ProductVariantSelector({
                <p>Price: {selectedVariant.price}</p>
                <p>Stock: {selectedVariant.stock_quantity}</p>
                <p>SKU: {selectedVariant.sku}</p>
+               <AddToCartButton productVariantId={selectedVariant.id} />
             </div>
          )}
+
+         {isSignedIn ? (
+            <UserButton />
+            ) : (
+              <SignInButton>
+                  <button className="px-4 py-2 rounded-md border border-border">
+                    Sign In
+                  </button>
+              </SignInButton>
+            )
+        }
       </section>
    );
 }

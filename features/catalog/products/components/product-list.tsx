@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { Product } from "@/features/products/types/product";
+import { Product } from "../types/product";
+import { AddToCartButton } from "../../shared/components/add-to-cart-button";
 
 type ProductListProps = {
    products: Product[];
@@ -24,6 +25,7 @@ export default function ProductList({
 
                <p>Brand: {product.brand?.name ?? "Unknown"}</p>
                <p>Price: {product.base_price}</p>
+               <AddToCartButton productVariantId={product.variants[0].id} />
             </li>
          ))}
       </ul>

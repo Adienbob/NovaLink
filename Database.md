@@ -465,3 +465,89 @@ AS $$
         c.name
     LIMIT 10;
 $$;
+
+
+CREATE OR REPLACE FUNCTION public.merge_guest_cart(
+    p_user_id uuid,
+    p_items jsonb
+)
+RETURNS void
+LANGUAGE plpgsql
+SECURITY INVOKER
+SET search_path = ''
+AS $$
+DECLARE
+    v_item record;
+    v_stock integer;
+    v_current_quantity integer;
+BEGIN
+    IF p_user_id IS NULL
+       OR p_items IS NULL
+       OR pg_catalog.jsonb_typeof(p_items) <> 'array'
+    THEN
+        RAISE EXCEPTION 'INVALID_CART_INPUT';
+    END IF;
+
+    -- Aggregate duplicate variants and process them consistently.
+    FOR v_item IN
+        SELECT
+            item."variantId" AS variant_id,
+            SUM(item.quantity)::integer AS quantity
+        FROM pg_catalog.jsonb_to_recordset(p_items)
+            AS item("variantId" uuid, quantity integer)
+        GROUP BY item."variantId"
+        ORDER BY item."variantId"
+    LOOP
+        IF v_item.variant_id IS NULL
+           OR v_item.quantity IS NULL
+           OR v_item.quantity < 1
+        THEN
+            RAISE EXCEPTION 'INVALID_CART_INPUT';
+        END IF;
+
+        -- Lock the variant while validating its availability.
+        SELECT pv.stock_quantity
+        INTO v_stock
+        FROM public.product_variants AS pv
+        JOIN public.products AS p
+            ON p.id = pv.product_id
+        WHERE pv.id = v_item.variant_id
+          AND pv.is_active = true
+          AND p.is_active = true
+        FOR UPDATE OF pv;
+
+        IF NOT FOUND THEN
+            RAISE EXCEPTION 'VARIANT_UNAVAILABLE';
+        END IF;
+
+        -- Lock an existing cart row, if one exists.
+        SELECT ci.quantity
+        INTO v_current_quantity
+        FROM public.cart_items AS ci
+        WHERE ci.user_id = p_user_id
+          AND ci.product_variant_id = v_item.variant_id
+        FOR UPDATE;
+
+        v_current_quantity := COALESCE(v_current_quantity, 0);
+
+        IF v_current_quantity + v_item.quantity > v_stock THEN
+            RAISE EXCEPTION 'INSUFFICIENT_STOCK';
+        END IF;
+
+        INSERT INTO public.cart_items (
+            user_id,
+            product_variant_id,
+            quantity
+        )
+        VALUES (
+            p_user_id,
+            v_item.variant_id,
+            v_item.quantity
+        )
+        ON CONFLICT (user_id, product_variant_id)
+        DO UPDATE SET
+            quantity = public.cart_items.quantity + EXCLUDED.quantity,
+            updated_at = pg_catalog.now();
+    END LOOP;
+END;
+$$;

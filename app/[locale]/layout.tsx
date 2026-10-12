@@ -1,3 +1,4 @@
+
 import { IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
@@ -7,6 +8,7 @@ import { getMessages } from "next-intl/server";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { arSA } from "@clerk/localizations";
+import { CartProvider } from "@/features/cart/components/cart-provider";
 
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -40,11 +42,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <ClerkProvider localization={clerkLocalization}>
-        <body className={font.className}>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </body>
+        <CartProvider>
+          <body className={font.className}>
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </body>
+        </CartProvider>
       </ClerkProvider>
     </html>
   );
