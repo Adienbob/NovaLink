@@ -36,6 +36,7 @@ export type ProductImage = {
 };
 
 export type Product = {
+   created_at: string;
    base_price: number;
    id: string;
    brand: ProductBrand | null;

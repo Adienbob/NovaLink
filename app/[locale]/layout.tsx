@@ -9,6 +9,8 @@ import { getMessages } from "next-intl/server";
 import { ClerkProvider } from "@clerk/nextjs";
 import { arSA } from "@clerk/localizations";
 import { CartProvider } from "@/features/cart/components/cart-provider";
+import { QueryClientProvider } from "@tanstack/react-query";
+import QueryProvider from "@/shared/providers/query-provider";
 
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -41,15 +43,17 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <ClerkProvider localization={clerkLocalization}>
-        <CartProvider>
+        <ClerkProvider localization={clerkLocalization}>
           <body className={font.className}>
-            <NextIntlClientProvider messages={messages}>
-              {children}
-            </NextIntlClientProvider>
+              <QueryProvider>
+                <CartProvider>
+                    <NextIntlClientProvider messages={messages}>
+                      {children}
+                    </NextIntlClientProvider>
+                </CartProvider>
+              </QueryProvider>
           </body>
-        </CartProvider>
-      </ClerkProvider>
+        </ClerkProvider>
     </html>
   );
 }
