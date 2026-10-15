@@ -2,8 +2,25 @@ import { supabaseAdmin } from "@/app/lib/supabase/server";
 import type { Product } from "@/features/catalog/products/types/product";
 
 export async function getProductsByBrand(
-   brandSlug: string
+   brandSlug: string,
 ): Promise<Product[]> {
+   
+   const { data: brand, error: brandError } = await supabaseAdmin
+      .from("brands")
+      .select("id, slug, name")
+      .eq("slug", brandSlug)
+      .maybeSingle();
+
+   if (brandError) {
+      throw new Error(
+         `Failed to fetch brand: ${brandError.message}`,
+      );
+   }
+
+   if (!brand) {
+      return [];
+   }
+
    const { data, error } = await supabaseAdmin
       .from("products")
       .select(`
@@ -14,13 +31,14 @@ export async function getProductsByBrand(
          base_price,
          seo_title,
          seo_description,
-         brand:brands (
+         created_at,
+         brand:brands!products_brand_id_fkey (
             id,
             name,
             slug,
             logo_url
          ),
-         category:categories (
+         category:categories!products_category_id_fkey (
             id,
             name,
             slug,
@@ -46,7 +64,7 @@ export async function getProductsByBrand(
             product_id
          )
       `)
-      .eq("brand.slug", brandSlug)
+      .eq("brand_id", brand.id)
       .eq("is_active", true)
       .eq("variants.is_active", true)
       .order("sort_order", {
@@ -55,8 +73,10 @@ export async function getProductsByBrand(
       });
 
    if (error) {
-      throw new Error(`Failed to fetch brand products: ${error.message}`);
+      throw new Error(
+         `Failed to fetch brand products: ${error.message}`,
+      );
    }
 
-   return data;
+   return (data ?? []) as unknown as Product[];
 }

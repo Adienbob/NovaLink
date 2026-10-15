@@ -1,8 +1,14 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProductsByBrand } from "@/features/catalog/brands/queries/get-products-by-brand";
+import {
+   QueryClient,
+   dehydrate,
+   HydrationBoundary,
+} from "@tanstack/react-query";
 
-type BrandPageProps = {
+import { getProductsByBrand } from "@/features/catalog/brands/queries/get-products-by-brand";
+import { BrandProducts } from "@/features/catalog/brands/components/brand-products";
+import { brandProductsQueryKey } from "@/shared/queries/brand-products-query-options";
+type CategoryPageProps = {
    params: Promise<{
       locale: string;
       slug: string;
@@ -11,7 +17,7 @@ type BrandPageProps = {
 
 export default async function BrandPage({
    params,
-}: BrandPageProps) {
+}: CategoryPageProps) {
    const { locale, slug } = await params;
 
    const products = await getProductsByBrand(slug);
@@ -19,38 +25,41 @@ export default async function BrandPage({
    if (products.length === 0) {
       notFound();
    }
-   
-   console.log(
-   products.map((product) => ({
-      name: product.name,
-      variants: product.variants.map((variant) => ({
-         name: variant.variant_name,
-         is_active: variant.is_active,
-      })),
-   }))
-);
+
+   const queryClient = new QueryClient();
+
+   queryClient.setQueryData(
+      brandProductsQueryKey(slug),
+      products,
+   );
+         
+
+   const category = Array.from(
+      new Map(
+         products
+            .filter((product) => product.category)
+            .map((product) => [
+               product.category!.id,
+               {
+                  id: product.category!.id,
+                  name: product.category!.name,
+               },
+            ]),
+      ).values(),
+   );
+
    return (
       <main>
          <h1>Brand: {slug}</h1>
 
-         <section>
-            {products.map((product) => (
-               <article key={product.id}>
-                  <h2>
-                     <Link href={`/${locale}/products/${product.slug}`}>
-                        {product.name}
-                     </Link>
-                  </h2>
-
-                  <p>Brand: {product.brand?.name ?? "Unknown"}</p>
-                  <p>Price: {product.base_price}</p>
-
-                  {product.images[0] && (
-                     <p>Image: {product.images[0].url}</p>
-                  )}
-               </article>
-            ))}
-         </section>
+         <HydrationBoundary state={dehydrate(queryClient)}>
+            <BrandProducts
+               slug={slug}
+               locale={locale}
+               availableCategories={category}
+            />
+         </HydrationBoundary>
       </main>
    );
 }
+

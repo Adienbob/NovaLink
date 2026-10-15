@@ -8,14 +8,14 @@ export async function getProductsByCategory(
 ): Promise<Product[]> {
 
    const { data: category, error: categoryError } = await supabaseAdmin
-   .from("categories")
-   .select("id, slug, name")
-   .eq("slug", categorySlug)
-   .maybeSingle();
+      .from("categories")
+      .select("id, slug, name")
+      .eq("slug", categorySlug)
+      .maybeSingle();
 
-if (categoryError || !category) {
-   return [];
-}
+   if (categoryError || !category) {
+      return [];
+   }
 
 
    const { data, error } = await supabaseAdmin

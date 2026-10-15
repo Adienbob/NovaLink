@@ -28,21 +28,11 @@ export default async function CategoryPage({
 
    const queryClient = new QueryClient();
 
-console.log(
-   "Server cache before hydration:",
-   queryClient.getQueryData(categoryProductsQueryKey(slug)),
-);
-
-queryClient.setQueryData(
-   categoryProductsQueryKey(slug),
-   products,
-);
-
-console.log(
-   "Server cache after hydration:",
-   queryClient.getQueryData(categoryProductsQueryKey(slug)),
-);
-   
+   queryClient.setQueryData(
+      categoryProductsQueryKey(slug),
+      products,
+   );
+         
 
    const brands = Array.from(
       new Map(
