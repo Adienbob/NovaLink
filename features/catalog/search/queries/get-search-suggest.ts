@@ -12,7 +12,6 @@ export async function getSearchSuggestions(
       return [];
    }
    
-
    const [
       brandsResult,
       categoriesResult,

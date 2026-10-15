@@ -1,6 +1,6 @@
 "use client"
 
-import { SearchBar } from "@/features/search/components/search-bar";
+import { SearchBar } from "@/features/catalog/search/components/search-bar";
 import { InviteStaffForm } from "@/features/staff/components/invite-staff-form";
 import { SignInButton, UserButton, useAuth } from "@clerk/nextjs";
 

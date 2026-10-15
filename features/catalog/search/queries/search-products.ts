@@ -17,6 +17,7 @@ export async function searchProducts(query: string) {
    if (error) {
       throw new Error(`Failed to search products: ${error.message}`);
    }
+   console.log(data)
 
    return (data ?? []).map((product) => ({
       id: product.id,
@@ -24,17 +25,21 @@ export async function searchProducts(query: string) {
       slug: product.slug,
       description: product.description,
       base_price: product.base_price,
-      brands: product.brand_name
+      brand: product.brand_id
          ? {
-               name: product.brand_name,
-               slug: product.brand_slug,
-            }
+            id: product.brand_id,
+            name: product.brand_name,
+            slug: product.brand_slug,
+            logo_url: null,
+         }
          : null,
-      categories: product.category_name
+      category: product.category_id
          ? {
-               name: product.category_name,
-               slug: product.category_slug,
-            }
+            id: product.category_id,
+            name: product.category_name,
+            slug: product.category_slug,
+            parent_id: null,
+         }
          : null,
    }));
 }

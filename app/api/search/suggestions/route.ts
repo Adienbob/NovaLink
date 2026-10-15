@@ -1,4 +1,4 @@
-import { getSearchSuggestions } from "@/features/search/queries/get-search-suggest";
+import { getSearchSuggestions } from "@/features/catalog/search/queries/get-search-suggest";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
