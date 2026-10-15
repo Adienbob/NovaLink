@@ -8,6 +8,7 @@ import {
 import { getProductsByCategory } from "@/features/catalog/categories/queries/get-products-by-category";
 import { CategoryProducts } from "@/features/catalog/categories/components/category-products";
 import { categoryProductsQueryKey } from "@/shared/queries/category-products-query-options";
+
 type CategoryPageProps = {
    params: Promise<{
       locale: string;
@@ -32,7 +33,6 @@ export default async function CategoryPage({
       categoryProductsQueryKey(slug),
       products,
    );
-         
 
    const brands = Array.from(
       new Map(
@@ -43,6 +43,7 @@ export default async function CategoryPage({
                {
                   id: product.brand!.id,
                   name: product.brand!.name,
+                  slug: product.brand!.slug,
                },
             ]),
       ).values(),
@@ -62,4 +63,3 @@ export default async function CategoryPage({
       </main>
    );
 }
-

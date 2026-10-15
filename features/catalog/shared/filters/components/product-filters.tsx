@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ProductFilters as ProductFiltersType } from "../types/product-filter";
 import { FilterBrands } from "./filter-brands";
 import { FilterCategories } from "./filter-categories";
@@ -37,6 +37,13 @@ export function ProductFilters({
       ...defaultFilters,
       ...initialFilters,
    });
+
+   useEffect(() => {
+      setFilters({
+         ...defaultFilters,
+         ...initialFilters,
+      });
+   }, [initialFilters]);
 
    function updateFilters(updates: Partial<ProductFiltersType>) {
       const next = {

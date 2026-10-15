@@ -1,6 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
+import {
+   useSearchParams,
+   useRouter,
+   usePathname,
+} from "next/navigation";
 
 import { ProductFilters as ProductFiltersComponent } from "@/features/catalog/shared/filters/components/product-filters";
 import type { ProductFilters } from "@/features/catalog/shared/filters/types/product-filter";
@@ -29,18 +34,201 @@ type SearchResultsProps = {
    products: SearchProduct[];
 };
 
+const DEFAULT_PAGE_SIZE = 12;
+
+const VALID_SORT_OPTIONS: NonNullable<ProductFilters["sortBy"]>[] = [
+   "relevance",
+   "price_asc",
+   "price_desc",
+   "name_asc",
+];
+
+function parseNonNegativeNumber(
+   value: string | null,
+): number | undefined {
+   if (value === null || value.trim() === "") {
+      return undefined;
+   }
+
+   const number = Number(value);
+
+   if (!Number.isFinite(number) || number < 0) {
+      return undefined;
+   }
+
+   return number;
+}
+
+function parsePositiveInteger(
+   value: string | null,
+   fallback: number,
+): number {
+   if (value === null || !/^\d+$/.test(value)) {
+      return fallback;
+   }
+
+   const number = Number(value);
+
+   return Number.isSafeInteger(number) && number > 0
+      ? number
+      : fallback;
+}
+
 export function SearchResults({
    products,
 }: SearchResultsProps) {
-   const [filters, setFilters] = useState<ProductFilters>({
-      brands: [],
-      categories: [],
-      minPrice: undefined,
-      maxPrice: undefined,
-      inStock: false,
-      sortBy: "relevance",
-      page: 1,
-      pageSize: 12,
+   const searchParams = useSearchParams();
+   const router = useRouter();
+   const pathname = usePathname();
+   const updateUrl = useCallback(
+      (nextFilters: ProductFilters) => {
+         const params = new URLSearchParams(searchParams.toString());
+
+         function setOrDelete(key: string, value: string | undefined) {
+            if (value === undefined || value === "") {
+               params.delete(key);
+            } else {
+               params.set(key, value);
+            }
+         }
+
+         const selectedBrandSlugs = products
+            .filter(
+               (product) =>
+                  product.brand &&
+                  nextFilters.brands?.includes(product.brand.id),
+            )
+            .map((product) => product.brand!.slug);
+
+         const selectedCategorySlugs = products
+            .filter(
+               (product) =>
+                  product.category &&
+                  nextFilters.categories?.includes(product.category.id),
+            )
+            .map((product) => product.category!.slug);
+
+         setOrDelete(
+            "brands",
+            [...new Set(selectedBrandSlugs)].join(","),
+         );
+
+         setOrDelete(
+            "categories",
+            [...new Set(selectedCategorySlugs)].join(","),
+         );
+
+         setOrDelete(
+            "minPrice",
+            nextFilters.minPrice?.toString(),
+         );
+
+         setOrDelete(
+            "maxPrice",
+            nextFilters.maxPrice?.toString(),
+         );
+
+         setOrDelete(
+            "sortBy",
+            nextFilters.sortBy === "relevance"
+               ? undefined
+               : nextFilters.sortBy,
+         );
+
+         setOrDelete(
+            "page",
+            nextFilters.page && nextFilters.page > 1
+               ? nextFilters.page.toString()
+               : undefined,
+         );
+
+         setOrDelete(
+            "pageSize",
+            nextFilters.pageSize === 12
+               ? undefined
+               : nextFilters.pageSize?.toString(),
+         );
+
+         router.replace(
+            `${pathname}?${params.toString()}`,
+            { scroll: false },
+         );
+      },
+      [pathname, products, router, searchParams],
+   );
+      
+
+   const [filters, setFilters] = useState<ProductFilters>(() => {
+      const brandSlugs = new Set(
+         (searchParams.get("brands") ?? "")
+            .split(",")
+            .map((slug) => slug.trim())
+            .filter(Boolean),
+      );
+
+      const categorySlugs = new Set(
+         (searchParams.get("categories") ?? "")
+            .split(",")
+            .map((slug) => slug.trim())
+            .filter(Boolean),
+      );
+
+      const sortByParam = searchParams.get("sortBy");
+
+      const sortBy =
+         sortByParam &&
+         VALID_SORT_OPTIONS.includes(
+            sortByParam as NonNullable<ProductFilters["sortBy"]>,
+         )
+            ? (sortByParam as NonNullable<ProductFilters["sortBy"]>)
+            : "relevance";
+
+      return {
+         brands: [
+            ...new Set(
+               products
+                  .filter(
+                     (product) =>
+                        product.brand &&
+                        brandSlugs.has(product.brand.slug),
+                  )
+                  .map((product) => product.brand!.id),
+            ),
+         ],
+
+         categories: [
+            ...new Set(
+               products
+                  .filter(
+                     (product) =>
+                        product.category &&
+                        categorySlugs.has(product.category.slug),
+                  )
+                  .map((product) => product.category!.id),
+            ),
+         ],
+
+         minPrice: parseNonNegativeNumber(
+            searchParams.get("minPrice"),
+         ),
+
+         maxPrice: parseNonNegativeNumber(
+            searchParams.get("maxPrice"),
+         ),
+
+         inStock: false,
+         sortBy,
+
+         page: parsePositiveInteger(
+            searchParams.get("page"),
+            1,
+         ),
+
+         pageSize: parsePositiveInteger(
+            searchParams.get("pageSize"),
+            DEFAULT_PAGE_SIZE,
+         ),
+      };
    });
 
    const availableBrands = useMemo(
@@ -80,7 +268,7 @@ export function SearchResults({
    );
 
    const filteredProducts = useMemo(() => {
-      let result = products.filter((product) => {
+      const result = products.filter((product) => {
          if (
             filters.brands?.length &&
             (!product.brand ||
@@ -135,14 +323,14 @@ export function SearchResults({
 
          case "relevance":
          default:
-            // Keep the relevance order returned by the RPC.
+            // Preserve the relevance order returned by the RPC.
             break;
       }
 
       return result;
    }, [products, filters]);
 
-   const pageSize = filters.pageSize ?? 12;
+   const pageSize = filters.pageSize ?? DEFAULT_PAGE_SIZE;
    const currentPage = filters.page ?? 1;
 
    const totalPages = Math.ceil(
@@ -155,10 +343,13 @@ export function SearchResults({
    );
 
    function handleFiltersChange(nextFilters: ProductFilters) {
-      setFilters({
+      const updatedFilters = {
          ...nextFilters,
          page: 1,
-      });
+      };
+
+      setFilters(updatedFilters);
+      updateUrl(updatedFilters);
    }
 
    return (
@@ -218,12 +409,15 @@ export function SearchResults({
                      <button
                         type="button"
                         disabled={currentPage <= 1}
-                        onClick={() =>
-                           setFilters((current) => ({
-                              ...current,
+                        onClick={() => {
+                           const updatedFilters = {
+                              ...filters,
                               page: currentPage - 1,
-                           }))
-                        }
+                           };
+
+                           setFilters(updatedFilters);
+                           updateUrl(updatedFilters);
+                        }}
                         className="rounded border px-4 py-2 disabled:opacity-50"
                      >
                         Previous
@@ -236,12 +430,15 @@ export function SearchResults({
                      <button
                         type="button"
                         disabled={currentPage >= totalPages}
-                        onClick={() =>
-                           setFilters((current) => ({
-                              ...current,
+                        onClick={() => {
+                           const updatedFilters = {
+                              ...filters,
                               page: currentPage + 1,
-                           }))
-                        }
+                           };
+
+                           setFilters(updatedFilters);
+                           updateUrl(updatedFilters);
+                        }}
                         className="rounded border px-4 py-2 disabled:opacity-50"
                      >
                         Next

@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import {
+   usePathname,
+   useRouter,
+   useSearchParams,
+} from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { ProductFilters } from "@/features/catalog/shared/filters/components/product-filters";
 import type { ProductFilters as ProductFiltersType } from "@/features/catalog/shared/filters/types/product-filter";
@@ -14,6 +19,7 @@ type BrandProductsProps = {
    availableCategories: {
       id: string;
       name: string;
+      slug: string;
    }[];
 };
 
@@ -22,13 +28,84 @@ export function BrandProducts({
    locale,
    availableCategories,
 }: BrandProductsProps) {
-   const [filters, setFilters] = useState<ProductFiltersType>({
-      brands: [],
-      minPrice: undefined,
-      maxPrice: undefined,
-      sortBy: "relevance",
-      page: 1,
-      pageSize: 12,
+
+   const router = useRouter();
+   const pathname = usePathname();
+
+   function parsePositiveInteger(
+      value: string | null,
+      fallback: number,
+   ): number {
+      if (value === null || !/^\d+$/.test(value)) {
+         return fallback;
+      }
+
+      const parsed = Number(value);
+
+      return Number.isSafeInteger(parsed) && parsed > 0
+         ? parsed
+         : fallback;
+   }
+
+   const searchParams = useSearchParams();
+
+   const [filters, setFilters] = useState<ProductFiltersType>(() => {
+      const categorySlugs = new Set(
+         (searchParams.get("categories") ?? "")
+            .split(",")
+            .map((slug) => slug.trim())
+            .filter(Boolean),
+      );
+
+      const minPriceParam = searchParams.get("minPrice");
+      const maxPriceParam = searchParams.get("maxPrice");
+
+      function parsePrice(value: string | null) {
+         if (value === null || value.trim() === "") {
+            return undefined;
+         }
+
+         const parsed = Number(value);
+
+         return Number.isFinite(parsed) && parsed >= 0
+            ? parsed
+            : undefined;
+      }
+
+      const sortByParam = searchParams.get("sortBy");
+
+      const validSortOptions: NonNullable<
+         ProductFiltersType["sortBy"]
+      >[] = [
+         "relevance",
+         "price_asc",
+         "price_desc",
+         "newest",
+         "name_asc",
+      ];
+
+      const sortBy =
+         sortByParam &&
+         validSortOptions.includes(
+            sortByParam as NonNullable<ProductFiltersType["sortBy"]>,
+         )
+            ? (sortByParam as NonNullable<ProductFiltersType["sortBy"]>)
+            : "relevance";
+
+      return {
+         brands: [],
+         categories: availableCategories
+            .filter((category) => categorySlugs.has(category.slug))
+            .map((category) => category.id),
+         minPrice: parsePrice(minPriceParam),
+         maxPrice: parsePrice(maxPriceParam),
+         sortBy,
+         page: parsePositiveInteger(searchParams.get("page"), 1),
+         pageSize: parsePositiveInteger(
+            searchParams.get("pageSize"),
+            12,
+         ),
+      };
    });
 
    const { data: products } = useQuery<Product[]>({
@@ -95,13 +172,91 @@ export function BrandProducts({
 
    const totalPages = Math.ceil(filteredProducts.length / pageSize);
 
+   const updateUrl = useCallback(
+      (nextFilters: ProductFiltersType) => {
+         const params = new URLSearchParams(searchParams.toString());
+
+         function setOrDelete(
+            key: string,
+            value: string | undefined,
+         ) {
+            if (value === undefined || value === "") {
+               params.delete(key);
+            } else {
+               params.set(key, value);
+            }
+         }
+
+         const selectedCategorySlugs = availableCategories
+            .filter((category) =>
+               nextFilters.categories?.includes(category.id),
+            )
+            .map((category) => category.slug);
+
+         setOrDelete(
+            "categories",
+            [...new Set(selectedCategorySlugs)].join(","),
+         );
+
+         setOrDelete(
+            "minPrice",
+            nextFilters.minPrice?.toString(),
+         );
+
+         setOrDelete(
+            "maxPrice",
+            nextFilters.maxPrice?.toString(),
+         );
+
+         setOrDelete(
+            "sortBy",
+            nextFilters.sortBy === "relevance"
+               ? undefined
+               : nextFilters.sortBy,
+         );
+
+         setOrDelete(
+            "page",
+            nextFilters.page && nextFilters.page > 1
+               ? nextFilters.page.toString()
+               : undefined,
+         );
+
+         setOrDelete(
+            "pageSize",
+            nextFilters.pageSize === 12
+               ? undefined
+               : nextFilters.pageSize?.toString(),
+         );
+
+         const query = params.toString();
+
+         router.replace(
+            query ? `${pathname}?${query}` : pathname,
+            { scroll: false },
+         );
+      },
+      [availableCategories, pathname, router, searchParams],
+   );
+
+   function handleFiltersChange(nextFilters: ProductFiltersType) {
+      const updatedFilters = {
+         ...nextFilters,
+         page: 1,
+      };
+
+      setFilters(updatedFilters);
+      updateUrl(updatedFilters);
+   }
+
    return (
       <div className="grid grid-cols-1 gap-8 md:grid-cols-[240px_1fr]">
          <ProductFilters
             availableCategories={availableCategories}
+            initialFilters={filters}
             showBrands={false}
             showCategories
-            onFiltersChange={setFilters}
+            onFiltersChange={handleFiltersChange}
          />
 
          <section>
@@ -154,12 +309,15 @@ export function BrandProducts({
                   <button
                      type="button"
                      disabled={page === 1}
-                     onClick={() =>
-                        setFilters((prev) => ({
-                           ...prev,
+                     onClick={() => {
+                        const updatedFilters = {
+                           ...filters,
                            page: page - 1,
-                        }))
-                     }
+                        };
+
+                        setFilters(updatedFilters);
+                        updateUrl(updatedFilters);
+                     }}
                      className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                      Previous
@@ -172,12 +330,15 @@ export function BrandProducts({
                   <button
                      type="button"
                      disabled={page >= totalPages}
-                     onClick={() =>
-                        setFilters((prev) => ({
-                           ...prev,
+                     onClick={() => {
+                        const updatedFilters = {
+                           ...filters,
                            page: page + 1,
-                        }))
-                     }
+                        };
+
+                        setFilters(updatedFilters);
+                        updateUrl(updatedFilters);
+                     }}
                      className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                      Next

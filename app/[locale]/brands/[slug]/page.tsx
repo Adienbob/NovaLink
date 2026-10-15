@@ -32,7 +32,7 @@ export default async function BrandPage({
       brandProductsQueryKey(slug),
       products,
    );
-         
+   
 
    const category = Array.from(
       new Map(
@@ -43,6 +43,7 @@ export default async function BrandPage({
                {
                   id: product.category!.id,
                   name: product.category!.name,
+                  slug: product.category!.slug,
                },
             ]),
       ).values(),
