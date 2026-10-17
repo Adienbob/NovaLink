@@ -43,7 +43,7 @@ export async function getGuestCartDetails(variantIds: string[]) {
       console.error("Failed to fetch guest cart details:", error);
       throw new Error("GUEST_CART_DETAILS_FETCH_FAILED");
    }
-
+   
    return data.map((variant) => ({
       ...variant,
       product: {
