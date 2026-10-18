@@ -132,7 +132,7 @@ export function CheckoutForm({ governorates, cartItems, locale = "ar" }: Checkou
 
          // Success: Clear LocalStorage draft and redirect to confirmation
          localStorage.removeItem(DRAFT_STORAGE_KEY);
-         router.push(`/${locale}/orders/${result.orderId}/success`);
+         router.push(`/${locale}/account/orders/${result.orderId}/success`);
       });
    };
 
