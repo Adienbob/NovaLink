@@ -8,6 +8,10 @@ const intlMiddleware = createMiddleware(routing);
 export default clerkMiddleware(async (auth, req) => {
    const pathname = req.nextUrl.pathname;
 
+   if (pathname.startsWith("/api/")) {
+      return;
+   }
+
    const pathnameWithoutLocale = pathname.startsWith("/en")
       ? pathname.slice(3) || "/"
       : pathname;

@@ -5,9 +5,9 @@ import {
    HydrationBoundary,
 } from "@tanstack/react-query";
 
-import { getProductsByCategory } from "@/features/catalog/categories/queries/get-products-by-category";
 import { CategoryProducts } from "@/features/catalog/categories/components/category-products";
 import { categoryProductsQueryKey } from "@/shared/queries/category-products-query-options";
+import { getProductsByCategory } from "@/features/catalog/categories/queries/get-products-by-category";
 
 type CategoryPageProps = {
    params: Promise<{

@@ -8,7 +8,9 @@ type SearchPageProps = {
 
 export default async function SearchPage({
    searchParams,
+   params,
 }: SearchPageProps) {
+   const { locale } = await params
    const { q } = await searchParams;
    const query = q?.trim() ?? "";
 
@@ -35,7 +37,7 @@ export default async function SearchPage({
          )}
 
          {products.length > 0 && (
-            <SearchResults products={products} />
+            <SearchResults locale={locale} products={products} />
          )}
       </main>
 

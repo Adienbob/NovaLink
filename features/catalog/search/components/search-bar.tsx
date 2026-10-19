@@ -34,15 +34,23 @@ export function SearchBar() {
             );
 
             if (!response.ok) {
+               console.log(response)
                throw new Error("Failed to load suggestions.");
             }
 
             const data: { suggestions: { text: string }[] } =
                await response.json();
-
-            setSuggestions(data.suggestions.map((item) => item.text));
-         } catch (error) {
-            if (error instanceof Error && error.name === "AbortError") {
+            
+            if (!controller.signal.aborted) {
+               setSuggestions(data.suggestions.map((item) => item.text));
+            }
+         } catch (err: unknown) {
+            const isAbortError = 
+               controller.signal.aborted || 
+               (err instanceof Error && err.name === "AbortError") ||
+               (typeof err === "object" && err !== null && "name" in err && err.name === "AbortError");
+               console.log(err)
+            if (isAbortError) {
                return;
             }
 

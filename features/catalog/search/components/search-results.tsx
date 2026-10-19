@@ -9,6 +9,7 @@ import {
 
 import { ProductFilters as ProductFiltersComponent } from "@/features/catalog/shared/filters/components/product-filters";
 import type { ProductFilters } from "@/features/catalog/shared/filters/types/product-filter";
+import Link from "next/link";
 
 type SearchProduct = {
    id: string;
@@ -32,6 +33,7 @@ type SearchProduct = {
 
 type SearchResultsProps = {
    products: SearchProduct[];
+   locale: string;
 };
 
 const DEFAULT_PAGE_SIZE = 12;
@@ -76,6 +78,7 @@ function parsePositiveInteger(
 
 export function SearchResults({
    products,
+   locale,
 }: SearchResultsProps) {
    const searchParams = useSearchParams();
    const router = useRouter();
@@ -397,6 +400,12 @@ export function SearchResults({
                            )}{" "}
                            EGP
                         </p>
+                        <Link
+                           href={`/${locale}/products/${product.slug}`}
+                           className="hover:underline"
+                        >
+                           {product.name}
+                        </Link>
                      </article>
                   ))}
                </div>
