@@ -12,6 +12,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          base_price,
          seo_title,
          seo_description,
+         created_at,
          brand:brands (
          id,
          name,
