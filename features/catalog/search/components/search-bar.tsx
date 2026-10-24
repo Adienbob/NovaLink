@@ -84,34 +84,57 @@ export function SearchBar() {
 
    return (
       <div className="relative w-full">
+      <div className="relative">
          <input
             onKeyDown={(event) => {
-               if (event.key === "Enter") {
-                  event.preventDefault();
-                  handleSearch(query);
-               }
+            if (event.key === "Enter") {
+               event.preventDefault();
+               handleSearch(query);
+            }
             }}
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search products, brands, and categories..."
             autoComplete="off"
-            className="h-11 w-full rounded-md border bg-background px-4 text-start text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="h-12 w-full rounded-xl border border-input bg-background ps-11 pe-4 text-start text-sm text-foreground shadow-sm transition-all duration-200 placeholder:text-muted-foreground/80 hover:border-ring/50 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 focus-visible:ring-offset-1"
             aria-label="Search products"
          />
 
-         {error ? (
-            <p role="status" className="mt-2 text-sm text-destructive">
-               {error}
-            </p>
-         ) : (
-            <SearchSuggestions
-               query={query}
-               suggestions={suggestions}
-               isLoading={isLoading}
-               onSelect={handleSelect}
-            />
-         )}
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            className="pointer-events-none absolute start-3.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+         >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+         </svg>
       </div>
+
+      {error ? (
+         <p
+            role="status"
+            className="mt-2 rounded-lg border border-destructive/20 bg-destructive/5 px-3 py-2 text-sm text-destructive"
+         >
+            {error}
+         </p>
+      ) : (
+         <SearchSuggestions
+            query={query}
+            suggestions={suggestions}
+            isLoading={isLoading}
+            onSelect={handleSelect}
+         />
+      )}
+      </div>
+
    );
 }

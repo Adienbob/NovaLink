@@ -6,8 +6,8 @@ import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { z } from "zod";
 
 const updateCartQuantitySchema = z.object({
-variantId: z.string().uuid(),
-quantity: z.number().int().positive(),
+   variantId: z.string().uuid(),
+   quantity: z.number().int().positive(),
 });
 
 

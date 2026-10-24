@@ -16,20 +16,20 @@ export default async function StaffBrandsPage() {
    }
 
    return (
-      <div className="space-y-6 p-6">
-         <div>
-            <h1 className="text-2xl font-bold tracking-tight">
+      <div className="max-w-7xl mx-auto space-y-6 p-6">
+         <div className="border-b border-border pb-4">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">
                Brands Management
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-secondary mt-1">
                Manage manufacturer and supplier brands associated with catalog items.
             </p>
          </div>
 
          <BrandsList
-            brands={brands}
-            userRole={user.role as "admin" | "owner" | "viewer"}
-            onRefresh={handleRefresh}
+         brands={brands}
+         userRole={user.role as "admin" | "owner" | "viewer"}
+         onRefresh={handleRefresh}
          />
       </div>
    );

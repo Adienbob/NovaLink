@@ -1,186 +1,163 @@
-"use client";
+// features/dashboards/delivery/components/delivery-card.tsx
+import * as React from "react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-import { useState, useTransition } from "react";
-import { pickUpDeliveryAction } from "../actions/pickup-delivery";
-import { completeDeliveryAction } from "../actions/complete-delivery";
-import { failDeliveryAction } from "../actions/fail-delivery";
-
-interface DeliveryCardProps {
-   delivery: any;
-   locale: string;
+// 1. مطابقة الواجهة بدقة مع استعلام Supabase
+export interface DeliveryItem {
+   id: string;
+   order_id: string;
+   driver_id: string;
+   status: "assigned" | "picked_up" | "delivered" | "failed";
+   failure_reason?: string | null;
+   notes?: string | null;
+   assigned_at?: string | null;
+   picked_up_at?: string | null;
+   completed_at?: string | null;
+   created_at: string;
+   orders: {
+      id: string;
+      total: number;
+      payment_method?: string;
+      status: string;
+      shipping_fee?: number;
+      delivery_address_snapshot?: any; // JSON Snapshot
+      notes?: string | null;
+      users?: {
+         full_name?: string | null;
+         phone?: string | null;
+         email?: string | null;
+      } | null;
+   } | null;
 }
 
-export function DeliveryCard({ delivery, locale }: DeliveryCardProps) {
-   const [isPending, startTransition] = useTransition();
-   const [showFailModal, setShowFailModal] = useState(false);
-   const [failureReason, setFailureReason] = useState("");
-   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+interface DeliveryCardProps {
+   delivery: DeliveryItem;
+   locale: string;
+   onUpdateStatus?: (deliveryId: string, newStatus: string) => void;
+   isLoading?: boolean;
+}
 
-   const order = delivery.orders;
-   const isAr = locale === "ar";
+export function DeliveryCard({
+  delivery,
+  locale,
+  onUpdateStatus,
+  isLoading = false,
+}: DeliveryCardProps) {
+  const isAr = locale === "ar";
+  const order = delivery.orders;
+  const user = order?.users;
 
-   // 1. إجراء استلام الشحنة من المستودع
-   const handlePickup = () => {
-      setErrorMessage(null);
-      startTransition(async () => {
-         const res = await pickUpDeliveryAction({ deliveryId: delivery.id, locale });
-         if (!res.success) {
-         setErrorMessage(res.error || "Failed to pick up order");
-         }
-      });
-   };
+  // 2. معالجة العنوان المأخوذ من snapshot بأمان
+  const addressText = React.useMemo(() => {
+    const snap = order?.delivery_address_snapshot;
+    if (!snap) return isAr ? "غير محدد" : "N/A";
+    if (typeof snap === "string") return snap;
+    // إذا كان المكون عبارة عن كائن يحتوي تفاصيل المدينة والشارع
+    const parts = [snap.city, snap.street, snap.details, snap.address_line].filter(Boolean);
+    return parts.length > 0 ? parts.join(", ") : JSON.stringify(snap);
+  }, [order?.delivery_address_snapshot, isAr]);
 
-   // 2. إجراء إتمام التسليم للعميل
-   const handleComplete = () => {
-      setErrorMessage(null);
-      startTransition(async () => {
-         const res = await completeDeliveryAction({ deliveryId: delivery.id, locale });
-         if (!res.success) {
-         setErrorMessage(res.error || "Failed to complete delivery");
-         }
-      });
-   };
+  // 3. خريطة الألوان والشارات المعتمدة في نظام التصميم
+  const statusBadgeVariant = {
+    assigned: "warning" as const,
+    picked_up: "default" as const,
+    delivered: "success" as const,
+    failed: "destructive" as const,
+  }[delivery.status] || "outline";
 
-   // 3. إجراء تسجيل فشل التوصيل
-   const handleFail = (e: React.FormEvent) => {
-      e.preventDefault();
-      if (!failureReason.trim()) return;
-
-      setErrorMessage(null);
-      startTransition(async () => {
-         const res = await failDeliveryAction({
-         deliveryId: delivery.id,
-         reason: failureReason,
-         locale,
-         });
-         if (!res.success) {
-         setErrorMessage(res.error || "Failed to record delivery failure");
-         } else {
-         setShowFailModal(false);
-         }
-      });
-   };
-
-   const address = order?.delivery_address_snapshot;
-
-   return (
-      <div className="border rounded-xl p-5 bg-card shadow-sm space-y-4 text-card-foreground">
-         {/* Header: Order ID & Total */}
-         <div className="flex justify-between items-start border-b pb-3">
-         <div>
-            <span className="font-mono text-xs text-muted-foreground block">
-               {isAr ? "رقم الطلب" : "Order ID"}
+  return (
+    <Card className="w-full border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] shadow-sm transition-all hover:shadow-md">
+      {/* رأس البطاقة */}
+      <CardHeader className="p-4 pb-3 flex flex-row items-center justify-between space-y-0 border-b border-[var(--border)]/50">
+        <div className="flex flex-col">
+          <CardTitle className="text-sm font-bold">
+            {isAr ? "طلب" : "Order"} #{order?.id ? order.id.slice(0, 8) : delivery.order_id.slice(0, 8)}
+          </CardTitle>
+          {order?.payment_method && (
+            <span className="text-[10px] text-[var(--secondary)] uppercase font-semibold mt-0.5">
+              {order.payment_method}
             </span>
-            <span className="font-bold font-mono text-base">#{order?.id?.slice(0, 8)}</span>
-         </div>
-         <div className="text-end">
-            <span className="font-bold text-lg text-primary">{order?.total} EGP</span>
-            <span className="block text-xs text-muted-foreground uppercase">
-               {order?.payment_method}
+          )}
+        </div>
+        <Badge variant={statusBadgeVariant} className="capitalize text-[11px]">
+          {delivery.status.replace("_", " ")}
+        </Badge>
+      </CardHeader>
+
+      {/* محتوى التفاصيل */}
+      <CardContent className="p-4 space-y-3 text-xs">
+        {/* العميل */}
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[var(--secondary)] text-[11px] font-medium">
+            {isAr ? "العميل" : "Customer"}
+          </span>
+          <span className="font-semibold text-[var(--foreground)] text-sm">
+            {user?.full_name || (isAr ? "عميل غير مسمى" : "Unnamed Customer")}
+          </span>
+        </div>
+
+        {/* رقم الهاتف والإتصال المباشر */}
+        {user?.phone && (
+          <div className="flex flex-col gap-0.5">
+            <span className="text-[var(--secondary)] text-[11px] font-medium">
+              {isAr ? "رقم التواصل" : "Contact Phone"}
             </span>
-         </div>
-         </div>
-
-         {/* Customer & Address Details */}
-         <div className="space-y-1 text-sm">
-         <p className="font-semibold">{order?.users?.full_name || (isAr ? "عميل غير مسمى" : "Customer")}</p>
-         <p className="text-muted-foreground text-xs">{order?.users?.phone || (isAr ? "بدون رقم هاتف" : "No phone")}</p>
-         {address && (
-            <div className="mt-2 text-xs bg-muted/50 p-2 rounded border">
-               <p className="font-medium text-foreground">{address.street || address.address_line1}</p>
-               <p className="text-muted-foreground">{address.city}, {address.governorate || address.state}</p>
-            </div>
-         )}
-         </div>
-
-         {/* Error Feedback */}
-         {errorMessage && (
-         <div className="p-2 text-xs bg-destructive/10 text-destructive border border-destructive/20 rounded">
-            {errorMessage}
-         </div>
-         )}
-
-         {/* Dynamic Action Buttons based on Status */}
-         <div className="pt-2">
-         {delivery.status === "assigned" && (
-            <button
-               onClick={handlePickup}
-               disabled={isPending}
-               className="w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg text-sm transition-colors disabled:opacity-50"
+            <a
+              href={`tel:${user.phone}`}
+              className="text-[var(--primary)] hover:underline font-mono font-bold text-sm text-start dir-ltr w-fit"
             >
-               {isPending ? (isAr ? "جاري الاستلام..." : "Picking up...") : (isAr ? "استلام الشحنة من الفرع" : "Pick Up Order")}
-            </button>
-         )}
+              {user.phone}
+            </a>
+          </div>
+        )}
 
-         {delivery.status === "picked_up" && (
-            <div className="grid grid-cols-2 gap-2">
-               <button
-               onClick={handleComplete}
-               disabled={isPending}
-               className="py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg text-sm transition-colors disabled:opacity-50"
-               >
-               {isPending ? (isAr ? "جاري الحفظ..." : "Saving...") : (isAr ? "تم التسليم" : "Delivered")}
-               </button>
-               <button
-               onClick={() => setShowFailModal(true)}
-               disabled={isPending}
-               className="py-2.5 px-4 bg-rose-600 hover:bg-rose-700 text-white font-medium rounded-lg text-sm transition-colors disabled:opacity-50"
-               >
-               {isAr ? "فشل التسليم" : "Failed"}
-               </button>
-            </div>
-         )}
+        {/* عنوان التوصيل */}
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[var(--secondary)] text-[11px] font-medium">
+            {isAr ? "عنوان التسليم" : "Delivery Address"}
+          </span>
+          <p className="text-[var(--foreground)] leading-relaxed">{addressText}</p>
+        </div>
 
-         {delivery.status === "delivered" && (
-            <span className="inline-block w-full text-center py-1.5 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded text-xs font-semibold">
-               {isAr ? "تم التسليم بنجاح" : "Delivered Successfully"}
+        {/* المبلغ الإجمالي */}
+        {order?.total !== undefined && (
+          <div className="pt-2 border-t border-[var(--border)] flex justify-between items-center text-xs">
+            <span className="text-[var(--secondary)]">{isAr ? "المبلغ الكلي" : "Total Amount"}</span>
+            <span className="font-bold text-sm text-[var(--foreground)] font-mono">
+              {order.total} SAR
             </span>
-         )}
+          </div>
+        )}
+      </CardContent>
 
-         {delivery.status === "failed" && (
-            <div className="text-xs bg-rose-50 dark:bg-rose-950/50 p-2 rounded border border-rose-200 dark:border-rose-900 text-rose-800 dark:text-rose-300">
-               <span className="font-bold">{isAr ? "سبب الفشل: " : "Reason: "}</span>
-               {delivery.failure_reason || (isAr ? "غير محدد" : "Unspecified")}
-            </div>
-         )}
-         </div>
+      {/* أزرار الإجراءات والتحكم بالإنهاء */}
+      {onUpdateStatus && delivery.status !== "delivered" && delivery.status !== "failed" && (
+        <CardFooter className="p-4 pt-0 gap-2">
+          {delivery.status === "assigned" && (
+            <Button
+              size="sm"
+              className="w-full h-10 text-xs font-semibold"
+              onClick={() => onUpdateStatus(delivery.id, "picked_up")}
+              isLoading={isLoading}
+            >
+              {isAr ? "تأكيد استلام الشحنة" : "Mark as Picked Up"}
+            </Button>
+          )}
 
-         {/* Failure Reason Modal */}
-         {showFailModal && (
-         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-            <div className="bg-background rounded-xl p-5 max-w-sm w-full space-y-4 border shadow-lg">
-               <h3 className="font-bold text-base">
-               {isAr ? "تسجيل سبب عدم التوصيل" : "Record Delivery Failure"}
-               </h3>
-               <form onSubmit={handleFail} className="space-y-3">
-               <textarea
-                  value={failureReason}
-                  onChange={(e) => setFailureReason(e.target.value)}
-                  placeholder={isAr ? "مثال: العميل لم يرد، العنوان غير صحيح..." : "e.g. Customer unreachable, incorrect address..."}
-                  required
-                  className="w-full p-2.5 text-sm border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  rows={3}
-               />
-               <div className="flex justify-end gap-2">
-                  <button
-                     type="button"
-                     onClick={() => setShowFailModal(false)}
-                     className="px-3 py-1.5 text-sm border rounded-lg hover:bg-accent"
-                  >
-                     {isAr ? "إلغاء" : "Cancel"}
-                  </button>
-                  <button
-                     type="submit"
-                     disabled={isPending}
-                     className="px-3 py-1.5 text-sm bg-rose-600 text-white rounded-lg hover:bg-rose-700 disabled:opacity-50"
-                  >
-                     {isPending ? (isAr ? "جاري الحفظ..." : "Saving...") : (isAr ? "تأكيد" : "Confirm")}
-                  </button>
-               </div>
-               </form>
-            </div>
-         </div>
-         )}
-      </div>
-   );
+          {delivery.status === "picked_up" && (
+            <Button
+              size="sm"
+              className="w-full h-10 text-xs font-semibold bg-[var(--success)] hover:opacity-90 text-white"
+              onClick={() => onUpdateStatus(delivery.id, "delivered")}
+              isLoading={isLoading}
+            >
+              {isAr ? "تأكيد التسليم للعميل" : "Complete Delivery"}
+            </Button>
+          )}
+        </CardFooter>
+      )}
+    </Card>
+  );
 }

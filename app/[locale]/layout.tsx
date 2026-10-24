@@ -11,6 +11,10 @@ import { arSA } from "@clerk/localizations";
 import { CartProvider } from "@/features/cart/components/cart-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
 import QueryProvider from "@/shared/providers/query-provider";
+import "@/app/globals.css";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { StoreNavigation } from "@/components/navigation/store-navigation";
 
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -45,13 +49,17 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
         <ClerkProvider localization={clerkLocalization}>
           <body className={font.className}>
+            <main className="bg-background">
               <QueryProvider>
                 <CartProvider>
                     <NextIntlClientProvider messages={messages}>
-                      {children}
+                      <Header />
+                        {children}
+                      <Footer />
                     </NextIntlClientProvider>
                 </CartProvider>
               </QueryProvider>
+            </main>
           </body>
         </ClerkProvider>
     </html>

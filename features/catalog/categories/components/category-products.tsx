@@ -301,12 +301,12 @@ export function CategoryProducts({
          />
 
          <section>
-            <p className="mb-4 text-sm text-muted-foreground">
+            <p className="mb-4 text-sm text-(--muted-foreground) bg-(--background)">
                {filteredProducts.length} products
             </p>
 
             {paginatedProducts.length === 0 ? (
-               <p className="py-8 text-center text-muted-foreground">
+               <p className="py-8 text-center text-(--muted-foreground)">
                   No products match your filters.
                </p>
             ) : (
