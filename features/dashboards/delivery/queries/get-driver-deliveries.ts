@@ -2,8 +2,10 @@
 
 import { requireRole } from "@/app/lib/auth/require-role";
 import { supabaseAdmin } from "@/app/lib/supabase/server";
+import { DeliveryItem, isDeliveryStatus } from "../types/delivery";
 
-export async function getDriverDeliveries() {
+
+export async function getDriverDeliveries(): Promise<DeliveryItem[]> {
    // 1. Enforce authentication and role permissions
    const currentUser = await requireRole(["delivery", "admin", "owner"]);
 
@@ -37,6 +39,7 @@ export async function getDriverDeliveries() {
          )
       `)
       .eq("driver_id", currentUser.id)
+      .in("status", ["assigned", "picked_up", "delivered", "failed"])
       .order("created_at", { ascending: false });
 
    if (error) {
@@ -44,5 +47,7 @@ export async function getDriverDeliveries() {
       return [];
    }
 
-   return deliveries || [];
+   return (deliveries ?? []).flatMap((d) =>
+      isDeliveryStatus(d.status) ? [{ ...d, status: d.status }] : []
+   );
 }

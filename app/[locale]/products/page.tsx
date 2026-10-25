@@ -1,6 +1,6 @@
 import { ProductGrid } from "@/components/storefront/product-grid";
 import { CartTriggerButton } from "@/features/cart/components/cart-trigger-button";
-import { getProducts } from "@/features/dashboards/staff/products/actions/products-actions";
+import { getPublicProducts } from "@/features/catalog/products/actions/get-public-products";
 
 type ProductsPageProps = {
    params: Promise<{
@@ -16,7 +16,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
 
    // جلب كافة المنتجات المتاحة من السيرفر
    // 1. استدعاء الـ Server Action
-   const response = await getProducts(); 
+   const response = await getPublicProducts(); 
 
    // 2. استخراج المصفوفة وتحويل هيكلها ليطابق الـ Product Type الخاص بـ ProductGrid
    const formattedProducts = response.products.map((p) => ({
@@ -64,7 +64,6 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
                ? "استعرض تشكيلة المنتجات المتاحة في المتجر"
                : "Browse our complete catalog of available products"}
          </p>
-         <CartTriggerButton locale={locale} />
          </header>
 
          {/* شبكة عرض المنتجات */}

@@ -3,40 +3,13 @@ import * as React from "react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-// 1. مطابقة الواجهة بدقة مع استعلام Supabase
-export interface DeliveryItem {
-   id: string;
-   order_id: string;
-   driver_id: string;
-   status: "assigned" | "picked_up" | "delivered" | "failed";
-   failure_reason?: string | null;
-   notes?: string | null;
-   assigned_at?: string | null;
-   picked_up_at?: string | null;
-   completed_at?: string | null;
-   created_at: string;
-   orders: {
-      id: string;
-      total: number;
-      payment_method?: string;
-      status: string;
-      shipping_fee?: number;
-      delivery_address_snapshot?: any; // JSON Snapshot
-      notes?: string | null;
-      users?: {
-         full_name?: string | null;
-         phone?: string | null;
-         email?: string | null;
-      } | null;
-   } | null;
-}
+import { DeliveryItem, DeliveryStatus } from "../types/delivery";
 
 interface DeliveryCardProps {
-   delivery: DeliveryItem;
-   locale: string;
-   onUpdateStatus?: (deliveryId: string, newStatus: string) => void;
-   isLoading?: boolean;
+  delivery: DeliveryItem;
+  locale: string;
+  onUpdateStatus?: (deliveryId: string, newStatus: string) => void;
+  isLoading?: boolean;
 }
 
 export function DeliveryCard({
