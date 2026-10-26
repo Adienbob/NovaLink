@@ -50,9 +50,7 @@ export default async function BrandPage({
    );
 
    return (
-      <main>
-         <h1>Brand: {slug}</h1>
-
+      <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-6">
          <HydrationBoundary state={dehydrate(queryClient)}>
             <BrandProducts
                slug={slug}

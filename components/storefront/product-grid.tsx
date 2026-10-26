@@ -1,19 +1,14 @@
-import * as React from "react";
 import { ProductCard } from "./product-card";
 import { Product } from "@/features/catalog/products/types/product";
 
 interface ProductGridProps {
    products: Product[];
    locale: string;
-   onAddToCart?: (productId: string, variantId?: string) => void;
-   loadingProductId?: string | null;
 }
 
-export function ProductGrid({
+export default function ProductGrid({
    products,
    locale,
-   onAddToCart,
-   loadingProductId,
 }: ProductGridProps) {
    const isAr = locale === "ar";
 
@@ -30,7 +25,7 @@ export function ProductGrid({
    }
 
    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-4">
          {products.map((product) => (
             <ProductCard
                key={product.id}

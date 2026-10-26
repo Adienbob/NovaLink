@@ -27,6 +27,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
   const displayPrice = defaultVariant?.price ?? product.base_price;
   const inStock = defaultVariant ? defaultVariant.stock_quantity > 0 : false;
 
+  console.log(primaryImage)
   return (
     <Card className="group overflow-hidden border-border bg-surface transition-all hover:shadow-md flex flex-col justify-between h-full">
       <div className="relative">
@@ -36,7 +37,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
         >
           {primaryImage ? (
             <Image
-              src={primaryImage}
+              src={`/${primaryImage}.webp`}
               alt={product.images?.[0]?.alt_text || product.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"

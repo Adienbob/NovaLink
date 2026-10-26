@@ -53,43 +53,61 @@ export function FilterPriceRange({
 
    }
 
-   return ( 
-      <section className="space-y-3"> <h3 className="font-medium">Price range</h3>
+  return (
+   <section className="space-y-4">
+      <h3 className="text-sm font-semibold text-foreground">
+      Price range
+      </h3>
 
          <div className="grid grid-cols-2 gap-3">
-            <label className="space-y-1">
-               <span className="text-sm text-muted-foreground">
+            <label className="min-w-0 space-y-1.5">
+               <span className="block text-xs font-medium text-muted-foreground">
                   Minimum
                </span>
+
                <input
                   type="number"
                   min="0"
                   step="any"
                   value={min}
-                  onChange={(event) => setMin(event.target.value)}
+                  onChange={(event) => {
+                     setMin(event.target.value);
+                     setError("");
+                  }}
                   placeholder="Min"
-                  className="w-full rounded-md border px-3 py-2 text-sm"
+                  aria-label="Minimum price"
+                  aria-invalid={!!error}
+                  className="w-full min-w-0 rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-ring/20"
                />
             </label>
 
-            <label className="space-y-1">
-               <span className="text-sm text-muted-foreground">
+            <label className="min-w-0 space-y-1.5">
+               <span className="block text-xs font-medium text-muted-foreground">
                   Maximum
                </span>
+
                <input
                   type="number"
                   min="0"
                   step="any"
                   value={max}
-                  onChange={(event) => setMax(event.target.value)}
+                  onChange={(event) => {
+                     setMax(event.target.value);
+                     setError("");
+                  }}
                   placeholder="Max"
-                  className="w-full rounded-md border px-3 py-2 text-sm"
+                  aria-label="Maximum price"
+                  aria-invalid={!!error}
+                  className="w-full min-w-0 rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-ring/20"
                />
             </label>
          </div>
 
          {error && (
-            <p role="alert" className="text-sm text-destructive">
+            <p
+               role="alert"
+               className="rounded-md border border-destructive/20 bg-destructive/5 px-3 py-2 text-xs leading-relaxed text-destructive"
+            >
                {error}
             </p>
          )}
@@ -97,11 +115,10 @@ export function FilterPriceRange({
          <button
             type="button"
             onClick={handleApply}
-            className="w-full rounded-md border px-3 py-2 text-sm font-medium"
+            className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.99]"
          >
             Apply price
          </button>
       </section>
-
    );
 }

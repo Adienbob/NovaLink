@@ -4,6 +4,8 @@ import { getProductBySlug } from "@/features/catalog/products/queries/get-produc
 import ProductVariantSelector from "@/features/catalog/products/components/product-variant-selector";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import RelatedProducts from "@/features/catalog/products/components/related-products";
+import { getRelatedProducts } from "@/features/catalog/products/queries/get-related-products";
 
 type ProductPageProps = {
    params: Promise<{
@@ -16,11 +18,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
    const { locale, slug } = await params;
    const isAr = locale === "ar";
 
+   console.log(slug)
+
    const product = await getProductBySlug(slug);
 
-   if (!product) {
+   
+   if (!product || !product.category) {
       notFound();
    }
+   const relatedProductsData = await getRelatedProducts({categoryId: product.category.id, currentProductId: product.id, brandId: product.brand?.id, limit: 4})
+
+   console.log("product", product)
 
    // ترتيب الصور بحسب sort_order
    const sortedImages = product.images
@@ -32,15 +40,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
    const displayPrice = defaultVariant?.price ?? product.base_price;
    const inStock = defaultVariant ? defaultVariant.stock_quantity > 0 : false;
 
+
    return (
       <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-8 text-foreground">
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
          {/* قسم معارض الصور */}
          <section className="space-y-4">
             <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-border bg-muted shadow-sm">
-                <div className="flex h-full w-full items-center justify-center text-sm text-secondary">
+               {mainImage.length > 1 ? 
+               
+               <div>
+                  <Image 
+                     src={`/${mainImage}.webp`}
+                     fill
+                     alt="s"
+                  />
+               </div> 
+               :  
+               <div className="flex h-full w-full items-center justify-center text-sm text-secondary">
                   {isAr ? "لا توجد صورة متاحة" : "No image available"}
-               </div>
+               </div> 
+               
+               }
                {!inStock && (
                <div className="absolute top-4 start-4 z-10">
                   <Badge variant="destructive" className="px-3 py-1 text-xs">
@@ -59,7 +80,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                      className="relative aspect-square w-20 flex-shrink-0 overflow-hidden rounded-lg border border-border bg-muted cursor-pointer hover:border-primary transition-colors"
                   >
                      <Image
-                     src={img.url}
+                     src={product.images[0].url}
                      alt={img.alt_text || product.name}
                      fill
                      className="object-cover"
@@ -110,13 +131,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* محدد الأشكال والمتغيرات (Variant Selector) */}
             <Card className="border-border bg-surface shadow-sm">
                <CardContent className="p-4 space-y-4">
-               <h2 className="text-sm font-bold text-foreground">
-                  {isAr ? "الخيارات المتاحة" : "Available Options"}
-               </h2>
+               <h2 className="flex items-center gap-2 border-b border-border pb-3 text-base font-bold tracking-tight text-foreground"> <span className="h-5 w-1 rounded-full bg-primary" aria-hidden="true" /> {isAr ? "الخيارات المتاحة" : "Available Options"} </h2>
                <ProductVariantSelector variants={product.variants} />
                </CardContent>
             </Card>
          </section>
+         <div className="col-span-2">
+
+            <RelatedProducts products={relatedProductsData} />
+         </div>
          </div>
       </main>
    );

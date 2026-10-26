@@ -36,7 +36,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          is_active,
          product_id
          ),
-         images:product_images (
+         images:product_images!inner (
          id,
          variant_id,
          url,

@@ -50,9 +50,7 @@ export default async function CategoryPage({
    );
 
    return (
-      <main>
-         <h1>Category: {slug}</h1>
-
+      <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-6">
          <HydrationBoundary state={dehydrate(queryClient)}>
             <CategoryProducts
                slug={slug}

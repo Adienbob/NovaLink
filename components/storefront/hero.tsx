@@ -1,122 +1,193 @@
+// src/components/home/Hero.tsx
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
+
+export interface HeroSlide {
+  id: string;
+  badge: string;
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaLink: string;
+  imageSrc: string;
+}
 
 interface HeroProps {
   locale?: string;
-  heroImageSrc?: string;
+  slides?: HeroSlide[];
 }
 
-const HEADING = 'Discover Premium Tech & Modern Lifestyle Essentials';
-const EASE = 'ease-[cubic-bezier(0.22,1,0.36,1)]';
+// Default slides incorporating your image path
+const DEFAULT_SLIDES: HeroSlide[] = [
+  {
+    id: 'slide-1',
+    badge: 'Enterprise Solutions 2026',
+    title: 'Build High-Performance Enterprise Networks',
+    description: 'Explore state-of-the-art routers, managed switches, and access points built for unmatched speed and reliability.',
+    ctaText: 'Explore Catalog',
+    ctaLink: '/products',
+    imageSrc: '/hero banner.png',
+  },
+  {
+    id: 'slide-4',
+    badge: 'Enterprise Solutions 2026',
+    title: 'Build High-Performance Enterprise Networks',
+    description: 'Explore state-of-the-art routers, managed switches, and access points built for unmatched speed and reliability.',
+    ctaText: 'Explore Catalog',
+    ctaLink: '/products',
+    imageSrc: '/hero banner.png',
+  },
+  {
+    id: 'slide-2',
+    badge: 'Official Distributor',
+    title: 'Top-Tier Networking Gear & Accessories',
+    description: 'Direct access to certified Cisco, Aruba, and Grandstream equipment with full Egyptian local warranty.',
+    ctaText: 'View Brands',
+    ctaLink: '/brands',
+    imageSrc: '/hero banner.png',
+  },
+  {
+    id: 'slide-3',
+    badge: 'Next-Gen Connectivity',
+    title: 'Empower Your Business Infrastructure',
+    description: 'Scalable Wi-Fi 6 access points and structured cabling solutions engineered for dense modern environments.',
+    ctaText: 'Shop Solutions',
+    ctaLink: '/categories',
+    imageSrc: '/hero banner.png',
+  },
+];
 
-export default function Hero({
-  locale = 'en',
-  heroImageSrc = '/hero banner.png',
-}: HeroProps) {
-  const [showContent, setShowContent] = useState(false);
+export default function Hero({ locale = 'en', slides = DEFAULT_SLIDES }: HeroProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const isRtl = locale === 'ar';
 
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  }, [slides.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+  }, [slides.length]);
+
+  // Autoplay functionality (5 seconds interval)
   useEffect(() => {
-    const timer = window.setTimeout(() => setShowContent(true), 400);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  const words = HEADING.split(' ');
-  const headingEnd = 300 + words.length * 80; // when the last word starts
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide, isPaused]);
 
   return (
-    <section className="relative flex min-h-[550px] items-center overflow-hidden bg-slate-950 py-24 lg:py-32">
-      {/* Background Image */}
+    <section
+      className="relative overflow-hidden m-0 bg-slate-950 max-h-[350px] flex items-center group"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* 1. SLIDER CONTAINER */}
       <div className="absolute inset-0 z-0">
-        {heroImageSrc ? (
-          <Image
-            src={heroImageSrc}
-            alt="Zain Networking Hero Background"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        ) : (
-          <div className="h-full w-full bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950" />
-        )}
-
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-slate-950/20 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+        <div
+          className="flex h-full w-full transition-transform duration-700 ease-out"
+          style={{
+            transform: `translateX(${isRtl ? currentIndex * 100 : -currentIndex * 100}%)`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div key={slide.id} className="relative min-w-full h-full flex-shrink-0">
+              <Image
+                src={slide.imageSrc}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                className="w-full h-full object-fill object-center"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* 2. TEXT CONTENT WITH STAGGERED BOTTOM-TO-TOP ANIMATIONS */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="max-w-3xl space-y-6">
-          {/* Eyebrow: fade + scale + blur */}
-          <span
-            className={`inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/20 px-3.5 py-1 text-xs font-semibold text-blue-300 backdrop-blur-md transition-[opacity,transform,filter] duration-700 ${EASE} motion-reduce:transition-none ${
-              showContent
-                ? 'scale-100 opacity-100 blur-0'
-                : 'scale-90 opacity-0 blur-sm'
-            }`}
-          >
-            New Season Arrivals 2026
-          </span>
+          {slides.map((slide, index) => {
+            if (index !== currentIndex) return null;
 
-          {/* Heading: word-by-word mask reveal */}
-          <h1
-            aria-label={HEADING}
-            className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
-          >
-            {words.map((word, i) => (
-              <React.Fragment key={`${word}-${i}`}>
-                <span
-                  aria-hidden="true"
-                  className="inline-block overflow-hidden pb-[0.1em] align-bottom"
-                >
-                  <span
-                    className={`inline-block transition-[transform,opacity] duration-700 ${EASE} motion-reduce:transition-none ${
-                      showContent
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-full opacity-0'
-                    }`}
-                    style={{ transitionDelay: `${300 + i * 80}ms` }}
-                  >
-                    {word}
+            return (
+              <div key={`content-${slide.id}`} className="space-y-6">
+                {/* 1. Eyebrow Tag */}
+                <div className="animate-fade-in-up [animation-delay:150ms] opacity-0">
+                  <span className="inline-flex items-center rounded-full bg-blue-500/20 border border-blue-500/30 px-3.5 py-1 text-xs font-semibold text-blue-300 backdrop-blur-md">
+                    {slide.badge}
                   </span>
-                </span>{' '}
-              </React.Fragment>
-            ))}
-          </h1>
+                </div>
 
-          {/* Description: fade + blur-in */}
-          <p
-            className={`max-w-2xl text-base leading-relaxed text-slate-300 transition-[opacity,filter] duration-1000 ease-out motion-reduce:transition-none sm:text-lg ${
-              showContent ? 'opacity-100 blur-0' : 'opacity-0 blur-md'
-            }`}
-            style={{ transitionDelay: `${headingEnd}ms` }}
-          >
-            Shop top-tier brands, high-performance electronics, and everyday
-            innovations curated specifically for you at Zain.
-          </p>
+                {/* 2. Main Title */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] animate-fade-in-up [animation-delay:350ms] opacity-0">
+                  {slide.title}
+                </h1>
 
-          {/* Action: fade + scale-up */}
-          <div
-            className={`flex flex-wrap items-center gap-4 pt-4 transition-[opacity,transform] duration-700 ${EASE} motion-reduce:transition-none ${
-              showContent ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-            }`}
-            style={{ transitionDelay: `${headingEnd + 250}ms` }}
-          >
-            <Link href={`/${locale}/brands`}>
-              <Button
-                size="lg"
-                className="h-12 bg-blue-600 px-8 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.02] hover:bg-blue-500"
-              >
-                Explore Catalog
-              </Button>
-            </Link>
-          </div>
+                {/* 3. Description */}
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl animate-fade-in-up [animation-delay:550ms] opacity-0">
+                  {slide.description}
+                </p>
+
+                {/* 4. Action Button */}
+                <div className="flex flex-wrap items-center gap-4 pt-4 animate-fade-in-up [animation-delay:750ms] opacity-0">
+                  <Link href={`/${locale}${slide.ctaLink}`}>
+                    <Button
+                      size="lg"
+                      className="h-12 px-8 font-semibold text-sm shadow-xl bg-blue-600 hover:bg-blue-500 text-white transition-all duration-300 hover:scale-[1.02]"
+                    >
+                      {slide.ctaText}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
+      </div>
+
+      {/* 3. NAVIGATION ARROWS (Left & Right) */}
+      <button
+        onClick={isRtl ? nextSlide : prevSlide}
+        aria-label="Previous Slide"
+        className="absolute start-4 lg:start-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-slate-900/60 border border-slate-700/60 text-white backdrop-blur-md transition-all duration-300 hover:bg-blue-600 hover:border-blue-500 hover:scale-110 opacity-0 group-hover:opacity-100"
+      >
+        <svg className="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={isRtl ? prevSlide : nextSlide}
+        aria-label="Next Slide"
+        className="absolute end-4 lg:end-8 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-slate-900/60 border border-slate-700/60 text-white backdrop-blur-md transition-all duration-300 hover:bg-blue-600 hover:border-blue-500 hover:scale-110 opacity-0 group-hover:opacity-100"
+      >
+        <svg className="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* 4. SLIDE DOT INDICATORS */}
+      <div className="absolute bottom-6 start-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              currentIndex === index
+                ? 'w-8 bg-blue-500'
+                : 'w-2.5 bg-slate-600/70 hover:bg-slate-400'
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

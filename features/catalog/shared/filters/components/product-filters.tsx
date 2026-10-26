@@ -12,7 +12,7 @@ type ProductFiltersProps = {
    initialFilters?: ProductFiltersType;
    showBrands?: boolean;
    showCategories?: boolean;
-   onFiltersChange?: (filters: ProductFiltersType) => void;
+onFiltersChange?: (filters: ProductFiltersType) => void;
 };
 
 const defaultFilters: ProductFiltersType = {
@@ -33,25 +33,24 @@ export function ProductFilters({
    showCategories = true,
    onFiltersChange,
 }: ProductFiltersProps) {
-   const [filters, setFilters] = useState<ProductFiltersType>({
+      const [filters, setFilters] = useState<ProductFiltersType>({
       ...defaultFilters,
       ...initialFilters,
    });
 
    useEffect(() => {
       setFilters({
-         ...defaultFilters,
-         ...initialFilters,
+      ...defaultFilters,
+      ...initialFilters,
       });
    }, [initialFilters]);
 
    function updateFilters(updates: Partial<ProductFiltersType>) {
       const next = {
-         ...filters,
-         ...updates,
-         page: 1,
+      ...filters,
+      ...updates,
+      page: 1,
       };
-
       setFilters(next);
       onFiltersChange?.(next);
    }
@@ -61,69 +60,86 @@ export function ProductFilters({
          ...defaultFilters,
          page: 1,
       };
-
       setFilters(cleared);
       onFiltersChange?.(cleared);
    }
 
-   return (
-      <aside className="space-y-6">
-         <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Filters</h2>
+   return ( 
+
+      <aside className="h-fit rounded-xl border border-border bg-card shadow-sm">
+      {/* Header */} <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4"> <div className="flex items-center gap-2.5"> <span
+                     aria-hidden="true"
+                     className="h-5 w-1 rounded-full bg-primary"
+                  /> <h2 className="text-base font-bold tracking-tight text-foreground">
+      Filters </h2> </div>
 
             <button
                type="button"
                onClick={clearFilters}
-               className="text-sm underline underline-offset-4"
+               className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
                Clear all
             </button>
          </div>
 
-         {showBrands && (
-            <FilterBrands
-               brands={availableBrands}
-               selectedBrands={filters.brands ?? []}
-               onChange={(brands) => updateFilters({ brands })}
-            />
-         )}
+         {/* Filter Sections */}
+         <div className="divide-y divide-border px-5">
+            {showBrands && (
+               <div className="py-5">
+                  <FilterBrands
+                     brands={availableBrands}
+                     selectedBrands={filters.brands ?? []}
+                     onChange={(brands) => updateFilters({ brands })}
+                  />
+               </div>
+            )}
 
-         {showCategories && (
-            <FilterCategories
-               categories={availableCategories}
-               selectedCategories={filters.categories ?? []}
-               onChange={(categories) => updateFilters({ categories })}
-            />
-         )}
+            {showCategories && (
+               <div className="py-5">
+                  <FilterCategories
+                     categories={availableCategories}
+                     selectedCategories={filters.categories ?? []}
+                     onChange={(categories) => updateFilters({ categories })}
+                  />
+               </div>
+            )}
 
-         <FilterPriceRange
-            minPrice={filters.minPrice}
-            maxPrice={filters.maxPrice}
-            onChange={(price) => updateFilters(price)}
-         />
+            <div className="py-5">
+               <FilterPriceRange
+                  minPrice={filters.minPrice}
+                  maxPrice={filters.maxPrice}
+                  onChange={(price) => updateFilters(price)}
+               />
+            </div>
 
-         <section className="space-y-3">
-            <label htmlFor="product-sort" className="font-medium">
-               Sort by
-            </label>
+            {/* Sorting */}
+            <section className="space-y-3 py-5">
+               <label
+                  htmlFor="product-sort"
+                  className="block text-sm font-semibold text-foreground"
+               >
+                  Sort by
+               </label>
 
-            <select
-               id="product-sort"
-               value={filters.sortBy ?? "relevance"}
-               onChange={(event) =>
-                  updateFilters({
-                     sortBy: event.target.value as ProductFiltersType["sortBy"],
-                  })
-               }
-               className="w-full rounded-md border px-3 py-2 text-sm"
-            >
-               <option value="relevance">Relevance</option>
-               <option value="price_asc">Price: Low to High</option>
-               <option value="price_desc">Price: High to Low</option>
-               <option value="newest">Newest</option>
-               <option value="name_asc">Name: A–Z</option>
-            </select>
-         </section>
+               <select
+                  id="product-sort"
+                  value={filters.sortBy ?? "relevance"}
+                  onChange={(event) =>
+                     updateFilters({
+                        sortBy: event.target.value as ProductFiltersType["sortBy"],
+                     })
+                  }
+                  className="w-full cursor-pointer appearance-none rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors hover:border-primary/50 focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30"
+               >
+                  <option value="relevance">Relevance</option>
+                  <option value="price_asc">Price: Low to High</option>
+                  <option value="price_desc">Price: High to Low</option>
+                  <option value="newest">Newest</option>
+                  <option value="name_asc">Name: A–Z</option>
+               </select>
+            </section>
+         </div>
       </aside>
+
    );
 }

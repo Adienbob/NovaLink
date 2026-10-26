@@ -12,6 +12,7 @@ import { ProductFilters } from "@/features/catalog/shared/filters/components/pro
 import type { ProductFilters as ProductFiltersType } from "@/features/catalog/shared/filters/types/product-filter";
 import type { Product } from "@/features/catalog/products/types/product";
 import { brandProductsQueryKey } from "@/shared/queries/brand-products-query-options";
+import ProductGrid from "@/components/storefront/product-grid";
 
 type BrandProductsProps = {
    slug: string;
@@ -258,49 +259,16 @@ export function BrandProducts({
             showCategories
             onFiltersChange={handleFiltersChange}
          />
+         
 
          <section>
-            <p className="mb-4 text-sm text-muted-foreground">
-               {filteredProducts.length} products
-            </p>
-
             {paginatedProducts.length === 0 ? (
                <p className="py-8 text-center text-muted-foreground">
                   No products match your filters.
                </p>
             ) : (
-               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {paginatedProducts.map((product) => (
-                     <article
-                        key={product.id}
-                        className="space-y-3 rounded-lg border p-4"
-                     >
-                        {product.images[0] && (
-                           <img
-                              src={product.images[0].url}
-                              alt={product.name}
-                              className="aspect-square w-full rounded-md object-contain"
-                           />
-                        )}
-
-                        <h2 className="font-medium">
-                           <Link
-                              href={`/${locale}/products/${product.slug}`}
-                              className="hover:underline"
-                           >
-                              {product.name}
-                           </Link>
-                        </h2>
-
-                        <p className="text-sm text-muted-foreground">
-                           {product.brand?.name ?? "Unknown brand"}
-                        </p>
-
-                        <p className="font-semibold">
-                           {product.base_price}
-                        </p>
-                     </article>
-                  ))}
+               <div className="">
+                  <ProductGrid products={paginatedProducts} locale={locale} />
                </div>
             )}
 

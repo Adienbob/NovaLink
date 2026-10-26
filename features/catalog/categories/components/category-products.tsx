@@ -8,6 +8,7 @@ import { ProductFilters } from "@/features/catalog/shared/filters/components/pro
 import type { ProductFilters as ProductFiltersType } from "@/features/catalog/shared/filters/types/product-filter";
 import { categoryProductsQueryKey } from "@/shared/queries/category-products-query-options";
 import type { Product } from "@/features/catalog/products/types/product";
+import ProductGrid from "@/components/storefront/product-grid";
 
 type CategoryProductsProps = {
    slug: string;
@@ -293,55 +294,22 @@ export function CategoryProducts({
    return (
       <div className="grid grid-cols-1 gap-8 md:grid-cols-[240px_1fr]">
          <ProductFilters
-            availableBrands={availableBrands}
+            availableCategories={availableBrands}
             initialFilters={filters}
-            showBrands
-            showCategories={false}
+            showBrands={false}
+            showCategories
             onFiltersChange={handleFiltersChange}
          />
+         
 
          <section>
-            <p className="mb-4 text-sm text-(--muted-foreground) bg-(--background)">
-               {filteredProducts.length} products
-            </p>
-
             {paginatedProducts.length === 0 ? (
-               <p className="py-8 text-center text-(--muted-foreground)">
+               <p className="py-8 text-center text-muted-foreground">
                   No products match your filters.
                </p>
             ) : (
-               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {paginatedProducts.map((product) => (
-                     <article
-                        key={product.id}
-                        className="space-y-3 rounded-lg border p-4"
-                     >
-                        {product.images[0] && (
-                           <img
-                              src={product.images[0].url}
-                              alt={product.name}
-                              className="aspect-square w-full rounded-md object-contain"
-                           />
-                        )}
-
-                        <h2 className="font-medium">
-                           <Link
-                              href={`/${locale}/products/${product.slug}`}
-                              className="hover:underline"
-                           >
-                              {product.name}
-                           </Link>
-                        </h2>
-
-                        <p className="text-sm text-muted-foreground">
-                           {product.brand?.name ?? "Unknown brand"}
-                        </p>
-
-                        <p className="font-semibold">
-                           {product.base_price}
-                        </p>
-                     </article>
-                  ))}
+               <div className="">
+                  <ProductGrid products={paginatedProducts} locale={locale} />
                </div>
             )}
 
@@ -350,7 +318,15 @@ export function CategoryProducts({
                   <button
                      type="button"
                      disabled={page === 1}
-                     onClick={() => handlePageChange(page - 1)}
+                     onClick={() => {
+                        const updatedFilters = {
+                           ...filters,
+                           page: page - 1,
+                        };
+
+                        setFilters(updatedFilters);
+                        updateUrl(updatedFilters);
+                     }}
                      className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                      Previous
@@ -363,7 +339,15 @@ export function CategoryProducts({
                   <button
                      type="button"
                      disabled={page >= totalPages}
-                     onClick={() => handlePageChange(page + 1)}
+                     onClick={() => {
+                        const updatedFilters = {
+                           ...filters,
+                           page: page + 1,
+                        };
+
+                        setFilters(updatedFilters);
+                        updateUrl(updatedFilters);
+                     }}
                      className="rounded-md border px-4 py-2 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                      Next

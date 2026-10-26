@@ -49,7 +49,7 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
         <ClerkProvider localization={clerkLocalization}>
           <body className={font.className}>
-            <main className="bg-background">
+            <main className="bg-background w-full">
               <QueryProvider>
                 <CartProvider>
                     <NextIntlClientProvider messages={messages}>

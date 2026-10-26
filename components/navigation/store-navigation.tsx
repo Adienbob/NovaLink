@@ -26,7 +26,8 @@ export function StoreNavigation() {
                <Link
                   key={category.href}
                   href={category.href}
-                  className="shrink-0 rounded-md border border-transparent px-3 py-2 text-sm font-medium text-foreground/80 transition-colors duration-200 hover:border-primary/30 hover:bg-primary/2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="relative shrink-0 rounded-md px-3 p-1 text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-primary after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-primary after:transition-all after:duration-300 hover:after:w-[calc(100%-1.5rem)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+
                >
                   {category.label}
                </Link>

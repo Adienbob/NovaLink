@@ -1,5 +1,4 @@
-import { ProductGrid } from "@/components/storefront/product-grid";
-import { CartTriggerButton } from "@/features/cart/components/cart-trigger-button";
+import ProductGrid from "@/components/storefront/product-grid";
 import { getPublicProducts } from "@/features/catalog/products/actions/get-public-products";
 
 type ProductsPageProps = {
@@ -51,19 +50,19 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
       })),
    }));
 
-
+   console.log(formattedProducts)
    return (
       <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-6">
          {/* الهيكل الرأسي للصفحة */}
          <header className="flex flex-col gap-2 border-b border-border pb-4">
-         <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-            {isAr ? "جميع المنتجات" : "All Products"}
-         </h1>
-         <p className="text-sm text-secondary">
-            {isAr
-               ? "استعرض تشكيلة المنتجات المتاحة في المتجر"
-               : "Browse our complete catalog of available products"}
-         </p>
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+               {isAr ? "جميع المنتجات" : "All Products"}
+            </h1>
+            <p className="text-sm text-secondary">
+               {isAr
+                  ? "استعرض تشكيلة المنتجات المتاحة في المتجر"
+                  : "Browse our complete catalog of available products"}
+            </p>
          </header>
 
          {/* شبكة عرض المنتجات */}
