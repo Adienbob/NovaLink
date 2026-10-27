@@ -7,6 +7,18 @@ type ProductsPageProps = {
    }>;
 };
 
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+   return {
+      title: 'بحث المنتجات | Zain',
+      robots: {
+         index: false,
+         follow: true, // Keep following internal product links
+      },
+   };
+}
+
 
 
 export default async function ProductsPage({ params }: ProductsPageProps) {
@@ -50,7 +62,6 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
       })),
    }));
 
-   console.log(formattedProducts)
    return (
       <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-6">
          {/* الهيكل الرأسي للصفحة */}

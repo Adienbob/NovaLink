@@ -8,6 +8,10 @@ import {
 import { CategoryProducts } from "@/features/catalog/categories/components/category-products";
 import { categoryProductsQueryKey } from "@/shared/queries/category-products-query-options";
 import { getProductsByCategory } from "@/features/catalog/categories/queries/get-products-by-category";
+import { getCategoryMetadata } from '@/features/catalog/categories/queries/get-category-metadata';
+import { Metadata } from 'next';
+import { baseUrl } from "@/app/lib/utils/utils";
+import { getCategoryBySlug } from "@/features/catalog/categories/queries/get-category-by-slug";
 
 type CategoryPageProps = {
    params: Promise<{
@@ -16,12 +20,19 @@ type CategoryPageProps = {
    }>;
 };
 
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+   const { locale, slug } = await params;
+
+   return getCategoryMetadata({ slug, locale });
+}
+
 export default async function CategoryPage({
    params,
 }: CategoryPageProps) {
    const { locale, slug } = await params;
 
    const products = await getProductsByCategory(slug);
+   const category = await getCategoryBySlug(slug);
 
    if (products.length === 0) {
       notFound();
@@ -58,6 +69,29 @@ export default async function CategoryPage({
                availableBrands={brands}
             />
          </HydrationBoundary>
+
+        {/* JSON-LD Schema.org CollectionPage */}
+         <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+               __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "CollectionPage",
+                  name: locale === "ar" ? category.name_ar : category.name,
+                  description:
+                  locale === "ar"
+                     ? category.description_ar
+                     : category.description_en,
+                  url: `${baseUrl}${locale === "en" ? "/en" : ""}/categories/${slug}`,
+                  inLanguage: locale === "ar" ? "ar-EG" : "en-US",
+                  isPartOf: {
+                  "@type": "WebSite",
+                  name: "Zain",
+                  url: baseUrl,
+                  },
+               }),
+            }}
+         />
       </main>
    );
 }

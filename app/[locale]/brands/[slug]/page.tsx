@@ -5,22 +5,34 @@ import {
    HydrationBoundary,
 } from "@tanstack/react-query";
 
+import { Metadata } from 'next';
 import { getProductsByBrand } from "@/features/catalog/brands/queries/get-products-by-brand";
 import { BrandProducts } from "@/features/catalog/brands/components/brand-products";
 import { brandProductsQueryKey } from "@/shared/queries/brand-products-query-options";
-type CategoryPageProps = {
+import { getBrandMetadata } from "@/features/catalog/brands/queries/get-brand-metadata";
+import { getBrandsBySlug } from "@/features/catalog/brands/queries/get-brand-by-slug";
+import { baseUrl } from "@/app/lib/utils/utils";
+
+type BrandPageProps = {
    params: Promise<{
       locale: string;
       slug: string;
    }>;
 };
 
+export async function generateMetadata({ params }: BrandPageProps): Promise<Metadata> {
+   const { locale, slug } = await params;
+
+   return getBrandMetadata({ slug, locale });
+}
+
 export default async function BrandPage({
    params,
-}: CategoryPageProps) {
+}: BrandPageProps) {
    const { locale, slug } = await params;
 
    const products = await getProductsByBrand(slug);
+   const brand = await getBrandsBySlug(slug)
 
    if (products.length === 0) {
       notFound();
@@ -58,6 +70,29 @@ export default async function BrandPage({
                availableCategories={category}
             />
          </HydrationBoundary>
+
+         {/* JSON-LD Schema.org CollectionPage */}
+         <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+               __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "CollectionPage",
+                  name: locale === "ar" ? brand.name_ar : brand.name,
+                  description:
+                  locale === "ar"
+                     ? brand.description_ar
+                     : brand.description_en,
+                  url: `${baseUrl}${locale === "en" ? "/en" : ""}/categories/${slug}`,
+                  inLanguage: locale === "ar" ? "ar-EG" : "en-US",
+                  isPartOf: {
+                  "@type": "WebSite",
+                  name: "Zain",
+                  url: baseUrl,
+                  },
+               }),
+            }}
+         />
       </main>
    );
 }

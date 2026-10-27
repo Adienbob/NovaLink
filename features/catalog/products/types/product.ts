@@ -36,15 +36,15 @@ export type ProductImage = {
 };
 
 export type Product = {
-   created_at: string;
-   base_price: number;
    id: string;
-   brand: ProductBrand | null;
    name: string;
    slug: string;
    description: string;
+   base_price: number;
    seo_title: string | null;
    seo_description: string | null;
+   created_at: string;
+   brand: ProductBrand | null;
    category: ProductCategory | null;
    variants: ProductVariant[];
    images: ProductImage[];

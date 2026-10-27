@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getOrderSuccessDetails } from "@/features/checkout/queries/get-order-success-details";
 import { Button } from "@/components/ui/button";
+import { OrderSuccessAnalytics } from "@/features/seo/components/order-success-analytics";
+import { OrderItem } from "@/features/orders/types/order";
 
 interface OrderSuccessPageProps {
   params: Promise<{
@@ -22,6 +24,21 @@ export default async function OrderSuccessPage({ params }: OrderSuccessPageProps
 
   return (
     <main className="container mx-auto py-12 px-4 max-w-2xl">
+      {/* GA4 / GTM Purchase Event Analytics Trigger */}
+      <OrderSuccessAnalytics
+        order={{
+          id: order.id,
+          totalAmount: Number(order.total),
+          shippingFee: Number(order.shippingFee || 0),
+          items: (order.items || []).map((item: OrderItem) => ({
+            id: item.id,
+            name: item.productName,
+            price: Number(item.unitPrice),
+            quantity: Number(item.quantity),
+          })),
+        }}
+      />
+
       <div className="rounded-lg border border-border bg-surface p-8 text-center space-y-6 shadow-sm">
         {/* Icon */}
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary text-3xl">
