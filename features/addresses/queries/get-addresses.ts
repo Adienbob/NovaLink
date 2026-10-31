@@ -6,7 +6,7 @@ export async function getAddresses() {
 
    const { data, error } = await supabaseAdmin
       .from("addresses")
-      .select("*, governorate:governorates(id, name_ar, name)")
+      .select("*, governorate:governorates(id, name_ar, name_en)")
       .eq("user_id", user.id)
       .order("is_default", { ascending: false })
       .order("created_at", { ascending: false });
@@ -21,8 +21,8 @@ export async function getAddresses() {
 export async function getGovernorates() {
    const { data, error } = await supabaseAdmin
       .from("governorates")
-      .select("id, name")
-      .order("name");
+      .select("id, name_en, name_ar")
+      .order("name_en");
 
    if (error) {
       throw new Error(error.message);

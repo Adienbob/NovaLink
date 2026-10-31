@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 
 type Governorate = {
-   id: string;
-   name: string;
+  id: string;
+  name_ar?: string;
+  name_en?: string;
 };
 
 export type AddressFormData = {
@@ -29,6 +30,7 @@ type AddressFormProps = {
    onSubmit: (data: AddressFormData) => Promise<void>;
    onCancel?: () => void;
    submitLabel?: string;
+   locale: string;
 };
 
 const emptyValues: AddressFormData = {
@@ -53,6 +55,7 @@ export default function AddressForm({
    onSubmit,
    onCancel,
    submitLabel = "Save Address",
+   locale
 }: AddressFormProps) {
    const [formData, setFormData] = useState<AddressFormData>({
       ...emptyValues,
@@ -181,7 +184,7 @@ export default function AddressForm({
                <option value="">Select governorate</option>
                {governorates.map((g) => (
                   <option key={g.id} value={g.id}>
-                     {g.name}
+                     {locale === "ar" ? g.name_ar : g.name_en}
                   </option>
                ))}
                </select>

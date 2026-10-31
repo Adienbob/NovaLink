@@ -10,7 +10,8 @@ import AddressForm, { AddressFormData } from "./address-form";
 
 type Governorate = {
    id: string;
-   name: string;
+   name_en?: string;
+   name_ar?: string;
 };
 
 type Address = {
@@ -18,7 +19,7 @@ type Address = {
    label: string | null;
    recipient_name: string;
    phone: string;
-   governorate: { id: string; name: string } | null;
+   governorate: { id: string; name_ar?: string, name_en?: string } | null;
    governorate_id?: string; // may come from the query
    city: string;
    area: string;
@@ -34,9 +35,10 @@ type Address = {
 type Props = {
    addresses: Address[];
    governorates: Governorate[];
+   locale: string;
 };
 
-export default function AddressesList({ addresses, governorates }: Props) {
+export default function AddressesList({ addresses, governorates, locale }: Props) {
    const router = useRouter();
    const [isPending, startTransition] = useTransition();
 
@@ -121,6 +123,7 @@ export default function AddressesList({ addresses, governorates }: Props) {
                   onSubmit={isEdit ? handleUpdate : handleCreate}
                   onCancel={() => setMode("list")}
                   submitLabel={isEdit ? "Update Address" : "Save Address"}
+                  locale={locale}
                />
 
             </div>
@@ -213,16 +216,19 @@ export default function AddressesList({ addresses, governorates }: Props) {
                      <p className="text-xs font-medium text-muted-foreground">Address</p>
                      <p className="mt-1 leading-7 text-foreground">
                      {[
-                        address.governorate?.name,
+                        locale === "ar"
+                           ? address.governorate?.name_ar
+                           : address.governorate?.name_en,
                         address.city,
                         address.area,
                         address.street,
                         address.building,
                         address.floor && `Floor ${address.floor}`,
                         address.apartment && `Apartment ${address.apartment}`,
-                     ]
+                        ]
                         .filter(Boolean)
-                        .join(", ")}
+                        .join(", ")
+                     }
                      </p>
                   </div>
 
