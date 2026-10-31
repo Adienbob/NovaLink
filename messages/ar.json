@@ -1,5 +1,16 @@
 {
    "Home": {
       "title": "الرئيسية"
+   },
+   "StaffNavigation": {
+      "dashboard": "لوحة التحكم",
+      "orders": "الطلبات",
+      "inventory": "المخزون",
+      "returns": "المرتجعات",
+      "deliveries": "التوصيلات",
+      "categories": "التصنيفات",
+      "brands": "العلامات التجارية",
+      "emptyUnits": "نفدت الكمية",
+      "sidebarAriaLabel": "القائمة الجانبية"
    }
 }

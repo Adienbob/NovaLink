@@ -13,6 +13,8 @@ import { baseUrl } from "@/app/lib/utils/utils";
 import { getProductMetadata } from "@/features/catalog/products/queries/get-product-metadata";
 import { BreadcrumbJsonLd } from '@/features/seo/components/breadcrumb-json-ld';
 import { PDPAnalytics } from "@/features/seo/components/pdp-analytics";
+import { ProductKeyFeatures } from "@/features/catalog/products/components/key-features";
+import { ProductTechSpecs } from "@/features/catalog/products/components/tech-specs";
 
 
 type ProductPageProps = {
@@ -59,7 +61,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   
                   <div>
                      <Image 
-                        src={`/${mainImage}.webp`}
+                        src={`${mainImage}`}
                         fill
                         alt="s"
                      />
@@ -143,7 +145,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <ProductVariantSelector variants={product.variants} />
                   </CardContent>
                </Card>
+               
             </section>
+               <ProductTechSpecs specs={product.specs} locale={locale} />
+               <ProductKeyFeatures features={product.key_features} />
             <div className="col-span-2">
 
                <RelatedProducts products={relatedProductsData} />

@@ -1,8 +1,8 @@
+import { ProductCardTypes } from "@/features/catalog/products/types/product-card";
 import { ProductCard } from "./product-card";
-import { Product } from "@/features/catalog/products/types/product";
 
 interface ProductGridProps {
-   products: Product[];
+   products: ProductCardTypes[];
    locale: string;
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import ProductGrid from './product-grid';
+import { ProductCardTypes } from '@/features/catalog/products/types/product-card';
 
 interface BuildNetworkSectionProps {
-   products: any[];
+   products: ProductCardTypes[];
    locale?: string;
    title?: string;
    subtitle?: string;

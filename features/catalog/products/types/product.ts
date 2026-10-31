@@ -40,6 +40,8 @@ export type Product = {
    name: string;
    slug: string;
    description: string;
+   key_features: string[] | null;
+   specs: Json;
    base_price: number;
    seo_title: string | null;
    seo_description: string | null;

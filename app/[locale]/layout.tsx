@@ -67,6 +67,10 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <ClerkProvider localization={clerkLocalization}>
         <body className={font.className}>
+          {process.env.NEXT_PUBLIC_GTM_ID && (
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+          )}
+
           <main className="bg-background w-full">
             <QueryProvider>
               <CartProvider>
@@ -80,19 +84,6 @@ export default async function LocaleLayout({
           </main>
         </body>
       </ClerkProvider>
-      {process.env.NEXT_PUBLIC_GTM_ID && (
-        <>
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-          <noscript>
-              <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
-                height="0"
-                width="0"
-                style={{ display: 'none', visibility: 'hidden' }}
-              />
-            </noscript>
-          </>
-      )}
     </html>
   );
 }

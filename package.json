@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@channel3/sdk": "^4.5.0",
+    "@channel3/skills": "^1.0.0",
     "@clerk/localizations": "^4.22.0",
     "@clerk/nextjs": "^7.9.11",
     "@next/third-parties": "^16.4.3",
@@ -39,6 +41,7 @@
     "eslint-config-next": "16.3.8",
     "supabase": "^2.121.0",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

@@ -1,0 +1,4882 @@
+[
+  {
+    "id": "qky97lL",
+    "title": "TL-SG1008P SWITCH 8 PORT GIGABIT DESKTOP 55W 4 POE",
+    "description": "The TP-Link TL-SG1008P is an 8-port Gigabit desktop switch featuring 4 PoE+ ports that allow for simultaneous data and power transmission over Ethernet cables. It is a plug-and-play device requiring no configuration, supporting IEEE 802.3af/at compliant PDs with up to 30W per PoE port and a total PoE budget of 64W. It includes 802.1p/DSCP QoS to ensure smooth handling of latency-sensitive traffic.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/c40ac3cf-7afd-46a9-9b9a-c7c2f4435c60?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c40ac3cf-7afd-46a9-9b9a-c7c2f4435c60?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a3a9023b-bbe0-4186-be4c-da7ad9dcfe66?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/a3a9023b-bbe0-4186-be4c-da7ad9dcfe66?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/01e8df03-2dec-4370-bb77-3342ced5aa03?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/01e8df03-2dec-4370-bb77-3342ced5aa03?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch from the back."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7e87be40-6b73-4d71-98e8-9a05ddb8e25e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/7e87be40-6b73-4d71-98e8-9a05ddb8e25e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch from the side angle."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/0e2b823c-2bd1-4be4-9f54-0ec786ffc90d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/0e2b823c-2bd1-4be4-9f54-0ec786ffc90d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch from the side view."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/126dbdcf-e560-48df-9e79-8e4d255959b8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/126dbdcf-e560-48df-9e79-8e4d255959b8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P PoE switch showing the front ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/8718015b-607f-47e6-9e03-30b7cc59140d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/8718015b-607f-47e6-9e03-30b7cc59140d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch with status lights."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/c0495d62-71ab-40f5-87cc-50e0d6dc304d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c0495d62-71ab-40f5-87cc-50e0d6dc304d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch showing PoE ports and status."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/6f381f45-4ead-40d0-ad03-a3d9caf8c31f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/6f381f45-4ead-40d0-ad03-a3d9caf8c31f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch with PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/5a3cc18b-038a-4e28-b6b4-5f9751b39b93?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/5a3cc18b-038a-4e28-b6b4-5f9751b39b93?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch with PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b8789c38-3d60-485a-9c48-5790d4ba423a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/b8789c38-3d60-485a-9c48-5790d4ba423a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch showing PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/23ac9fa5-caf5-4525-9886-30065cfc6e13?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/23ac9fa5-caf5-4525-9886-30065cfc6e13?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch with PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/ae89a899-2233-4f13-9e01-4697a21bf521?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/ae89a899-2233-4f13-9e01-4697a21bf521?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch showing PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/0495a74a-2f32-4413-942a-56ff408c9ead?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/0495a74a-2f32-4413-942a-56ff408c9ead?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch with PoE ports and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/47f6acb2-9633-4774-ac9f-7fb041a484e8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/47f6acb2-9633-4774-ac9f-7fb041a484e8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1008P switch from the side view."
+      }
+    ],
+    "category": {
+      "slug": "power-over-ethernet-switches",
+      "title": "Power Over Ethernet Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "power-over-ethernet-switches",
+          "title": "Power Over Ethernet Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "8-Port Gigabit Desktop Switch",
+      "4-Port PoE+ for data and power transmission",
+      "Plug and Play installation",
+      "802.1p/DSCP QoS for latency-sensitive traffic",
+      "Supports PoE power up to 30 W per port",
+      "Total PoE power budget up to 64 W",
+      "Compatible with IEEE 802.3af/at compliant PDs"
+    ],
+    "colors": [
+      {
+        "hex": "#8e8f90",
+        "percentage": 0.5194
+      },
+      {
+        "hex": "#474749",
+        "percentage": 0.381
+      },
+      {
+        "hex": "#6c6c6c",
+        "percentage": 0.0996
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/qky97lL-LPzf-xPUPk1?o=01M5NSKMMYMH1WR3MWPCK2PTCN&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 69.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": {
+          "length": {
+            "number": 6.7,
+            "unit": "in"
+          },
+          "width": {
+            "number": 3.9,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.1,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 2.55,
+            "unit": "lb"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "mounting-type": [
+        "Tabletop"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "IGMP"
+      ],
+      "power-source": [
+        "DC-powered"
+      ],
+      "poe-standard": [
+        "IEEE 802.3af",
+        "IEEE 802.3at"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "mE4bVqL",
+    "title": "24-Port Gigabit Desktop/Rackmount Switch",
+    "description": "The TP-Link TL-SG1024D is a 24-port Gigabit desktop/rackmount switch designed for high-performance networking. It features 24 10/100/1000 Mbps RJ45 ports with auto-negotiation and auto MDI/MDIX support. This unmanaged switch utilizes innovative energy-efficient technology to reduce power consumption and offers a plug-and-play design for easy installation. It is suitable for both desktop and rackmount environments and includes rackmount kits and rubber feet.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/d5e9a760-aa94-4991-bf43-6718fc8f6d5f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/d5e9a760-aa94-4991-bf43-6718fc8f6d5f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-LINK TL-SG1024D 24-port Gigabit Ethernet switch on a white background."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/083ca3a1-cef1-4279-89b5-9015f21bda87?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/083ca3a1-cef1-4279-89b5-9015f21bda87?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Packaging box for the TP-LINK TL-SG1024D 24-Port Gigabit Desktop/Rackmount Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7272472b-3e29-4102-8f87-ad148cb03d58?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/7272472b-3e29-4102-8f87-ad148cb03d58?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-LINK TL-SG1024D switch showing the power port on a white background."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b915fd65-bb09-4339-bd31-ca240ed9a21e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/b915fd65-bb09-4339-bd31-ca240ed9a21e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=TgS4",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Packaging box for the TP-LINK TL-SG1024D 24-Port Gigabit Desktop/Rackmount Switch."
+      }
+    ],
+    "category": {
+      "slug": "hubs-switches",
+      "title": "Hubs & Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        }
+      ],
+      "has_children": true
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "24 10/100/1000 Mbps ports",
+      "Innovative energy-efficient technology saves power consumption",
+      "Supports MAC address self-learning, Auto MDI/MDIX and Auto negotiation",
+      "Plug and play design",
+      "Switching Capacity: 48 Gbps",
+      "Forwarding Rate: 35.7 Mpps"
+    ],
+    "colors": [
+      {
+        "hex": "#666e71",
+        "percentage": 0.402
+      },
+      {
+        "hex": "#393f44",
+        "percentage": 0.2541
+      },
+      {
+        "hex": "#889092",
+        "percentage": 0.1474
+      },
+      {
+        "hex": "#141519",
+        "percentage": 0.1002
+      },
+      {
+        "hex": "#bcc1c4",
+        "percentage": 0.0962
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/mE4bVqL-TgS4-xPUPk1?o=01M4SD350CWKYDBQ7VAMRKH4XS&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "cdw.com",
+        "price": {
+          "price": 125.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "width": {
+            "number": 11.6,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "mounting-type": [
+        "Wall",
+        "Tabletop"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "XefhA3S",
+    "title": "TP‑Link TL‑SG108E 8‑Port Gigabit Easy Smart Switch",
+    "description": "Buy TP‑Link TL‑SG108E 8‑Port Gigabit Easy Smart Switch online with fast shipping and top‑rated customer service. Mwave.com.au",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/c54b4b86-6585-4aaa-8a93-63126c99293a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/2aade9e1-c4d3-4dea-b390-cb77cffb6ae9?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black 8-port Gigabit Unmanaged Pro Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e228c843-a8b8-4aa8-8e43-5f86b50ba13a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black 8-port Gigabit Unmanaged Pro Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/31cf6032-407f-472e-a17a-0111e55b284c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the tp-link TL-SG108E 8-Port Gigabit Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "8 × 10/100/1000 Mbps RJ45 ports",
+      "Intelligent management via web UI and downloadable utility",
+      "Auto‑Negotiation, Auto MDI/MDIX",
+      "Port‑based/802.1p/DSCP QoS, VLAN, Loop Prevention & Port Mirroring",
+      "Green technology – up to 58 % power savings",
+      "Durable metal casing",
+      "5‑year limited warranty",
+      "Plug‑and‑play – no configuration required"
+    ],
+    "colors": [
+      {
+        "hex": "#6d6f6f",
+        "percentage": 0.2566
+      },
+      {
+        "hex": "#454645",
+        "percentage": 0.2421
+      },
+      {
+        "hex": "#2c2c2b",
+        "percentage": 0.1422
+      },
+      {
+        "hex": "#989899",
+        "percentage": 0.1421
+      },
+      {
+        "hex": "#16120f",
+        "percentage": 0.1121
+      },
+      {
+        "hex": "#cecfce",
+        "percentage": 0.1049
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/XefhA3S-hl1t-xPUPk1?o=01M265EQGN60B2YGDF7AWJ3Q83&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "lenovo.com",
+        "price": {
+          "price": 29.99,
+          "compare_at_price": 32.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.014,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/XefhA3S-Z87s-xPUPk1?o=01KKC0J98Y8YHTZVV1QBQHE9ZJ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "kohls.com",
+        "price": {
+          "price": 34.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/XefhA3S-p1PB-xPUPk1?o=01M1WVR1RJSVHH7MGMZ7WENVVG&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bestbuy.com",
+        "price": {
+          "price": 69.85,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.005,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "pattern": [
+        "Solid"
+      ],
+      "power-source": [
+        "AC-powered",
+        "DC-powered"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Free-standing",
+        "Wall"
+      ],
+      "switch-management-type": [
+        "Smart",
+        "Easy Smart"
+      ],
+      "network-protocols-supported": [
+        "IGMP",
+        "VLAN"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ]
+    },
+    "ratings": {
+      "value": 4.9,
+      "count": 48,
+      "source_count": 2
+    }
+  },
+  {
+    "id": "XkrHrHA",
+    "title": "8-Port Gigabit Desktop Switch",
+    "description": "This TP-Link 8-Port Gigabit Desktop Switch (model TL-SG108) offers a simple way to expand your wired network. It features 8 ports that support Gigabit Ethernet speeds (10/100/1000Mbps) and auto-negotiation, meaning it can automatically detect the optimal speed for connected devices. The switch is plug-and-play, requiring no configuration. It also includes Quality of Service (QoS) for prioritizing network traffic, IGMP Snooping for optimized multicast traffic, and Green Ethernet technology to reduce power consumption. The durable steel housing allows for desktop or wall mounting.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/d02dcf21-03ad-470d-861c-a2a78d479856?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/d02dcf21-03ad-470d-861c-a2a78d479856?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black desktop switch with 8 Ethernet ports on a plain background."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b6afb46d-bb1e-4bc5-9d6f-ed7fe1eab861?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/b6afb46d-bb1e-4bc5-9d6f-ed7fe1eab861?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black desktop switch with 8 Ethernet ports facing the camera."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/823b6d49-b4d7-48d8-96a4-91261a60b5d3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Black desktop switch with blue stripes underneath it."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/92493d79-9611-4b09-b12b-98a947c1071a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/92493d79-9611-4b09-b12b-98a947c1071a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the TP-Link 8-Port Gigabit Desktop Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "Plug and play, no configuration needed",
+      "Support 802.1p/DSCP QoS and IGMP Snooping function",
+      "Green Ethernet technology saves power consumption",
+      "IEEE 802.3x flow control provides reliable data transfer",
+      "Steel housing, desktop or wall-mounting design",
+      "8 × 10/100/1000Mbps Auto-Negotiation RJ45 ports supporting Auto-MDI/MDIX"
+    ],
+    "colors": [
+      {
+        "hex": "#73848b",
+        "percentage": 0.3979
+      },
+      {
+        "hex": "#313e43",
+        "percentage": 0.2672
+      },
+      {
+        "hex": "#4e5d64",
+        "percentage": 0.1192
+      },
+      {
+        "hex": "#1b201e",
+        "percentage": 0.11
+      },
+      {
+        "hex": "#b7c1c5",
+        "percentage": 0.1058
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/XkrHrHA-6Uzl-xPUPk1?o=01KRG4M5S244DC3Q84PR3978NP&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "officedepot.com",
+        "price": {
+          "price": 29.99,
+          "compare_at_price": 49.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.035,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "pattern": [
+        "Solid"
+      ],
+      "power-source": [
+        "AC-powered"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "Ho6z2lM",
+    "title": "Desktop Switch",
+    "description": "The TP-Link 5-Port Gigabit Desktop Switch is a reliable networking solution designed for efficient data transfer. It features five 10/100/1000 Mbps auto-negotiation RJ45 ports and utilizes Green Ethernet technology to reduce power consumption. With a durable metal casing and a fanless design, it is suitable for both desktop and wall-mounting. This plug-and-play device requires no configuration and supports 802.1p/DSCP QoS and IGMP Snooping for optimized network performance.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/c3365b10-9c25-4dca-8c92-d36d4e4242d0?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c3365b10-9c25-4dca-8c92-d36d4e4242d0?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black 5-port desktop Gigabit switch from a front view."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e6b39aee-4fb7-49f6-9041-6e9eebf7548c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e6b39aee-4fb7-49f6-9041-6e9eebf7548c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Blue-gray 5-port desktop Gigabit switch from a front view."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a161e010-1784-4c71-9ec5-c79e3c29f0da?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the TP-Link TL-SG105 5-Port Gigabit Desktop Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "Green Ethernet technology reduces power consumption",
+      "IEEE 802.3x flow control provides reliable data transfer",
+      "Plug and play, no configuration needed",
+      "Supports 802.1p/DSCP QoS and IGMP Snooping functions",
+      "Durable metal casing, desktop/wall-mounting options, and a fanless design",
+      "5× 10/100/1000 Mbps Auto-Negotiation RJ45 ports supporting Auto-MDI/MDIX"
+    ],
+    "colors": [
+      {
+        "hex": "#73808b",
+        "percentage": 0.2877
+      },
+      {
+        "hex": "#3e4850",
+        "percentage": 0.2607
+      },
+      {
+        "hex": "#212527",
+        "percentage": 0.2356
+      },
+      {
+        "hex": "#57646d",
+        "percentage": 0.1217
+      },
+      {
+        "hex": "#b9bfc5",
+        "percentage": 0.0943
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/Ho6z2lM-6Uzl-xPUPk1?o=01M24VDZ7SP55RP1S4FS18YHTC&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "officedepot.com",
+        "price": {
+          "price": 34.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.035,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "network-protocols-supported": [
+        "IGMP",
+        "Ethernet (IEEE 802.3)"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "XHE31im",
+    "title": "TP-Link TL-SG3428 24 Port Gigabit Switch",
+    "description": "The TP-Link TL-SG3428 is a business-grade L2+ smart managed Gigabit switch designed for enterprise or campus networks. It features 24 Gigabit RJ45 ports and 4 Gigabit SFP slots for flexible high-speed connectivity. Integrated into the Omada SDN platform, it allows for centralized cloud management of network devices from a single interface. The switch includes advanced security features such as 802.1Q VLAN, IP-MAC-Port binding, and ACLs, along with L2/L3/L4 QoS for prioritizing time-sensitive traffic. It also supports IPv6 and static routing for improved network efficiency.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/e1455b50-0e1d-4c15-9b57-cac56f4c4d0a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e1455b50-0e1d-4c15-9b57-cac56f4c4d0a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link network switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/97ba2f66-4c40-46d3-8f18-088ab1b2150c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Front view of a black TP-Link network switch with dimensions."
+      }
+    ],
+    "category": {
+      "slug": "managed-switches",
+      "title": "Managed Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "managed-switches",
+          "title": "Managed Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "24 x 10/100/1000 Mbps RJ45 ports",
+      "4 x Gigabit SFP slots",
+      "Omada SDN Integrated for centralized cloud management",
+      "L2+ Smart Managed with Static Routing",
+      "Advanced security: 802.1Q VLAN, IP-MAC-Port binding, ACL",
+      "L2/L3/L4 QoS for prioritized traffic",
+      "IPv6 support including Dual IPv4/IPv6 Stack",
+      "Management via web-based GUI or CLI"
+    ],
+    "colors": [
+      {
+        "hex": "#585a5b",
+        "percentage": 0.393
+      },
+      {
+        "hex": "#afb0af",
+        "percentage": 0.2607
+      },
+      {
+        "hex": "#303132",
+        "percentage": 0.2396
+      },
+      {
+        "hex": "#828384",
+        "percentage": 0.1066
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/XHE31im-oHaU-xPUPk1?o=01M3GT10VWHBVGWHQFZV4TR954&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 199.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 5.9,
+            "unit": "lb"
+          }
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/XHE31im-n0yg-xPUPk1?o=01M37JDXKYHV71KS75XP7YX086&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "backmarket.com",
+        "price": {
+          "price": 306,
+          "compare_at_price": 531.9,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "used",
+        "max_commission_rate": 0.035,
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null,
+          "weight": {
+            "number": 15,
+            "unit": "oz"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "uplink-port-type": [
+        "SFP"
+      ],
+      "switch-management-type": [
+        "Layer 2 Managed",
+        "Fully managed",
+        "Smart",
+        "Cloud managed"
+      ],
+      "network-protocols-supported": [
+        "DHCP",
+        "SNMP",
+        "VLAN",
+        "IGMP",
+        "TCP/IP"
+      ],
+      "poe-standard": [
+        "IEEE 802.3af",
+        "IEEE 802.3at"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switching-layer": [
+        "Layer 2",
+        "Layer 2/3",
+        "Layer 3",
+        "Layer 2+"
+      ],
+      "mounting-type": [
+        "Wall"
+      ],
+      "hub-switch-storage-options": [
+        "Rack-mountable",
+        "Stackable",
+        "Non-stackable"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "network-layer-support": [
+        "Layer 2",
+        "Layer 3",
+        "Layer 2+"
+      ],
+      "cooling-technology": [
+        "Fan"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "1Bi1GRQ",
+    "title": "TP-LINK TL-SG1016 - 16-Port Gigabit Ethernet Switch",
+    "description": "The TP-Link TL-SG1016 is a 16-port unmanaged Gigabit switch designed for high-performance networking with plug-and-play simplicity. It features 16 RJ-45 ports supporting 10/100/1000 Mbps, a 32 Gbps switching capacity, and an 8K MAC address table for efficient data handling. To reduce energy costs and carbon footprint, it incorporates TP-LINK Green Technology, which can save up to 15% in power consumption. The switch supports IEEE 802.3i, 802.3u, 802.3ab, and 802.3x standards, and includes Auto MDI/MDIX to eliminate the need for crossover cables. Its compact design is suitable for both desktop and rackmount installations.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/26d99c71-2f78-4434-b6ec-ad139eff4b04?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/26d99c71-2f78-4434-b6ec-ad139eff4b04?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-LINK TL-SG1016 Gigabit Ethernet switch, front view."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/201ca1ff-e5fb-4d01-b517-2fdfabc44c82?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/201ca1ff-e5fb-4d01-b517-2fdfabc44c82?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-LINK TL-SG1016 Gigabit Ethernet switch with warranty badge."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "16 x 10/100/1000 Mbps RJ-45 Ports",
+      "32 Gbps Switching Capacity",
+      "8K MAC Address Table",
+      "IEEE 802.3i, 802.3u, 802.3ab, 802.3x compliant",
+      "TP-LINK Green Technology for energy efficiency",
+      "Auto MDI/MDIX eliminates crossover cables",
+      "Non-blocking switching architecture for maximum throughput",
+      "Plug and play installation",
+      "Auto-negotiation on each port for optimal performance",
+      "Rack-mountable and Desktop form factor"
+    ],
+    "colors": [
+      {
+        "hex": "#9da2a4",
+        "percentage": 0.267
+      },
+      {
+        "hex": "#35393f",
+        "percentage": 0.2515
+      },
+      {
+        "hex": "#1c1e25",
+        "percentage": 0.2506
+      },
+      {
+        "hex": "#7a7f83",
+        "percentage": 0.1184
+      },
+      {
+        "hex": "#c1c4c4",
+        "percentage": 0.1126
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/1Bi1GRQ-oHaU-xPUPk1?o=01M3YXESWXWV4MZDTM29S8BFA0&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 69.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 4.55,
+            "unit": "lb"
+          }
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/1Bi1GRQ-TgS4-xPUPk1?o=01M4SEP8W7Q84F2J4XZHAHC9NY&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "cdw.com",
+        "price": {
+          "price": 84.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "hub-switch-storage-options": [
+        "Non-stackable",
+        "Rack-mountable"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ]
+    },
+    "ratings": {
+      "value": 4,
+      "count": 4,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "pFGj9Vs",
+    "title": "TP-Link TL-SG105S - 5 Port Gigabit Ethernet Switch",
+    "description": "The TP-Link TL-SG105S is a compact 5-Port Gigabit Ethernet Switch designed for home and business environments. It features five 10/100/1000Mbps RJ45 ports for high-speed data transfer and a plug-and-play design for easy setup without needing a technician. The switch is housed in a durable, fanless metal casing for quiet operation and longevity. Advanced software features include Port-based 802.1p/DSCP QoS for traffic prioritization and IGMP Snooping for optimized multicast traffic, making it ideal for IPTV, streaming, and gaming. Its flexible design allows for either desktop or wall-mount installation.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/4f5398c3-a915-459f-ae57-d1418da8044c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/4f5398c3-a915-459f-ae57-d1418da8044c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Top-down view of the TP-Link TL-SG105S switch showing ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/ad81fd73-d01b-47d7-b49f-a3c4e5acf35f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/ad81fd73-d01b-47d7-b49f-a3c4e5acf35f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of the TP-Link TL-SG105S switch with five ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/2276add6-20b5-49fa-b433-8c23cd0f7d96?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/2276add6-20b5-49fa-b433-8c23cd0f7d96?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of the black TP-Link TL-SG105S 5-Port Gigabit Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/686c45fa-ab0a-4bcb-98a8-542a0ba8c1af?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Rear view of the TP-Link TL-SG105S switch showing power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/3a03d0e6-7d81-40b3-8146-846ba0b9c068?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/3a03d0e6-7d81-40b3-8146-846ba0b9c068?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the TP-Link TL-SG105S 5-Port Gigabit Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "5 10/100/1000Mbps ports",
+      "Plug and Play design",
+      "Energy-efficient technology",
+      "802.1p and DSCP QoS for traffic optimization",
+      "IGMP Snooping for Multicast data stream optimization",
+      "Fanless design for quiet operation",
+      "Auto MDI/MDIX eliminates need for crossover cables",
+      "Auto-negotiation on each port",
+      "Durable metal casing",
+      "Desktop/Wall-mounting design"
+    ],
+    "colors": [
+      {
+        "hex": "#201d1b",
+        "percentage": 0.5228
+      },
+      {
+        "hex": "#e5e3e3",
+        "percentage": 0.2963
+      },
+      {
+        "hex": "#484543",
+        "percentage": 0.1082
+      },
+      {
+        "hex": "#b2b2b1",
+        "percentage": 0.0726
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/pFGj9Vs-oHaU-xPUPk1?o=01M3GQ3GXQ70SQP3P79MNYQ8CZ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 19.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 3.9,
+            "unit": "in"
+          },
+          "width": {
+            "number": 3.9,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 0.805,
+            "unit": "lb"
+          }
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/pFGj9Vs-TgS4-xPUPk1?o=01M4SGQXDSQ1XVN6ESW8QY2JM0&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "cdw.com",
+        "price": {
+          "price": 24.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 98,
+            "unit": "mm"
+          },
+          "width": {
+            "number": 100,
+            "unit": "mm"
+          },
+          "height": {
+            "number": 25,
+            "unit": "mm"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "power-source": [
+        "DC-powered"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "IGMP"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": {
+      "value": 5,
+      "count": 1,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "6JIxF8b",
+    "title": "TP‑Link SG2218 Omada 16‑port Managed Gigabit L2+ SFP Switch",
+    "description": "16 port, managed, gigabit, SFP capable, Omada, AgeGroup.ADULT",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/25f7aac5-59a7-4b94-a763-a940628305a4?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/25f7aac5-59a7-4b94-a763-a940628305a4?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link JetStream 16-Port Gigabit Network Switch on white background."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/81b5e341-adbd-4b03-9854-fb97668abf09?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/81b5e341-adbd-4b03-9854-fb97668abf09?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link JetStream 16-Port Gigabit Network Switch from a slight angle."
+      }
+    ],
+    "category": {
+      "slug": "managed-switches",
+      "title": "Managed Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "managed-switches",
+          "title": "Managed Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "16 Gigabit RJ45 ports and 2 Gigabit SFP slots",
+      "Centralised cloud management via the Omada app or web UI",
+      "Standalone management via web, CLI, SNMP, RMON",
+      "Layer‑2+ features: VLAN, ACL, QoS, IGMP snooping, static routing",
+      "Fanless design for silent operation",
+      "Durable metal chassis, rack‑mountable, 5‑year limited warranty"
+    ],
+    "colors": [
+      {
+        "hex": "#56585a",
+        "percentage": 0.3986
+      },
+      {
+        "hex": "#333335",
+        "percentage": 0.2299
+      },
+      {
+        "hex": "#bbbcbf",
+        "percentage": 0.1332
+      },
+      {
+        "hex": "#9e9fa2",
+        "percentage": 0.1252
+      },
+      {
+        "hex": "#78797c",
+        "percentage": 0.1132
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/6JIxF8b-oHaU-xPUPk1?o=01M3QKW64DXP73J7ZYTS9A41X6&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 149.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 5.4,
+            "unit": "lb"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "network-protocols-supported": [
+        "DHCP",
+        "IGMP",
+        "VLAN"
+      ],
+      "network-layer-support": [
+        "Layer 2",
+        "Layer 3"
+      ],
+      "switch-management-type": [
+        "Fully managed"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "mounting-type": [
+        "Wall"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "uplink-port-type": [
+        "SFP"
+      ],
+      "hub-switch-storage-options": [
+        "Rack-mountable",
+        "Non-stackable",
+        "Stackable"
+      ],
+      "switching-layer": [
+        "Layer 2/3"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ]
+    },
+    "ratings": {
+      "value": 5,
+      "count": 1,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "aWkWT1M",
+    "title": "TP-Link 5-Port 10/100/1000 Mbps Unmanaged Switch",
+    "description": "A compact 5-port unmanaged Gigabit desktop switch. Supports auto negotiation and Auto MDI/MDIX for easy setup. Energy-efficient, fanless design for quiet operation. Suitable for expanding wired networks in home or small office environments.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/cd5af79a-21a9-470c-9dd9-91841a7eef9b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/fa8a9e14-f807-4946-99d6-c609513ce690?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 5-port Gigabit desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b15f3c11-c0dd-4ba2-93e8-cdfd4ead3034?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/4b72c9c7-8058-4cce-b051-5206d380d2cc?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Top view of a black 5-port Gigabit desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/3cec1a56-107c-4295-9267-6a2f82140eba?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/9b14e04b-7a94-47cd-ad31-b01b5d1a2692?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "A black TP-Link switch with five ports glowing blue lines."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "One switch made to expand network: 5× 10/100/1000Mbps RJ45 Ports supporting Auto Negotiation and Auto MDI/MDIX.",
+      "Gigabit that saves energy: Energy-efficient technology expands your network capacity with much less power consumption and helps save money.",
+      "Reliable and quiet: IEEE 802.3X flow control provides reliable data transfer and fanless design ensures quiet operation.",
+      "Plug and play: Easy setup with no software installation or configuration needed.",
+      "Advanced software features: Prioritize your traffic and guarantee high quality of video or voice data transmission with Port-based 802.1p/DSCP QoS and IGMP Snooping."
+    ],
+    "colors": [
+      {
+        "hex": "#3f4f58",
+        "percentage": 0.3945
+      },
+      {
+        "hex": "#657580",
+        "percentage": 0.2421
+      },
+      {
+        "hex": "#84949f",
+        "percentage": 0.1522
+      },
+      {
+        "hex": "#20221d",
+        "percentage": 0.1079
+      },
+      {
+        "hex": "#c8cfd2",
+        "percentage": 0.1034
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/aWkWT1M-LFnL-xPUPk1?o=01KMT5ETEJS3H2JKRVHAWKVGEQ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "staples.com",
+        "price": {
+          "price": 19.99,
+          "compare_at_price": 29.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.03,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "mounting-type": [
+        "Tabletop"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-protocols-supported": [
+        "IGMP"
+      ],
+      "hub-switch-storage-options": [
+        "Non-stackable"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "axPnviq",
+    "title": "TP‑Link TL‑SG1016 16 Port Gigabit Switch",
+    "description": "A 16‑port Gigabit Ethernet switch designed for small‑to‑medium businesses. It offers 1,000 Mbps throughput on all ports, auto‑MDI/MDIX for plug‑and‑play, energy‑saving features, and a robust 19‑inch rack‑mountable steel chassis.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/0bbf1928-0dfb-41f8-a41b-3cbc257e444a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "cleaned_url": "https://cdn.trychannel3.com/af3391c9-732c-40a3-9900-9963d56472a6?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "TP-Link 16 Port Gigabit Switch - TLSG1016"
+      },
+      {
+        "url": "https://cdn.trychannel3.com/6c680b79-e061-40e9-a6c4-e077c0601d87?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "cleaned_url": "https://cdn.trychannel3.com/b52d34ca-03d8-4d1a-9372-43111e219b43?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of TP-Link 16 Port Gigabit Switch - TLSG1016"
+      },
+      {
+        "url": "https://cdn.trychannel3.com/23c9c10f-18da-48b5-8fa6-dd978d3d840e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "cleaned_url": "https://cdn.trychannel3.com/b2336b2b-b183-4489-8ea7-5bf0bb30dd97?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=DO3T",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Rear view of TP-Link 16 Port Gigabit Switch - TLSG1016"
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "16 x 1G RJ‑45 ports with auto‑MDI/MDIX",
+      "Energy‑efficient operation with power‑saving mode",
+      "5‑year limited manufacturer warranty",
+      "19‑inch rack‑moun­table steel chassis",
+      "Supports MAC address learning and auto‑loopback clearance"
+    ],
+    "colors": [
+      {
+        "hex": "#999a9e",
+        "percentage": 0.4561
+      },
+      {
+        "hex": "#16161a",
+        "percentage": 0.4487
+      },
+      {
+        "hex": "#c5c5c9",
+        "percentage": 0.0928
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/axPnviq-DO3T-xPUPk1?o=01KZ6B0K6W6A6A01NF868FKPJ1&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "abt.com",
+        "price": {
+          "price": 71.57,
+          "compare_at_price": 99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "width": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "mounting-type": [
+        "Free-standing",
+        "Wall"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ]
+    },
+    "ratings": {
+      "value": 5,
+      "count": 2,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "dOXIqgX",
+    "title": "LiteWave 5-Port Gigabit Desktop Switch",
+    "description": "Expand your wired network easily and affordably with the TP-Link LiteWave 5-Port Gigabit Desktop Switch. This unmanaged, plug-and-play switch provides five 10/100/1000 Mbps ports for quick, reliable network expansion with auto-MDI/MDIX support and energy-efficient design. Ideal for homes and small offices needing simple, silent, desktop connectivity.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/72e776e7-15f4-4e81-9092-53d0e9cc09aa?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/72e776e7-15f4-4e81-9092-53d0e9cc09aa?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black 5-port Gigabit desktop switch viewed from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/5a3613fd-2cb1-42f3-9ba0-79d9b585fbc3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/5a3613fd-2cb1-42f3-9ba0-79d9b585fbc3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black 5-port Gigabit desktop switch viewed from the front."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "5× 10/100/1000Mbos Auto-Negotiation RJ45 ports",
+      "Auto-MDI/MDIX",
+      "Green Ethernet technology",
+      "IEEE 802.3X flow control",
+      "Plastic casing, desktop or wall-mounting design",
+      "Plug and play, no configuration needed",
+      "Fanless design for quiet operation"
+    ],
+    "colors": [
+      {
+        "hex": "#292827",
+        "percentage": 0.4968
+      },
+      {
+        "hex": "#5f5f5f",
+        "percentage": 0.4218
+      },
+      {
+        "hex": "#868787",
+        "percentage": 0.0814
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/dOXIqgX-hl1t-xPUPk1?o=01KYHS62VJRZCXEGKKVJBK8WTN&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "lenovo.com",
+        "price": {
+          "price": 14.99,
+          "compare_at_price": 15.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.014,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "pattern": [
+        "Solid"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "TCP/IP"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit",
+        "10 gigabit"
+      ]
+    },
+    "ratings": {
+      "value": 4.9,
+      "count": 34,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "zfxDmfx",
+    "title": "Omada 24-Port Gigabit Easy Managed Switch",
+    "description": "The TP-Link Omada 24-Port Gigabit Easy Managed Switch is a professional network device designed for efficiency and scalability. It features 24 Gigabit Ethernet ports supporting 10/100/1000Base-T speeds and is a Layer 2 supported switch. With a compact 1U form factor, it can be used as a desktop unit or installed in a rack. This energy-efficient switch has a power consumption of 11.40 W and uses twisted pair cabling.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/4546a847-f70b-4e69-8f72-e162e9a7c161?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/4546a847-f70b-4e69-8f72-e162e9a7c161?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 24-port Gigabit Ethernet managed switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/6b994bda-ce71-4c18-88a9-460daa5adfd4?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/6b994bda-ce71-4c18-88a9-460daa5adfd4?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Top view of a black TP-Link Omada 24-Port Gigabit switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/32d966b7-43f8-4a07-8d24-a70de442402f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/32d966b7-43f8-4a07-8d24-a70de442402f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link Omada ES224G switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e287185b-40e5-4211-8d4c-7a5f5d8f9c4c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e287185b-40e5-4211-8d4c-7a5f5d8f9c4c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Rear view of a black TP-Link Omada switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/1cf7ef17-9b86-4b9a-a690-caae54441c8a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "detail",
+        "alt_text": "Close-up of mounting brackets and screw terminals for a network switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/69103221-678a-4a4c-9edc-d6dd667d9fe2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/69103221-678a-4a4c-9edc-d6dd667d9fe2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link Omada switch with ports and power."
+      }
+    ],
+    "category": {
+      "slug": "managed-switches",
+      "title": "Managed Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "managed-switches",
+          "title": "Managed Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "24 Gigabit Ethernet ports",
+      "Manageable switch",
+      "10/100/1000Base-T support",
+      "Layer 2 Supported",
+      "11.40 W Power Consumption",
+      "Twisted Pair cabling",
+      "1U form factor",
+      "Desktop and Rack-mountable"
+    ],
+    "colors": [
+      {
+        "hex": "#989898",
+        "percentage": 0.501
+      },
+      {
+        "hex": "#535353",
+        "percentage": 0.499
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/zfxDmfx-LPzf-xPUPk1?o=01M233437QJYW7Y5N9G54J60VD&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 119.94,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "switch-management-type": [
+        "Easy Smart"
+      ],
+      "cooling-technology": [
+        "Fan"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "9bNhjnl",
+    "title": "8-Port Gigabit Desktop Switch",
+    "description": "This TP-Link TL-SG108 is an 8-port unmanaged Gigabit Ethernet network switch designed for efficient and high-speed data transfer. It features plug-and-play setup, a fanless metal design for quiet operation, and traffic optimization capabilities. Ideal for both home and office, it provides a reliable solution to enhance network performance and productivity.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/44ded62d-d83a-4883-9321-35567e332cbf?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/c8c84ba7-c313-495a-af47-c425172f1091?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port Gigabit Desktop Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/bd98e8ae-6de3-4bdd-877b-3e2883138db3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/ed0e3f8c-d065-4881-89ca-0873c99c2bd7?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port Gigabit Desktop Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "Upgrade your network speed and efficiency with the TL-SG608 Desktop Switch. Perfect for both home and office use, experience lightning-fast data transfer and handle your business with ease. Get the TL-SG608 now and supercharge your network.",
+      "Experience lightning-fast networking while saving money with our latest innovation, Gigabit that Saves Energy. Our energy-efficient technology expands your network capacity while consuming less power, helping you save on energy costs.",
+      "Enjoy reliable and silent networking with our product's advanced features. IEEE 802.3X flow control ensures smooth data transfer, while the fanless design guarantees quiet operation.",
+      "With no software installation or configuration required, setting up your network has never been easier. Get up and running quickly with our simple and intuitive plug-and-play design.",
+      "Prioritize traffic and guarantee high-quality transmission of video or voice data with port-based 802.1p/DSCP QoS and IGMP Snooping. With these features, you can optimize your network for seamless data transfer and prioritize your most important tasks.",
+      "TL-SG608 features a durable and quiet design, with a sturdy metal case and fanless construction. Whether you choose to place it on your desktop or mount it on the wall, our product offers versatility and reliability. With an operating temperature range of 0°C to 40°C (32°F to 104°F), TL-SG608 is suitable for a wide range of environments.",
+      "Limited Lifetime Protection: Industry leading limited lifetime protection and free 24/7 technical support"
+    ],
+    "colors": [
+      {
+        "hex": "#83919e",
+        "percentage": 0.4077
+      },
+      {
+        "hex": "#5b6b77",
+        "percentage": 0.253
+      },
+      {
+        "hex": "#191d1b",
+        "percentage": 0.1281
+      },
+      {
+        "hex": "#c8d0d7",
+        "percentage": 0.1094
+      },
+      {
+        "hex": "#31393b",
+        "percentage": 0.1017
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/9bNhjnl-LFnL-xPUPk1?o=01KR1GNYVYAJB0XWVFHZJCPSJ0&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "staples.com",
+        "price": {
+          "price": 30.49,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.03,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "power-source": [
+        "AC-powered"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "526CLA0",
+    "title": "TP-Link (TL-SG108-M2) 8 Port 2.5G Unmanaged Network Switch",
+    "description": "The TP-Link TL-SG108-M2 is an 8-port unmanaged network switch designed for high-performance connectivity. It features eight 2.5-Gigabit ports, providing a total switching capacity of up to 40 Gbps. The switch utilizes auto-negotiation to intelligently adjust link speeds between 100Mb, 1G, and 2.5G for maximum compatibility with devices such as WiFi 6 APs, NAS, and gaming computers. It is designed for easy deployment with plug-and-play functionality and a sturdy, fanless metal casing that ensures quiet operation and effective heat dissipation. The unit supports both desktop and wall-mounting for flexible installation.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/e5394f5d-c4fd-4950-b760-7b3f237cb036?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e5394f5d-c4fd-4950-b760-7b3f237cb036?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port 2.5G network switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/dad1ed63-8a32-4f19-ab62-af331ccb3d90?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/dad1ed63-8a32-4f19-ab62-af331ccb3d90?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Bottom view of a black 8-port 2.5G network switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/30b9caea-1148-4ce1-b62a-83a624090f00?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/30b9caea-1148-4ce1-b62a-83a624090f00?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Side profile view of a black 8-port 2.5G switch with ventilation."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a51efd25-54a0-4996-8072-d8a6ff300d6e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing 2.5G switch connectivity to various devices."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/11b6dda7-86e0-44d8-9f04-33674f6c8e90?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Lifestyle scenes showing network usage in different scenarios."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a8b3514c-5209-4a99-96f3-fbbb5f300792?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black switch highlighting silent operation and metal casing."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a269ecb0-8c74-4cd3-a80d-dbc68139dc59?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic comparing 1G and 2.5G speeds over different cable types."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/8b0f1160-1b5c-495a-8c56-efbbc3e5af83?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/8b0f1160-1b5c-495a-8c56-efbbc3e5af83?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Product box packaging for the TP-Link TL-SG108-M2 switch."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "Eight 2.5Gbps Ports for high-performance Multi-Gig bandwidth",
+      "Up to 40 Gbps switching capacity",
+      "Auto-negotiation for 100Mb/1G/2.5G link speeds",
+      "Plug and Play setup with no software installation required",
+      "Fanless metal design for silent operation and durability",
+      "Desktop and wall-mounting options",
+      "Compatible with existing Cat5e cabling"
+    ],
+    "colors": [
+      {
+        "hex": "#6e6f72",
+        "percentage": 0.4159
+      },
+      {
+        "hex": "#939497",
+        "percentage": 0.2658
+      },
+      {
+        "hex": "#202020",
+        "percentage": 0.1449
+      },
+      {
+        "hex": "#c1c3c6",
+        "percentage": 0.1113
+      },
+      {
+        "hex": "#3a3b3c",
+        "percentage": 0.062
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/526CLA0-CCJD-xPUPk1?o=01M3VQ6SBDV7YGDXY1MFZH7SWZ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "canadacomputers.com",
+        "price": {
+          "price": 134.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "ethernet-lan-interface-type": [
+        "Multi-gigabit"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "B2ShNXH",
+    "title": "JetStream 8-Port Gigabit L2+ Managed Switch",
+    "description": "The TP-LINK JetStream 8-Port Gigabit L2+ Managed Switch (TL-SG3210XHP-M2) is a high-performance networking solution designed to expand business network capacity. It features eight PoE+ compliant Gigabit Ethernet ports providing up to 30W per port with a total budget of 150W, ideal for powering IP cameras, VoIP phones, and wireless access points. Additionally, it includes two SFP ports for fiber uplink connections, offering a switching capacity of 20 Gb/s and a forwarding rate of 14.9 Mpps. The switch supports Layer 2 security features, including ACL and VLAN, and is compatible with the Omada SDN platform for cloud-based remote management. It is designed for flexibility with included mounting kits for 13\" or 19\" 1 RU racks or desktop placement.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/cdb512ac-1416-4046-99f1-b526c2c11aa5?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=yqJJ",
+        "cleaned_url": null,
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link JetStream 8-port Gigabit L2+ managed switch."
+      }
+    ],
+    "category": {
+      "slug": "managed-switches",
+      "title": "Managed Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "managed-switches",
+          "title": "Managed Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "8 x Gbe RJ-45 Ports",
+      "10/100/1000 Mbps",
+      "802.3 af/at PoE+ compliant",
+      "Managed Switch",
+      "Desktop and Rack Mountable (13\" or 19\" 1 RU)",
+      "Two Gigabit SFP ports for fiber uplink",
+      "Omada SDN compatible"
+    ],
+    "colors": [
+      {
+        "hex": "#57585a",
+        "percentage": 0.5319
+      },
+      {
+        "hex": "#2e2f31",
+        "percentage": 0.2274
+      },
+      {
+        "hex": "#868789",
+        "percentage": 0.1206
+      },
+      {
+        "hex": "#b6b7b9",
+        "percentage": 0.12
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/B2ShNXH-yqJJ-xPUPk1?o=01M2H6STYNAMS7HHXCNQ99HWXY&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "microcenter.com",
+        "price": {
+          "price": 419.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "width": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 4.78,
+            "unit": "lb"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "switching-layer": [
+        "Layer 2+"
+      ],
+      "network-protocols-supported": [
+        "SNMP",
+        "VLAN"
+      ],
+      "uplink-port-type": [
+        "SFP"
+      ],
+      "switch-management-type": [
+        "Fully managed"
+      ],
+      "poe-standard": [
+        "IEEE 802.3af",
+        "IEEE 802.3at"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "hub-switch-storage-options": [
+        "Rack-mountable",
+        "Stackable"
+      ],
+      "network-layer-support": [
+        "Layer 2",
+        "Layer 3",
+        "Layer 4"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "DG8zHrU",
+    "title": "TL-SG1016D Network Switch Gigabit",
+    "description": "The TP-Link TL-SG1016D is a 16-port Gigabit desktop/rackmount network switch designed for plug-and-play simplicity. It features 16 10/100/1000 Mbps ports with Auto-Negotiation and Auto-MDI/MDIX support. The switch incorporates innovative energy-efficient technology to reduce power consumption and supports MAC address self-learning. It is rack-mountable and includes the necessary kits, rubber feet, and a power cord.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/0ee7ac8e-7177-4992-8e1c-b00526f97876?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/0ee7ac8e-7177-4992-8e1c-b00526f97876?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 16-port Gigabit Ethernet rackmount switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/46db71b4-53da-4179-9bc5-59fb01186fd5?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/46db71b4-53da-4179-9bc5-59fb01186fd5?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Rear view of a black rackmount switch showing ventilation and power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/248d9086-9bfc-4a21-bff1-7c206cc7aa33?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/248d9086-9bfc-4a21-bff1-7c206cc7aa33?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=6Uzl",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 16-port Gigabit Ethernet switch with TP-Link logo."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "16 10/100/1000 Mbps ports",
+      "Plug and play design",
+      "Energy-efficient technology",
+      "Supports MAC address self-learning",
+      "Auto MDI/MDIX and Auto negotiation",
+      "Switching Capacity: 32 Gbps",
+      "Forwarding Rate: 23.8 Mpps"
+    ],
+    "colors": [
+      {
+        "hex": "#5d605f",
+        "percentage": 0.533
+      },
+      {
+        "hex": "#8e9190",
+        "percentage": 0.177
+      },
+      {
+        "hex": "#212322",
+        "percentage": 0.133
+      },
+      {
+        "hex": "#babcbb",
+        "percentage": 0.0811
+      },
+      {
+        "hex": "#424444",
+        "percentage": 0.0759
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/DG8zHrU-6Uzl-xPUPk1?o=01M4CBGCA1MW8RR7RMEXWQHBVN&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "officedepot.com",
+        "price": {
+          "price": 80.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.035,
+        "dimensions": {
+          "length": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "width": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "height": {
+            "number": 11.58,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "power-source": [
+        "AC-powered"
+      ],
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "mounting-type": [
+        "Wall"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "MqVjGfg",
+    "title": "TP-Link TL-SG116 - 16-Port Gigabit Ethernet Network Switch",
+    "description": "The TP-Link TL-SG116 is a 16-port Gigabit Ethernet network switch designed for home or office environments. It provides high-speed data transfer for bandwidth-intensive files like CGI, CAD, and multimedia. Featuring an eco-friendly design, it automatically adjusts power consumption based on link status and cable length. The switch is plug-and-play, requiring no software installation or configuration, and includes a fanless design for quiet operation. It supports 802.1p and DSCP QoS for smooth latency-sensitive traffic and IGMP Snooping for optimized multicast data streams.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/fe88ccc2-eafb-489c-b6de-3e03a9e6d662?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=n0yg",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/fe88ccc2-eafb-489c-b6de-3e03a9e6d662?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=n0yg",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 16-port Gigabit Ethernet network switch."
+      }
+    ],
+    "category": {
+      "slug": "hubs-switches",
+      "title": "Hubs & Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        }
+      ],
+      "has_children": true
+    },
+    "gender": null,
+    "age": null,
+    "materials": [],
+    "key_features": [
+      "16-port 10/100/1000Mbps Gigabit Ethernet",
+      "Plug and play design with no configuration required",
+      "Energy-efficient technology for lower power consumption",
+      "Compatible with Windows, Mac, and Linux",
+      "Fanless design for quiet operation",
+      "IEEE 802.3X flow control for reliable data transfer",
+      "Auto-negotiation and Auto MDI/MDIX support",
+      "802.1p and DSCP QoS for voice and video traffic optimization",
+      "IGMP Snooping optimizes Multicast data stream"
+    ],
+    "colors": [
+      {
+        "hex": "#424654",
+        "percentage": 0.3885
+      },
+      {
+        "hex": "#676e7d",
+        "percentage": 0.2556
+      },
+      {
+        "hex": "#9098a8",
+        "percentage": 0.1579
+      },
+      {
+        "hex": "#272423",
+        "percentage": 0.1019
+      },
+      {
+        "hex": "#bbbec6",
+        "percentage": 0.0961
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/MqVjGfg-n0yg-xPUPk1?o=01M4BKBD8JZHGDQYV28TF3N34C&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "backmarket.com",
+        "price": {
+          "price": 40,
+          "compare_at_price": 59.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.035,
+        "dimensions": {
+          "length": {
+            "number": 9,
+            "unit": "in"
+          },
+          "width": {
+            "number": 5,
+            "unit": "in"
+          },
+          "height": {
+            "number": 7,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 1,
+            "unit": "oz"
+          }
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/MqVjGfg-TgS4-xPUPk1?o=01M3ZVQSA2JD96XFZ3JVG8GCE4&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "cdw.com",
+        "price": {
+          "price": 82.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 4.4,
+            "unit": "in"
+          },
+          "width": {
+            "number": 11.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "power-source": [
+        "AC-powered"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "network-protocols-supported": [
+        "IGMP"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "ZMeF1He",
+    "title": "TP-Link (TL-SG116) 16-Port Gigabit Unmanaged Desktop Switch",
+    "description": "The TP-Link TL-SG116 is an unmanaged 16-port Gigabit Ethernet desktop switch designed for seamless network expansion. It supports IEEE 802.3ab, 802.3x, 802.3u, and 802.3i standards, ensuring high-speed connectivity for a variety of Ethernet-enabled devices. Featuring 802.1p and DSCP QoS for prioritizing latency-sensitive traffic like voice and video, as well as IGMP snooping for optimized multicast streams, it ensures smooth performance. The switch is built with power-saving technology that adjusts energy consumption based on port usage and cable length. Its durable steel housing and fanless design allow for quiet operation, whether placed on a desktop or mounted on a wall.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/ff7a64e3-d46f-4513-bb24-5839eadc2cf7?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "TP-Link TL-SG116 16-Port Gigabit Desktop Ethernet Network Switch packaging and device"
+      },
+      {
+        "url": "https://cdn.trychannel3.com/641d27d0-7175-492c-8576-a5fccb17877b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG116 16-Port Gigabit Desktop Ethernet Network Switch"
+      },
+      {
+        "url": "https://cdn.trychannel3.com/197ba208-e24a-40e9-8ae8-87869a56a707?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG116 16-Port Gigabit Desktop Ethernet Network Switch from a top angle"
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7a75b346-18be-4b90-9e67-9870acfb567b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=oHaU",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-80118 16-Port Gigabit Ethernet Switch"
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "16 Gigabit Ethernet Ports",
+      "IEEE 802.3ab/x/u/i Standards",
+      "802.1p Support and IGMP Snooping",
+      "Power-Saving Technology",
+      "Fanless Design for Quiet Operation",
+      "Steel Housing",
+      "Desktop/Wall-Mountable Design",
+      "16 10/100/1000Mbps Auto-Negotiation RJ45 ports supporting Auto-MDI/MDIX",
+      "IEEE 802.3 x flow control provides reliable data transfer",
+      "Plug and Play installation"
+    ],
+    "colors": [],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/ZMeF1He-oHaU-xPUPk1?o=01M3M41PEG1E6VT8VX4HGYRKZM&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 59.99,
+          "compare_at_price": 66.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 11.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 4.4,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 2.865,
+            "unit": "lb"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Wall-mountable",
+        "Non-stackable"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "network-protocols-supported": [
+        "IGMP",
+        "Ethernet (IEEE 802.3)"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ]
+    },
+    "ratings": {
+      "value": 3.83,
+      "count": 118,
+      "source_count": 2
+    }
+  },
+  {
+    "id": "Kyv6Kc7",
+    "title": "8-Port Gigabit Desktop Switch",
+    "description": "This TP-Link TL-SG108S is an 8-port Gigabit Ethernet switch designed for desktop or wall-mount use. It offers plug-and-play functionality with no configuration required, making it easy to set up. The switch features lower power consumption, automatic adjustment of power usage based on link status and cable length, and supports 802.1p/DSCP QoS and IGMP Snooping for optimized traffic and multicast streams. Its fanless design ensures quiet operation, and it is housed in a sturdy metal casing.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/fdf5f58f-da55-412c-8fe9-f64a610bdbec?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port desktop Gigabit switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/962cd49b-8055-4519-bc41-8bc6cc87c2c3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Home office setup with desk and computer monitor."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b7874151-a1a8-4fc7-bd17-3c4351107e2f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/b7874151-a1a8-4fc7-bd17-3c4351107e2f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "is_main_image": false,
+        "shot_type": "detail",
+        "alt_text": "Close-up of 8 Gigabit Ethernet ports on a desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/08a307df-bcc0-4149-9620-e62c3e1eea2e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Diagram showing how the switch connects various home network devices."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/bbae4e07-5523-4f3c-9c53-7b754ebab8e0?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the Tp-link TL-SG108S desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/3f87cdec-4a8f-42bc-a4b4-2b69af7a4803?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing Device Prioritization QoS settings."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/02517f2f-9353-4495-8e70-89bf80cb60f8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port Gigabit desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a6aead7f-9842-4716-8e63-73d908eeb342?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=p1PB",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "detail",
+        "alt_text": "Dimensions and features of the desktop switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "8 x 10/100/1000Mbps ports",
+      "Plug and Play",
+      "Lower power consumption",
+      "802.1p/DSCP QoS",
+      "IGMP Snooping",
+      "Fanless design",
+      "Sturdy metal casing",
+      "Desktop/Wall-Mount"
+    ],
+    "colors": [
+      {
+        "hex": "#272625",
+        "percentage": 0.3096
+      },
+      {
+        "hex": "#9b9c9d",
+        "percentage": 0.3002
+      },
+      {
+        "hex": "#130e0d",
+        "percentage": 0.1294
+      },
+      {
+        "hex": "#d8d9d8",
+        "percentage": 0.1214
+      },
+      {
+        "hex": "#b9bab9",
+        "percentage": 0.1155
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/Kyv6Kc7-p1PB-xPUPk1?o=01KXSYBCMSGDG9JB1H5YNRSSG7&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bestbuy.com",
+        "price": {
+          "price": 46.59,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.004,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "IGMP",
+        "TCP/IP"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "mounting-type": [
+        "Wall"
+      ]
+    },
+    "ratings": {
+      "value": 5,
+      "count": 5,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "19JeXvg",
+    "title": "16-Port Gigabit Ethernet Unmanaged Switch",
+    "description": "This TP-Link TL-SG1016 is a 16-port Gigabit Ethernet unmanaged switch that provides a high-performance, low-cost, and easy-to-use solution for upgrading your network to 1000Mbps speeds. It features innovative energy-efficient technology that saves power consumption and reduces your network's carbon footprint. All 16 ports support auto MDI/MDIX, allowing for plug-and-play simplicity without the need for crossover cables. The switch is designed for reliable performance with non-blocking switching architecture and supports MAC address self-learning and auto MDI/MDIX.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/5974b22b-b817-416f-a8b0-87af7c80b855?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/5974b22b-b817-416f-a8b0-87af7c80b855?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link TL-SG1016 16-port Gigabit switch viewed from the front."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "Steel"
+    ],
+    "key_features": [
+      "16× 10/100/1000Mbps RJ45 ports",
+      "Innovative energy-efficient technology saves power consumption",
+      "Supports MAC address self-learning and auto MDI/MDIX",
+      "Standard 19-inch rack-mountable steel case",
+      "Isolation Mode allows one-click client traffic separation for higher security and performance",
+      "Monitor and address loop-related issues within your network structure to prevent disruptions caused by looping"
+    ],
+    "colors": [
+      {
+        "hex": "#646466",
+        "percentage": 0.417
+      },
+      {
+        "hex": "#3d3d3f",
+        "percentage": 0.2477
+      },
+      {
+        "hex": "#7d7e7f",
+        "percentage": 0.147
+      },
+      {
+        "hex": "#1b1b1c",
+        "percentage": 0.1022
+      },
+      {
+        "hex": "#b0b1b2",
+        "percentage": 0.0861
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/19JeXvg-LFnL-xPUPk1?o=01KR1KHQESN03J3P3HZF3B3MGK&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "staples.com",
+        "price": {
+          "price": 69.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.03,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/19JeXvg-CCJD-xPUPk1?o=01M3V54YQ0ZBGT0YZGJ43GYY57&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "canadacomputers.com",
+        "price": {
+          "price": 80.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 17.3,
+            "unit": "in"
+          },
+          "width": {
+            "number": 7.1,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.7,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "network-protocols-supported": [
+        "IGMP"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "power-source": [
+        "AC-powered"
+      ]
+    },
+    "ratings": {
+      "value": 4.8,
+      "count": 5,
+      "source_count": 1
+    }
+  },
+  {
+    "id": "QUNWmL9",
+    "title": "TP-Link TL-SX1008",
+    "description": "The TP-Link TL-SX1008 is a high-performance, unmanaged 8-port 10G/multi-gigabit Ethernet switch designed for lightning-fast connectivity. It features eight 10-Gigabit ports that support auto-negotiation between 100Mb, 1G, 2.5G, 5G, and 10G speeds, providing up to 160 Gbps of switching capacity. Housed in a durable metal casing, it supports both desktop and rackmount installations and utilizes active cooling with a smart fan for low-noise operation. This plug-and-play device is ideal for high-demand environments involving 10G NAS, servers, gaming computers, and 8K video.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/43f76dc2-ce70-4f80-9d62-212b7a516dff?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/43f76dc2-ce70-4f80-9d62-212b7a516dff?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link TL-SX1008 unmanaged switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/d743bbe8-91d4-4400-be18-b24781e1b3af?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/d743bbe8-91d4-4400-be18-b24781e1b3af?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front and rear view of a black TP-Link unmanaged switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/9cfce4cf-1324-43d6-8006-25db0b569675?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing features of a durable network switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7d9fca27-2570-4676-9163-bb3c4ce4ed47?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/7d9fca27-2570-4676-9163-bb3c4ce4ed47?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Packaging box for the TP-Link TL-SX1008 switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/70021468-5164-49e3-8797-6b5557ebc380?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/70021468-5164-49e3-8797-6b5557ebc380?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link TL-SX1008 unmanaged switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7f17dafe-1f05-4e81-baba-0ffe02d1198c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Diagram illustrating the plug-and-play setup instructions for the switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/358e0bec-7430-44cf-93a8-3c91437849a2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing 10G connectivity with WiFi 6 and Gigabit Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/ec0a4f40-cf04-4cf0-b7cf-33fcbef32789?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic detailing the high-performance capabilities of the switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/489ba5fd-d85e-4e93-8ae8-079a27ed9a7f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing the robust design features of the switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a64b9980-1ea2-474b-9507-987fa6da8f78?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic emphasizing the highest performance capabilities of the switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/4f765315-8a8c-4a33-a042-54b853df3d42?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/4f765315-8a8c-4a33-a042-54b853df3d42?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link TL-SX1008 unmanaged switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/dc96bec0-2077-4641-a652-bd44fefb474e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Man receiving expert help for network setup in a modern office."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/362c0af2-f9d2-4539-b85b-a9104923a59f?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Comparison showing significant reduction in data transfer time using the switch."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "Metal"
+    ],
+    "key_features": [
+      "Eight 10Gbps Ports for lightning-fast connections",
+      "Auto-Negotiation for compatibility between 100Mb, 1G, 2.5G, 5G, and 10G speeds",
+      "Up to 160 Gbps switching capacity",
+      "Plug and Play setup (no software installation needed)",
+      "Durable metal casing for various environments",
+      "Desktop/Rackmount design",
+      "Reliable and low-noise operation with a smart fan for active cooling",
+      "IEEE 802.3X flow control for reliable data transfer"
+    ],
+    "colors": [
+      {
+        "hex": "#2c2d2e",
+        "percentage": 0.4871
+      },
+      {
+        "hex": "#88898c",
+        "percentage": 0.2616
+      },
+      {
+        "hex": "#a4a5a8",
+        "percentage": 0.1529
+      },
+      {
+        "hex": "#c7c8c9",
+        "percentage": 0.0984
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/QUNWmL9-LPzf-xPUPk1?o=01M5TZ6H0V8BB52C298K682E0H&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 299.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Rack-mountable"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "cooling-technology": [
+        "Active",
+        "Fan"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "ethernet-lan-interface-type": [
+        "10 gigabit",
+        "Multi-gigabit"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "k7ns6HB",
+    "title": "TP-Link 8-Port Unmanaged Gigabit Desktop Switch",
+    "description": "The TP-Link TL-SG1008D is an affordable and easy-to-use 8-port unmanaged Gigabit desktop switch designed for LAN networks. It features eight Gigabit Ethernet ports for high-speed connectivity, supporting Auto MDI/MDIX on all ports to eliminate the need for crossover cables. The switch includes 802.3x flow control, 15K jumbo frames, and a non-blocking switching architecture with a 16 Gb/s switching capacity for maximum throughput. Its plug-and-play design simplifies installation, and the fan-less design ensures quiet operation. Additionally, it incorporates energy-efficient technology to reduce power consumption.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/a3c43a09-030e-4e0a-90a4-d5161770c259?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/a3c43a09-030e-4e0a-90a4-d5161770c259?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 8-port desktop switch viewed from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/6743fee4-20ae-4c22-b8fd-a8fd1eabd77b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Top view of a black TP-Link desktop switch showing port lights."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/1abbe292-1dae-42aa-8e20-375c3153fc96?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/1abbe292-1dae-42aa-8e20-375c3153fc96?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link 8-port switch with ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/39363539-07eb-4352-b767-798deca6e785?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=CCJD",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Group of people working at a desk with a TP-Link switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "plastic"
+    ],
+    "key_features": [
+      "8 Gigabit Ethernet Ports",
+      "Auto MDI/MDIX on All Ports",
+      "802.3x Flow Control",
+      "Supports 8K MAC Address Table",
+      "16 Gb/s switching capacity",
+      "15K jumbo frames",
+      "Plug and Play installation",
+      "Fan-less design for quiet operation",
+      "Energy-efficient technology",
+      "Ensure stable data transfer with full wire-speed forwarding on all ports for peak performance."
+    ],
+    "colors": [
+      {
+        "hex": "#0a0a0c",
+        "percentage": 0.7288
+      },
+      {
+        "hex": "#5b5c5f",
+        "percentage": 0.1466
+      },
+      {
+        "hex": "#9b9da4",
+        "percentage": 0.1246
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/k7ns6HB-CCJD-xPUPk1?o=01M3TQCZVF28F3G1J43FQJ715E&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "canadacomputers.com",
+        "price": {
+          "price": 24.29,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": {
+          "length": {
+            "number": 6.5,
+            "unit": "in"
+          },
+          "width": {
+            "number": 4.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.1,
+            "unit": "in"
+          },
+          "weight": null
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/k7ns6HB-oHaU-xPUPk1?o=01M3DC4W5YFVX5W1QCKD7HQKMP&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 24.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 6.5,
+            "unit": "in"
+          },
+          "width": {
+            "number": 4.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.1,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 0.7,
+            "unit": "lb"
+          }
+        }
+      },
+      {
+        "url": "https://buy.trychannel3.com/k7ns6HB-T9Fg-xPUPk1?o=01KNMK99PJBAKJZC15K7YM5XRM&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "adorama.com",
+        "price": {
+          "price": 34.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.025,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/k7ns6HB-n0yg-xPUPk1?o=01M38YV21REX0AN9PFNXC6N82D&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "backmarket.com",
+        "price": {
+          "price": 84,
+          "compare_at_price": 100,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": null,
+        "max_commission_rate": 0.035,
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null,
+          "weight": {
+            "number": 5,
+            "unit": "oz"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable",
+        "Non-stackable"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": {
+      "value": 4.58,
+      "count": 18,
+      "source_count": 3
+    }
+  },
+  {
+    "id": "M1sjxYb",
+    "title": "TP-Link (TL-SG1005D) SOHO 5-port Unmanaged Gigabit Desktop Switch",
+    "description": "The TP-Link TL-SG1005D is a SOHO 5-port Unmanaged Gigabit Desktop Switch designed for home and small office networks. It features five 10/100/1000Mbps auto-negotiation RJ45 ports, enabling high-speed data transfers for bandwidth-intensive files. This plug-and-play device requires no configuration, utilizing auto-MDI/MDIX to eliminate the need for crossover cables. It is engineered with energy-efficient 'Go Green' technology to reduce power consumption based on link status and cable length. The switch boasts a fanless, quiet design for noise-sensitive environments and supports IEEE 802.3x flow control for reliable data transmission.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/f394a368-4d34-46b9-bf6b-ffeb2c741338?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/f394a368-4d34-46b9-bf6b-ffeb2c741338?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link network switch device on a white background."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/705080a1-8326-4345-b677-156452f5d9f3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/705080a1-8326-4345-b677-156452f5d9f3?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link network switch device from a slightly elevated angle."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/8a52192d-10b3-4e8f-8956-807d8e01fa1e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/8a52192d-10b3-4e8f-8956-807d8e01fa1e?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link switch showing five Ethernet ports from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/676b4bb3-7218-46db-94e8-7da34bc6a41c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/676b4bb3-7218-46db-94e8-7da34bc6a41c?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link switch showing five Ethernet ports from the bottom."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/0e101b12-7759-412c-bf77-194ee3fe4bc8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/0e101b12-7759-412c-bf77-194ee3fe4bc8?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link switch with curved back from the side."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e62fa7f0-2934-44c8-af85-5b2b2980f5d2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e62fa7f0-2934-44c8-af85-5b2b2980f5d2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link switch angled view with indicator light."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/55a00940-8ffe-4dd0-a11c-3e3105c00576?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/55a00940-8ffe-4dd0-a11c-3e3105c00576?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LFnL",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Product box for TP-Link TL-SG1005D 5-Port Desktop Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [],
+    "key_features": [
+      "5 x Gbe RJ-45 Ports",
+      "10/100/1000 Mbps speeds",
+      "Unmanaged Switch",
+      "Desktop Mountable",
+      "Energy-efficient technology saves up to 80% power consumption",
+      "Compliant with IEEE 802.3 i/u/ab/x standards",
+      "Auto MDI/MDIX on All Ports",
+      "802.3x Flow Control",
+      "Supports 8K MAC Address Table",
+      "Plug-and-Play Installation"
+    ],
+    "colors": [
+      {
+        "hex": "#010103",
+        "percentage": 0.6356
+      },
+      {
+        "hex": "#2b2b2c",
+        "percentage": 0.1265
+      },
+      {
+        "hex": "#646463",
+        "percentage": 0.0886
+      },
+      {
+        "hex": "#9b9b9a",
+        "percentage": 0.0802
+      },
+      {
+        "hex": "#bebebe",
+        "percentage": 0.0691
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/M1sjxYb-LFnL-xPUPk1?o=01KPC141Z2S0RNKXJEKFJHVN30&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "staples.com",
+        "price": {
+          "price": 18.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.03,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/M1sjxYb-oHaU-xPUPk1?o=01M3EWSENPFSQC23K39J0PWC5Z&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "bhphotovideo.com",
+        "price": {
+          "price": 19.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.021,
+        "dimensions": {
+          "length": {
+            "number": 6.5,
+            "unit": "in"
+          },
+          "width": {
+            "number": 4.3,
+            "unit": "in"
+          },
+          "height": {
+            "number": 1.1,
+            "unit": "in"
+          },
+          "weight": {
+            "number": 0.55,
+            "unit": "lb"
+          }
+        }
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "TCP/IP"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "hub-switch-storage-options": [
+        "Non-stackable",
+        "Rack-mountable",
+        "Wall-mountable"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ]
+    },
+    "ratings": {
+      "value": 4.8,
+      "count": 47,
+      "source_count": 3
+    }
+  },
+  {
+    "id": "Qknb3MR",
+    "title": "TP-Link 5-Port 10/100/1000Mbps Desktop Switch",
+    "description": "The TP-Link TL-SG605 is a plug-and-play 5-port Gigabit desktop switch designed to increase network speed for home or office servers and backbone connections. It features five non-blocking 10/100/1000 Mbps ports for efficient transfer of bandwidth-intensive files. Built with a durable metal casing and a fanless design, it includes Quality of Service (QoS) for latency-sensitive applications and IGMP Snooping for optimized multimedia traffic like IPTV. The device also incorporates energy-saving technology to minimize power consumption based on link status and cable length.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/deb651ee-05f4-4bcc-a559-329232fc29f2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=Bteb",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/deb651ee-05f4-4bcc-a559-329232fc29f2?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=Bteb",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 5-Port Gigabit Desktop Switch from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/860e81c5-4989-415f-8a8e-de0b5550fc23?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=Bteb",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/860e81c5-4989-415f-8a8e-de0b5550fc23?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=Bteb",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black TP-Link 5-Port Gigabit Desktop Switch."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "Metal"
+    ],
+    "key_features": [
+      "Plug and Play installation",
+      "5 non-blocking 10/100/1000 Mbps ports",
+      "QoS for lag-free voice and video applications",
+      "IGMP Snooping for multicast optimization",
+      "Durable metal casing",
+      "Fanless design",
+      "Energy-saving technology",
+      "Desktop or wall-mountable form factor"
+    ],
+    "colors": [
+      {
+        "hex": "#737f8a",
+        "percentage": 0.2907
+      },
+      {
+        "hex": "#3d4850",
+        "percentage": 0.2602
+      },
+      {
+        "hex": "#212527",
+        "percentage": 0.2337
+      },
+      {
+        "hex": "#57636d",
+        "percentage": 0.1198
+      },
+      {
+        "hex": "#b8bec4",
+        "percentage": 0.0955
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/Qknb3MR-Bteb-xPUPk1?o=01M5YJFN3BX8M53DWD51FQYHWN&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "dell.com",
+        "price": {
+          "price": 38.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.013,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "network-protocols-supported": [
+        "IGMP"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "DJtEsfT",
+    "title": "8-port Gigabit Desktop Switch",
+    "description": "This TP-Link TL-SG108 is an 8-port Gigabit Ethernet desktop switch, designed for easy network expansion. It features plug-and-play installation, auto-MDI/MDIX support, and energy-efficient technology that can reduce power consumption by up to 72%. The non-blocking switching architecture ensures maximum throughput with full wire-speed forwarding and filtering. It also supports jumbo frames for improved performance with large data transfers and has a fanless design for quiet operation.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/0df58f96-e9b8-48e6-9c48-83947ed254c1?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/0df58f96-e9b8-48e6-9c48-83947ed254c1?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a grey desktop switch with 8 ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/2edc07e0-fd71-4347-b8e4-bc2e0af65e18?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/2edc07e0-fd71-4347-b8e4-bc2e0af65e18?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Top-down view of a grey desktop switch with 8 ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/c72c7f01-61d9-4f22-87df-4802ef97f914?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c72c7f01-61d9-4f22-87df-4802ef97f914?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Back view of a grey desktop switch with 8 ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/67241680-63d9-4faa-a23e-b16aca854341?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/67241680-63d9-4faa-a23e-b16aca854341?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Side view of a silver/light grey desktop switch with ports."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": "adult",
+    "materials": [
+      "steel"
+    ],
+    "key_features": [
+      "Energy-efficient technology saves power up to 72%",
+      "Supports IEEE 802.3x flow control for full duplex mode and backpressure for half duplex mode",
+      "Steel design, desktop or wall-mounting design",
+      "Supports QoS (IEEE 802.1p) function",
+      "Non-blocking switching architecture that forwards and filters packets at full wire-speed for maximum throughput",
+      "9K Jumbo frame improves performance of large data transfers",
+      "Auto-MDI/MDIX eliminates the need for crossover cables",
+      "Supports MAC address auto-learning and auto-aging",
+      "Auto-negotiation ports provide smart integration between 10 Mbps, 100 Mbps and 1000 Mbps hardware",
+      "Fanless design ensures quiet operation"
+    ],
+    "colors": [
+      {
+        "hex": "#718092",
+        "percentage": 0.4014
+      },
+      {
+        "hex": "#4b596a",
+        "percentage": 0.2585
+      },
+      {
+        "hex": "#343d4d",
+        "percentage": 0.1412
+      },
+      {
+        "hex": "#1d1d1d",
+        "percentage": 0.1069
+      },
+      {
+        "hex": "#b1b9c2",
+        "percentage": 0.0921
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/DJtEsfT-hl1t-xPUPk1?o=01KXTW9PRMH6MRJ3709QF1CG14&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "lenovo.com",
+        "price": {
+          "price": 19.99,
+          "compare_at_price": 21.99,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.014,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "Gak0CQa",
+    "title": "TP-Link (TL-SG108S-M2) 8-Port 2.5G Multi-Gigabit Desktop Switch",
+    "description": "The TP-Link TL-SG108S-M2 is an unmanaged 8-port multi-gigabit desktop switch designed for high-performance networking. It features eight 2.5Gbps ports providing a total switching capacity of 40Gbps, making it ideal for LAN parties, offices, and workstations. The device supports smart speed matching, auto-negotiating between 100Mbps, 1Gbps, and 2.5Gbps for optimal compatibility. Its fanless design ensures silent operation, and the plug-and-play setup allows for immediate connectivity without complex configuration. It can be mounted on a desktop or wall and allows for a 2.5Gbps upgrade using existing cabling without requiring Cat6.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/02b1bd7d-7b35-4406-8e3c-510540cc8aed?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/02b1bd7d-7b35-4406-8e3c-510540cc8aed?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black 8-port Gigabit Ethernet switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/81235227-55db-479d-bfed-9b729bc1c7ae?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/81235227-55db-479d-bfed-9b729bc1c7ae?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Back view of a black 8-port Gigabit Ethernet switch with power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/6267f11d-7486-4403-995d-eb2c08250a31?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/6267f11d-7486-4403-995d-eb2c08250a31?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Top-down view of a black 8-port Gigabit Ethernet switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/2399b15c-40b7-465c-8e3c-0d44c3b94c0d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/2399b15c-40b7-465c-8e3c-0d44c3b94c0d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Three-quarter view of a black 8-port Gigabit Ethernet switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e2003cbb-a08b-4a08-a67c-882d4eb95383?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e2003cbb-a08b-4a08-a67c-882d4eb95383?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Back panel of a black network switch with mounting holes."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/54e97301-4867-4d28-8380-e27d940e6f9b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/54e97301-4867-4d28-8380-e27d940e6f9b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Product box packaging for the TP-Link 8-Port Gigabit Switch."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "8x 2.5 Gbps Ports for high-performance multi-gig bandwidth",
+      "Up to 40 Gbps of switching capacity",
+      "Plug and Play for easy deployment without technician assistance",
+      "Fanless design for silent operation",
+      "Durable metal casing",
+      "Desktop and wall-mounting design",
+      "Supports cost-efficient twisted pair cables for high-speed data transfer up to 100 meters",
+      "Smart Speed Matching (100Mbps/1Gbps/2.5Gbps)",
+      "Unmanaged Network Switch"
+    ],
+    "colors": [
+      {
+        "hex": "#747677",
+        "percentage": 0.261
+      },
+      {
+        "hex": "#4a4c4b",
+        "percentage": 0.2384
+      },
+      {
+        "hex": "#2c2e2d",
+        "percentage": 0.1497
+      },
+      {
+        "hex": "#9a9b9c",
+        "percentage": 0.1467
+      },
+      {
+        "hex": "#191613",
+        "percentage": 0.1045
+      },
+      {
+        "hex": "#c4c5c4",
+        "percentage": 0.0997
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/Gak0CQa-LPzf-xPUPk1?o=01M5TYK97HP77CS49ECH4FZMDV&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 59.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "ethernet-lan-interface-type": [
+        "Multi-gigabit"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "power-source": [
+        "AC-powered"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "MxnfnQU",
+    "title": "TP-Link (TL-SX105) 5 Port 10G/Multi-Gig Unmanaged Ethernet Switch",
+    "description": "The TP-Link TL-SX105 is a high-performance 5-port 10G Multi-Gigabit unmanaged Ethernet switch designed for home offices, workstations, and gaming setups. It supports auto-negotiation for five different speeds (100Mbps, 1G, 2.5G, 5G, and 10G), ensuring optimal compatibility and performance for devices like 10G NAS, servers, and WiFi 6 access points. Featuring a fanless design for silent operation and a sturdy metal casing, it can be conveniently placed on a desktop or wall-mounted. This plug-and-play device provides up to 160 Gbps of switching capacity, eliminating network bottlenecks for ultra-fast data transfer.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/b97d3fdf-4b68-4376-a25d-ca1f96814092?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/b97d3fdf-4b68-4376-a25d-ca1f96814092?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 10G Multi-Gigabit Unmanaged Switch shown from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/dc86014e-52ad-4c2a-8025-add1a537eb14?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/dc86014e-52ad-4c2a-8025-add1a537eb14?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the TP-Link 5-Port 10G Multi-Gigabit Desktop Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/e15eb25b-6660-47ae-99c5-b3103f6872f7?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/e15eb25b-6660-47ae-99c5-b3103f6872f7?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 10G Multi-Gigabit Unmanaged Switch from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/b25eef0d-240a-4cb4-9ea0-34aa905614af?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing devices supported by the TP-Link 10G switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7cc0a6bb-df96-4d11-b7f3-4e03ac2f0005?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/7cc0a6bb-df96-4d11-b7f3-4e03ac2f0005?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 10G Multi-Gigabit Unmanaged Switch from the front."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/d0dedd08-7237-44e3-b31a-51327a00d47a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/d0dedd08-7237-44e3-b31a-51327a00d47a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 10G Multi-Gigabit Unmanaged Switch with power input."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/93166713-36ce-4a5c-a974-8d05354e3a19?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/93166713-36ce-4a5c-a974-8d05354e3a19?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Black TP-Link 10G Multi-Gigabit Unmanaged Switch from the front."
+      }
+    ],
+    "category": {
+      "slug": "unmanaged-switches",
+      "title": "Unmanaged Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "unmanaged-switches",
+          "title": "Unmanaged Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "metal"
+    ],
+    "key_features": [
+      "5-port 10G Multi-Gigabit connectivity",
+      "Auto-negotiation for 5-speed connections (100Mbps/1G/2.5G/5G/10G)",
+      "Up to 160 Gbps switching capacity",
+      "Fanless design for quiet operation",
+      "Sturdy metal casing",
+      "Desktop or Wall-Mount installation options",
+      "Plug and Play deployment"
+    ],
+    "colors": [
+      {
+        "hex": "#626262",
+        "percentage": 0.5403
+      },
+      {
+        "hex": "#3c3c3b",
+        "percentage": 0.3593
+      },
+      {
+        "hex": "#9f9f9e",
+        "percentage": 0.1004
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/MxnfnQU-LPzf-xPUPk1?o=01M5EAM6P137Y14HMA1FPBW9ZP&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 229.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": null
+      },
+      {
+        "url": "https://buy.trychannel3.com/MxnfnQU-TgS4-xPUPk1?o=01M4YWGWW92W12P01YPMG817CA&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "cdw.com",
+        "price": {
+          "price": 344.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "ethernet-lan-interface-type": [
+        "10 gigabit",
+        "Multi-gigabit"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "switch-management-type": [
+        "Unmanaged"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "power-source": [
+        "AC-powered",
+        "DC-powered"
+      ],
+      "pattern": [
+        "Solid"
+      ]
+    },
+    "ratings": null
+  },
+  {
+    "id": "usrrnQm",
+    "title": "TL-SG105 | 5 Port Gigabit Ethernet Switch",
+    "description": "The TP-Link TL-SG105 is a 5-port Gigabit Ethernet desktop switch designed to upgrade computer systems to fast Gigabit speeds. It features 5 RJ-45 ports supporting speeds up to 1000Mbps, allowing for the rapid transfer of large, bandwidth-intensive files across a network. Built for durability and quiet operation, it features a steel housing and a fanless design. The switch is plug-and-play, requiring no configuration, and includes Auto MDI/MDIX to eliminate the need for crossover cables. Additionally, it incorporates energy-efficient technology that can conserve up to 65% of power by budgeting power and powering down idle ports.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/4bb46101-c97a-4ea1-8f78-45b09d76e67b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/4bb46101-c97a-4ea1-8f78-45b09d76e67b?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a dark blue 5-port Gigabit Ethernet desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/c9b04fde-be59-4609-99fc-a4a0a07fbad6?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c9b04fde-be59-4609-99fc-a4a0a07fbad6?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Three-quarter view of a dark gray 5-port Gigabit Ethernet desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/bf026f81-1170-4665-9ac1-222d02806743?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/bf026f81-1170-4665-9ac1-222d02806743?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Product box for the TP-Link TL-SG105 5-Port Gigabit Desktop Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/c7fc74ca-5c86-41e6-9bf9-d5cfea4652ca?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/c7fc74ca-5c86-41e6-9bf9-d5cfea4652ca?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Product box for the TP-Link TL-SG105 5-Port Gigabit Desktop Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/d7402833-a3cb-4e64-818f-928f8af60e09?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic highlighting Gigabit ports and reliability of the desktop switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/39950a1d-298e-4803-b799-0647cd034f87?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=hl1t",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Desktop switch connected to various home and office devices."
+      }
+    ],
+    "category": {
+      "slug": "gigabit-switches",
+      "title": "Gigabit Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "gigabit-switches",
+          "title": "Gigabit Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "steel"
+    ],
+    "key_features": [
+      "Five 10/10/100 Mbps ports",
+      "Plug & Play",
+      "Energy efficient design",
+      "Support IEEE 802.3x flow control for Full Duplex mode and backpressure for Half Duplex mode",
+      "Support QoS (IEEE 802.1p)",
+      "Non-blocking switching architecture",
+      "10Gbps Switching Capacity",
+      "Auto-MDI/MDIX eliminates the need for crossover cables",
+      "Support MAC address auto-learning and auto-aging",
+      "Fanless design to keep a quiet environment"
+    ],
+    "colors": [
+      {
+        "hex": "#24211d",
+        "percentage": 0.3757
+      },
+      {
+        "hex": "#647083",
+        "percentage": 0.269
+      },
+      {
+        "hex": "#e0e0e1",
+        "percentage": 0.147
+      },
+      {
+        "hex": "#bbc1ca",
+        "percentage": 0.1269
+      },
+      {
+        "hex": "#909aa7",
+        "percentage": 0.0814
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/usrrnQm-hl1t-xPUPk1?o=01KYMABHM8ETHARXP9A4EQZYAQ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "lenovo.com",
+        "price": {
+          "price": 17.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.014,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "network-layer-support": [
+        "Layer 2"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "network-protocols-supported": [
+        "Ethernet (IEEE 802.3)",
+        "VLAN"
+      ],
+      "switch-management-type": [
+        "Web managed",
+        "Unmanaged"
+      ],
+      "hub-switch-storage-options": [
+        "Wall-mountable"
+      ],
+      "mounting-type": [
+        "Tabletop",
+        "Wall"
+      ]
+    },
+    "ratings": {
+      "value": 4.78,
+      "count": 293,
+      "source_count": 2
+    }
+  },
+  {
+    "id": "GGlgCNY",
+    "title": "tp-link tl-sg2008 v3 | jetstream 8 port gigabit smart managed switch",
+    "description": "The TP-Link TL-SG2008 v3 is a JetStream 8-port Gigabit smart managed switch designed for small to medium business networks. It features 8 10/100/1000 Mbps RJ45 ports and is integrated into the Omada SDN platform for centralized cloud management. This switch offers enterprise-level QoS, advanced Layer 2 management features including 802.1Q VLAN and Link Aggregation, and security strategies such as ACLs and Storm Control. Its durable metal casing and energy-saving design make it a reliable solution for growing business networks.",
+    "brands": [
+      {
+        "id": "xejy",
+        "name": "TP-Link"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://cdn.trychannel3.com/6f19802e-38e2-4725-a819-a55011337f28?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/6f19802e-38e2-4725-a819-a55011337f28?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": true,
+        "shot_type": "hero",
+        "alt_text": "Front view of a black desktop smart switch with 8 Gigabit ports."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/fff80b5b-7d2b-494a-9f4d-b14f31a25667?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": "https://cdn.trychannel3.com/cleaned/v1/fff80b5b-7d2b-494a-9f4d-b14f31a25667?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Front view of the TP-Link TL-SG2008 smart switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/a8ad7c73-3ed2-480c-9d5d-27b0c8e4df7a?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "hero",
+        "alt_text": "Side view of a black desktop smart switch showing metal casing."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/1269422a-6c20-413f-9162-5e75110c88da?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Infographic showing advanced network features like VLANs, QoS, and IGMP Snooping."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/7d21e677-2964-48d2-adeb-6f0d8abef52d?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "product_information",
+        "alt_text": "Graphic detailing secure networking features like Static Routing and security."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/989cf58c-d24a-42e6-9d71-81ee221b4d55?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Multiple application scenarios for a network switch in different industries."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/98398355-355b-4147-9565-16de5933e3ec?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "packaging",
+        "alt_text": "Box packaging for the TP-Link TL-SG2008 8-Port Gigabit Smart Switch."
+      },
+      {
+        "url": "https://cdn.trychannel3.com/023d96ec-a75b-4582-9595-7be60cf021e5?aid=01M61H1V405QJ0GF6R2CV6ZJAW&mid=LPzf",
+        "cleaned_url": null,
+        "is_main_image": false,
+        "shot_type": "lifestyle",
+        "alt_text": "Diagram illustrating Omada SDN platform integration with controllers and cloud access."
+      }
+    ],
+    "category": {
+      "slug": "smart-switches",
+      "title": "Smart Switches",
+      "path": [
+        {
+          "slug": "electronics",
+          "title": "Electronics"
+        },
+        {
+          "slug": "networking",
+          "title": "Networking"
+        },
+        {
+          "slug": "hubs-switches",
+          "title": "Hubs & Switches"
+        },
+        {
+          "slug": "smart-switches",
+          "title": "Smart Switches"
+        }
+      ],
+      "has_children": false
+    },
+    "gender": null,
+    "age": null,
+    "materials": [
+      "Metal"
+    ],
+    "key_features": [
+      "8 10/100/1000 Mbps RJ45 ports",
+      "Omada SDN integrated for centralized management",
+      "Enterprise-level QoS (Port, 802.1P, and DSCP Priority)",
+      "Advanced Layer 2 features: 802.1Q VLAN, Port Isolation, Port Mirroring, STP/RSTP/MSTP",
+      "Link Aggregation Control Protocol (LACP)",
+      "Security strategies: L2~L4 ACL, Port Security, Storm Control, SSL/SSH encryption",
+      "Management: Web-based GUI, CLI, SNMP v1/v2c/v3, RMON",
+      "IPv6 support and static routing"
+    ],
+    "colors": [
+      {
+        "hex": "#828583",
+        "percentage": 0.4209
+      },
+      {
+        "hex": "#2e3132",
+        "percentage": 0.2003
+      },
+      {
+        "hex": "#abafac",
+        "percentage": 0.1332
+      },
+      {
+        "hex": "#cdd0ce",
+        "percentage": 0.1155
+      },
+      {
+        "hex": "#1b1b19",
+        "percentage": 0.0953
+      }
+    ],
+    "offers": [
+      {
+        "url": "https://buy.trychannel3.com/GGlgCNY-LPzf-xPUPk1?o=01M4HQVW7GTJAE4Q18YG740KQJ&aid=01M61H1V405QJ0GF6R2CV6ZJAW",
+        "domain": "newegg.com",
+        "price": {
+          "price": 94.99,
+          "compare_at_price": null,
+          "currency": "USD"
+        },
+        "availability": "InStock",
+        "condition": "new",
+        "max_commission_rate": 0.007,
+        "dimensions": null
+      }
+    ],
+    "variants": null,
+    "structured_attributes": {
+      "network-protocols-supported": [
+        "DHCP",
+        "IGMP",
+        "SNMP",
+        "STP",
+        "VLAN"
+      ],
+      "power-source": [
+        "AC-powered"
+      ],
+      "hub-switch-storage-options": [
+        "Non-stackable"
+      ],
+      "ethernet-lan-interface-type": [
+        "Gigabit"
+      ],
+      "cooling-technology": [
+        "Passive"
+      ],
+      "pattern": [
+        "Solid"
+      ],
+      "switch-management-type": [
+        "Smart"
+      ],
+      "switching-layer": [
+        "Layer 2"
+      ],
+      "mounting-type": [
+        "Tabletop"
+      ],
+      "network-layer-support": [
+        "Layer 2"
+      ]
+    },
+    "ratings": null
+  }
+]

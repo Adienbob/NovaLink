@@ -1,4 +1,3 @@
-// src/components/navigation/asides/StaffSidebar.tsx
 'use client';
 
 import React from 'react';
@@ -22,167 +21,205 @@ interface StaffSidebarProps {
   className?: string;
 }
 
-// Pure SVG Icon helpers to avoid external icon dependencies
 const IconDashboard = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 13a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1v-7z" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 13a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1v-7z" />
   </svg>
 );
 
 const IconOrders = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M8 7V6a4 4 0 018 0v1m-11 0h14l1 13H4L5 7z" />
   </svg>
 );
 
 const IconInventory = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
   </svg>
 );
 
 const IconReturns = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M9 14l-4-4 4-4M5 10h9a5 5 0 015 5v3" />
   </svg>
 );
 
 const IconDeliveries = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M3 6h11v11H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 100-4 2 2 0 000 4zM18 20a2 2 0 100-4 2 2 0 000 4z" />
   </svg>
 );
 
 const IconCategories = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v6H4zM14 15h6v6h-6z" />
   </svg>
 );
 
 const IconBrands = () => (
-  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+  <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M20 13l-7 7-10-10V3h7l10 10z" />
+    <circle cx="7.5" cy="7.5" r="1" strokeWidth="1.7" />
   </svg>
 );
 
 const IconAlert = () => (
-  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  <svg className="size-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 9v3m0 4h.01M10.3 4.9L2.8 18a1.5 1.5 0 001.3 2.2h15.8a1.5 1.5 0 001.3-2.2L13.7 4.9a2 2 0 00-3.4 0z" />
   </svg>
 );
 
-export default function StaffSidebar({ operations, className = '' }: StaffSidebarProps) {
+export default function StaffSidebar({
+  operations,
+  className = '',
+}: StaffSidebarProps) {
   const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations('StaffNavigation');
 
-  const stats = operations || {
-    pendingReturns: 3,
-    pendingDeliveries: 12,
-    inventory: { outOfStockCount: 3, lowStockCount: 5 }
+  const stats = operations ?? {
+    pendingReturns: 0,
+    pendingDeliveries: 0,
+    inventory: {
+      outOfStockCount: 0,
+      lowStockCount: 0,
+    },
   };
 
+  const basePath = `/${locale}/staff`;
+
   const navItems = [
-    { 
-      href: `/${locale}/admin`, 
-      label: t('dashboard'), 
+    {
+      href: basePath,
+      label: t('dashboard'),
       icon: IconDashboard,
-      exact: true 
+      exact: true,
     },
-    { 
-      href: `/${locale}/admin/orders`, 
-      label: t('orders'), 
-      icon: IconOrders 
+    {
+      href: `${basePath}/orders`,
+      label: t('orders'),
+      icon: IconOrders,
     },
-    { 
-      href: `/${locale}/admin/inventory`, 
-      label: t('inventory'), 
+    {
+      href: `${basePath}/inventory`,
+      label: t('inventory'),
       icon: IconInventory,
-      badge: stats.inventory.outOfStockCount > 0 
-        ? `${stats.inventory.outOfStockCount} ${t('emptyUnits')}` 
-        : null,
-      badgeVariant: 'danger'
+      badge:
+        stats.inventory.outOfStockCount > 0
+          ? stats.inventory.outOfStockCount
+          : null,
+      badgeVariant: 'danger' as const,
     },
-    { 
-      href: `/${locale}/admin/returns`, 
-      label: t('returns'), 
+    {
+      href: `${basePath}/returns`,
+      label: t('returns'),
       icon: IconReturns,
-      badge: stats.pendingReturns > 0 ? `${stats.pendingReturns}` : null,
-      badgeVariant: 'warning'
+      badge: stats.pendingReturns > 0 ? stats.pendingReturns : null,
+      badgeVariant: 'warning' as const,
     },
-    { 
-      href: `/${locale}/admin/deliveries`, 
-      label: t('deliveries'), 
+    {
+      href: `${basePath}/deliveries`,
+      label: t('deliveries'),
       icon: IconDeliveries,
-      badge: stats.pendingDeliveries > 0 ? `${stats.pendingDeliveries}` : null,
-      badgeVariant: 'info'
+      badge: stats.pendingDeliveries > 0 ? stats.pendingDeliveries : null,
+      badgeVariant: 'info' as const,
     },
-    { 
-      href: `/${locale}/admin/categories`, 
-      label: t('categories'), 
-      icon: IconCategories 
+    {
+      href: `${basePath}/categories`,
+      label: t('categories'),
+      icon: IconCategories,
     },
-    { 
-      href: `/${locale}/admin/brands`, 
-      label: t('brands'), 
-      icon: IconBrands 
+    {
+      href: `${basePath}/brands`,
+      label: t('brands'),
+      icon: IconBrands,
     },
   ];
 
+  const isItemActive = (href: string, exact?: boolean) => {
+    if (exact) return pathname === href;
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
-    <aside 
-      aria-label={t('sidebarAriaLabel')} 
-      className={`w-64 bg-slate-900 text-slate-100 flex flex-col h-full border-e border-slate-800 select-none ${className}`}
+    <aside
+      aria-label={t('sidebarAriaLabel')}
+      className={`flex h-full w-64 shrink-0 flex-col border-e border-slate-200 bg-white text-slate-700 ${className}`}
     >
-      {/* Brand & Project Header */}
-      <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">
-          Z
-        </div>
-        <div>
-          <h2 className="font-bold text-sm tracking-wide text-white">Zain IT Admin</h2>
-          <span className="text-xs text-slate-400 font-medium">Networking & Infrastructure</span>
+      {/* Brand */}
+      <div className="border-b border-slate-100 px-5 py-5">
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-lg font-bold text-white shadow-sm shadow-blue-600/20">
+            Z
+          </div>
+
+          <div className="min-w-0">
+            <h2 className="truncate text-sm font-bold tracking-tight text-slate-900">
+              Zain IT
+            </h2>
+            <p className="mt-0.5 truncate text-xs text-slate-500">
+              {locale === 'ar' ? 'إدارة المتجر' : 'Store Management'}
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Navigation Links */}
-      <nav className="flex-1 px-3 py-6 space-y-1.5 overflow-y-auto">
+      {/* Navigation */}
+      <nav
+        aria-label={t('sidebarAriaLabel')}
+        className="flex-1 space-y-1 overflow-y-auto px-3 py-5"
+      >
+        <p className="mb-3 px-3 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+          {locale === 'ar' ? 'القائمة الرئيسية' : 'MAIN MENU'}
+        </p>
+
         {navItems.map((item) => {
-          const IconComponent = item.icon;
-          const isActive = item.exact 
-            ? pathname === item.href 
-            : pathname.startsWith(item.href);
+          const Icon = item.icon;
+          const isActive = isItemActive(item.href, item.exact);
 
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 group ${
-                isActive 
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20' 
-                  : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+              aria-current={isActive ? 'page' : undefined}
+              className={`group relative flex items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors duration-150 ${
+                isActive
+                  ? 'bg-blue-50 font-semibold text-blue-700'
+                  : 'font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900'
               }`}
             >
-              <div className="flex items-center gap-3">
-                <span className={`transition-colors ${
-                  isActive ? 'text-white' : 'text-slate-400 group-hover:text-blue-400'
-                }`}>
-                  <IconComponent />
+              <span
+                className={`absolute inset-y-2 start-0 w-0.5 rounded-e-full transition-colors ${
+                  isActive ? 'bg-blue-600' : 'bg-transparent'
+                }`}
+                aria-hidden="true"
+              />
+
+              <span className="flex min-w-0 items-center gap-3">
+                <span
+                  className={`shrink-0 ${
+                    isActive
+                      ? 'text-blue-600'
+                      : 'text-slate-400 transition-colors group-hover:text-slate-600'
+                  }`}
+                >
+                  <Icon />
                 </span>
-                <span>{item.label}</span>
-              </div>
-              
-              {item.badge && (
-                <span className={`px-2 py-0.5 text-xs font-semibold rounded-full flex items-center gap-1 transition-all ${
-                  isActive
-                    ? 'bg-white/20 text-white border border-white/20'
-                    : item.badgeVariant === 'danger' 
-                    ? 'bg-red-500/20 text-red-400 border border-red-500/30 animate-pulse' 
-                    : item.badgeVariant === 'warning'
-                    ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                    : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                }`}>
+
+                <span className="truncate">{item.label}</span>
+              </span>
+
+              {item.badge !== null && item.badge !== undefined && (
+                <span
+                  className={`inline-flex min-w-5 shrink-0 items-center justify-center gap-1 rounded-md px-1.5 py-0.5 text-xs font-semibold tabular-nums ${
+                    item.badgeVariant === 'danger'
+                      ? 'bg-red-50 text-red-600'
+                      : item.badgeVariant === 'warning'
+                        ? 'bg-amber-50 text-amber-700'
+                        : 'bg-blue-50 text-blue-700'
+                  }`}
+                >
                   {item.badgeVariant === 'danger' && <IconAlert />}
                   {item.badge}
                 </span>
@@ -192,10 +229,20 @@ export default function StaffSidebar({ operations, className = '' }: StaffSideba
         })}
       </nav>
 
-      {/* Footer Info / Versioning */}
-      <div className="p-4 border-t border-slate-800/80 text-xs text-slate-500 flex items-center justify-between">
-        <span>Zain Store v2.4</span>
-        <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" title="System Operational" />
+      {/* Footer */}
+      <div className="border-t border-slate-100 px-5 py-4">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-medium text-slate-600">Zain Store</p>
+            <p className="mt-1 text-[11px] text-slate-400">Admin Panel · v2.4</p>
+          </div>
+
+          <span
+            className="size-2 rounded-full bg-emerald-500 ring-4 ring-emerald-50"
+            title="System operational"
+            aria-label="System operational"
+          />
+        </div>
       </div>
     </aside>
   );

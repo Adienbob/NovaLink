@@ -40,88 +40,144 @@ export default async function AccountOrdersPage({ params }: PageProps) {
 
   return (
     <div
-      className={`max-w-4xl mx-auto p-4 sm:p-6 space-y-6 ${isAr ? "text-right" : "text-left"}`}
+      className="mx-auto max-w-5xl space-y-8 p-4 sm:p-6 lg:p-8"
       dir={isAr ? "rtl" : "ltr"}
     >
+      {/* Page Header */}
+      <header className="space-y-2">
+        <div className="flex items-center gap-3">
+
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">{t.title}</h1>
-        <p className="text-sm text-gray-600">{t.subtitle}</p>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          {t.title}
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {t.subtitle}
+        </p>
       </div>
+    </div>
 
-      {!success ? (
-        <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg text-center text-sm">
-          {t.errorText}
-        </div>
-      ) : orders.length === 0 ? (
-        <div className="bg-white border rounded-lg p-10 text-center space-y-4 shadow-sm">
-          <div className="text-4xl">🛍️</div>
-          <h2 className="text-lg font-bold text-gray-800">{t.noOrdersTitle}</h2>
-          <p className="text-sm text-gray-600 max-w-md mx-auto">{t.noOrdersDesc}</p>
-          <Link
-            href={`/${locale}`}
-            className="inline-block bg-black text-white px-6 py-2.5 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
-          >
-            {t.startShopping}
-          </Link>
-        </div>
-      ) : (
-        <div className="space-y-4">
-          {orders.map((order: OrderSummary) => (
-            <div
-              key={order.id}
-              className="bg-white border rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow space-y-4"
-            >
-              {/* Card Header */}
-              <div className="flex flex-wrap justify-between items-center gap-2 border-b pb-3 text-sm">
-                <div className="space-y-1">
-                  <p className="font-semibold text-gray-900">
-                    {t.orderId} <span className="font-mono">{order.id}</span>
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {t.date}{" "}
-                    {new Date(order.createdAt).toLocaleDateString(isAr ? "ar-EG" : "en-US", {
-                      dateStyle: "medium",
-                    })}
-                  </p>
-                </div>
-                <StatusBadge status={order.status} locale={locale} />
-              </div>
+      </header>
 
-              {/* Items Preview */}
-              <div className="text-sm text-gray-700 space-y-1">
-                <p className="font-medium text-xs text-gray-500">{t.items}</p>
-                {order.itemsPreview.map((item, idx) => (
-                  <p key={idx} className="text-gray-800">
-                    • {item.productName} ({item.variantName}) × {item.quantity}
-                  </p>
-                ))}
-                {order.itemCount > 3 && (
-                  <p className="text-xs text-gray-500 italic">
-                    + {order.itemCount - 3} {t.moreItems}
-                  </p>
+    {/* Error State */}
+    {!success ? ( <div className="flex items-center gap-3 rounded-xl border border-destructive/20 bg-destructive/5 p-5 text-sm text-destructive"> <span className="text-xl">⚠️</span> <p>{t.errorText}</p> </div>
+    ) : orders.length === 0 ? (
+    /* Empty State */ <div className="rounded-2xl border border-border bg-card px-6 py-16 text-center shadow-sm"> <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-4xl">
+    🛍️ </div>
+
+      <h2 className="mt-6 text-xl font-bold text-card-foreground">
+        {t.noOrdersTitle}
+      </h2>
+
+      <p className="mx-auto mt-2 max-w-md text-sm leading-7 text-muted-foreground">
+        {t.noOrdersDesc}
+      </p>
+
+      <Link
+        href={`/${locale}`}
+        className="mt-7 inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary-hover hover:shadow-md"
+      >
+        {t.startShopping}
+      </Link>
+    </div>
+
+    ) : (
+    /* Orders List */ <div className="space-y-5">
+    {orders.map((order: OrderSummary) => ( <article
+          key={order.id}
+          className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-200 hover:border-primary/30 hover:shadow-md"
+        >
+    {/* Order Header */} <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border bg-muted/30 px-5 py-4 sm:px-6"> <div className="space-y-1.5"> <p className="text-xs font-medium text-muted-foreground">
+    {t.orderId} </p>
+
+              <p className="font-mono text-sm font-bold text-foreground">
+                #{order.id}
+              </p>
+
+              <p className="text-xs text-muted-foreground">
+                {t.date}{" "}
+                {new Date(order.createdAt).toLocaleDateString(
+                  isAr ? "ar-EG" : "en-US",
+                  { dateStyle: "medium" }
                 )}
-              </div>
+              </p>
+            </div>
 
-              {/* Card Footer */}
-              <div className="flex justify-between items-center border-t pt-3 text-sm">
-                <div>
-                  <span className="text-gray-600">{t.total} </span>
-                  <span className="font-bold text-gray-900">
-                    {order.total.toFixed(2)} {t.currency}
+            <StatusBadge status={order.status} locale={locale} />
+          </div>
+
+          {/* Order Items */}
+          <div className="space-y-3 px-5 py-5 sm:px-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t.items}
+              </h3>
+
+              <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                {order.itemCount}
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {order.itemsPreview.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start justify-between gap-3 text-sm"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground">
+                      {item.productName}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {item.variantName}
+                    </p>
+                  </div>
+
+                  <span className="shrink-0 rounded-lg bg-muted/60 px-2.5 py-1 text-xs font-semibold text-foreground">
+                    × {item.quantity}
                   </span>
                 </div>
-                <Link
-                  href={`/${locale}/account/orders/${order.id}`}
-                  className="bg-gray-100 text-gray-800 hover:bg-gray-200 px-4 py-2 rounded-md text-xs font-semibold transition-colors"
-                >
-                  {t.viewDetails}
-                </Link>
-              </div>
+              ))}
+
+              {order.itemCount > 3 && (
+                <p className="border-t border-dashed border-border pt-3 text-xs text-primary">
+                  + {order.itemCount - 3} {t.moreItems}
+                </p>
+              )}
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+
+          {/* Order Footer */}
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border px-5 py-4 sm:px-6">
+            <div>
+              <p className="text-xs text-muted-foreground">{t.total}</p>
+
+              <p className="mt-1 text-lg font-bold text-foreground">
+                {order.total.toFixed(2)}{" "}
+                <span className="text-sm font-medium text-muted-foreground">
+                  {t.currency}
+                </span>
+              </p>
+            </div>
+
+            <Link
+              href={`/${locale}/account/orders/${order.id}`}
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              {t.viewDetails}
+              <span aria-hidden="true">
+                {isAr ? "←" : "→"}
+              </span>
+            </Link>
+          </div>
+        </article>
+      ))}
     </div>
+
+    )}
+
+    </div>
+
   );
 }
 

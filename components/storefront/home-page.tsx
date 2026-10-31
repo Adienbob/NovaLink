@@ -22,7 +22,7 @@ export async function StorefrontHomePage({ locale }: HomePageProps) {
       <div className="space-y-16 pb-16">
          <StoreNavigation />
          <Hero />
-         <BuildNetworkSection products={productsData.products} locale={locale}  />
+         <BuildNetworkSection products={productsData.data} locale={locale}  />
          <BrandsGrid brands={brands} locale={locale} />
          <BannersGrid />
          <CategoriesGrid categories={categories} locale={locale} />

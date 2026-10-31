@@ -22,24 +22,21 @@ export async function getPublicProducts({
    let query = supabaseAdmin
       .from("products")
       .select(
-         `
-         id,
-         name,
-         slug,
-         description,
-         base_price,
-         seo_title,
-         seo_description,
-         created_at,
-         categories ( id, name ),
-         brands ( id, name ),
-         product_variants (
-            id, sku, variant_name, price, base_price_usd,
-            attributes, stock_quantity, is_active
-         ),
-         product_images ( id, url, alt_text, sort_order, variant_id )
+      `
+      id,
+      name,
+      slug,
+      category:categories ( id, name ),
+      brand:brands ( id, name ),
+      variants:product_variants (
+         id, variant_name, price,
+         stock_quantity, is_active
+      ),
+      images:product_images (
+         id, url, alt_text, sort_order, variant_id
+      )
       `,
-         { count: "exact" }
+      { count: "exact" }
       )
       .eq("is_active", true); // المنتجات المفعّلة فقط
 
@@ -65,15 +62,10 @@ export async function getPublicProducts({
       console.error("Error fetching public products:", error);
       throw new Error("FAILED_TO_FETCH_PRODUCTS");
    }
-
-   // إخفاء الـ variants المعطّلة من الواجهة العامة
-   const products = (data ?? []).map((p) => ({
-      ...p,
-      product_variants: p.product_variants.filter((v) => v.is_active),
-   }));
+   
 
    return {
-      products,
+      data,
       totalCount: count ?? 0,
       totalPages: Math.ceil((count ?? 0) / safeLimit),
       currentPage: safePage,

@@ -1,5 +1,8 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { Product } from "../types/product";
+import { Json } from "@/app/lib/supabase/database";
+import { parseSpecs } from "../helpers/parse-specs";
+import { parseKeyFeatures } from "../helpers/parse-key-features";
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
    const { data, error } = await supabaseAdmin
@@ -11,6 +14,8 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          description,
          base_price,
          seo_title,
+         key_features,
+         specs,
          seo_description,
          created_at,
          brand:brands (
@@ -54,9 +59,19 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
       })
       .maybeSingle();
 
+      
+
+      const product = data
+         ? {
+               ...data,
+               key_features: parseKeyFeatures(data.key_features),
+               specs: parseSpecs(data.specs),
+            }
+         : null;
+
    if (error) {
       throw new Error(`Failed to fetch product: ${error.message}`);
    }
-   return data;
+   return product;
 }
 

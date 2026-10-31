@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Product } from "@/features/catalog/products/types/product";
 import { AddToCartButton } from "@/features/catalog/shared/components/add-to-cart-button";
+import { ProductCardTypes } from "@/features/catalog/products/types/product-card";
 
 interface ProductCardProps {
-  product: Product;
+  product: ProductCardTypes;
   locale: string;
 }
 
@@ -24,7 +24,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
 
   // تحديد المتغير الافتراضي للبطاقة
   const defaultVariant = product.variants?.[0];
-  const displayPrice = defaultVariant?.price ?? product.base_price;
+  const displayPrice = defaultVariant?.price;
   const inStock = defaultVariant ? defaultVariant.stock_quantity > 0 : false;
 
   console.log(primaryImage)
@@ -37,7 +37,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
         >
           {primaryImage ? (
             <Image
-              src={`/${primaryImage}.webp`}
+              src={`${primaryImage}`}
               alt={product.images?.[0]?.alt_text || product.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"

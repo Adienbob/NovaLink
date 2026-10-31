@@ -1,5 +1,17 @@
 {
    "Home": {
       "title": "Home"
+   },
+
+   "StaffNavigation": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "returns": "Returns",
+      "deliveries": "Deliveries",
+      "categories": "Categories",
+      "brands": "Brands",
+      "emptyUnits": "out of stock",
+      "sidebarAriaLabel": "Staff navigation"
    }
 }

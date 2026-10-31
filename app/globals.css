@@ -81,3 +81,13 @@
     --radius: 0.5rem;
   }
 }
+
+.cl-rootBox,
+.cl-cardBox,
+.cl-userProfile-root,
+.cl-scrollBox,
+.cl-pageScrollBox {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
