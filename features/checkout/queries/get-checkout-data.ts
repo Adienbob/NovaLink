@@ -2,8 +2,9 @@ import { auth } from "@clerk/nextjs/server";
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { getCart } from "@/features/cart/actions/get-cart";
 import type { CartItemSummary } from "../components/checkout-form";
+import { Locale } from "@/app/lib/types/general-types";
 
-export async function getCheckoutData() {
+export async function getCheckoutData(locale: Locale) {
    const { userId: clerkUserId } = await auth();
 
    const { data: governorates } = await supabaseAdmin
@@ -19,7 +20,7 @@ export async function getCheckoutData() {
    }));
 
    if (clerkUserId) {
-      const userCart = await getCart();
+      const userCart = await getCart(locale);
 
       const cartItems: CartItemSummary[] = userCart.map((item) => ({
          variantId: item.product_variant_id,

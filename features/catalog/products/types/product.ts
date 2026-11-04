@@ -1,53 +1,57 @@
+// features/catalog/products/types.ts  (or wherever this file lives)
 import type { Json } from "@/app/lib/supabase/database";
 
 export type ProductBrand = {
-   id: string;
-   name: string;
-   slug: string;
-   logo_url: string | null;
+  id: string;
+  name: string;
+  slug: string;
+  logo_url: string | null;
 };
 
 export type ProductCategory = {
-   id: string;
-   name: string;
-   slug: string;
-   parent_id: string | null
+  id: string;
+  name: string;
+  slug: string;
+  parent_id: string | null;
 };
 
 export type ProductVariant = {
-   attributes: Json;
-   base_price_usd: number | null;
-   id: string;
-   is_active: boolean;
-   price: number;
-   product_id: string;
-   sku: string;
-   stock_quantity: number;
-   variant_name: string;
+  attributes: Json;
+  base_price_usd: number | null;
+  id: string;
+  is_active: boolean;
+  price: number;
+  product_id: string;
+  sku: string;
+  stock_quantity: number;
+  variant_name: string;
 };
 
 export type ProductImage = {
-   id: string;
-   variant_id: string | null;
-   product_id: string
-   url: string;
-   alt_text: string | null;
-   sort_order: number;
+  id: string;
+  variant_id: string | null;
+  product_id: string;
+  url: string;
+  alt_text: string | null;
+  sort_order: number;
 };
 
 export type Product = {
-   id: string;
-   name: string;
-   slug: string;
-   description: string;
-   key_features: string[] | null;
-   specs: Json;
-   base_price: number;
-   seo_title: string | null;
-   seo_description: string | null;
-   created_at: string;
-   brand: ProductBrand | null;
-   category: ProductCategory | null;
-   variants: ProductVariant[];
-   images: ProductImage[];
+  id: string;
+  name: string;
+  description: string;
+  slug: string; 
+  seo_title: string | null;
+  seo_description: string | null;
+  key_features: string[] | null;
+  specs: Json | null;
+  base_price: number;
+  is_active?: boolean;          
+  created_at: string;
+  updated_at?: string;
+  
+  brand: ProductBrand | null;
+  category: ProductCategory | null;
+  variants: ProductVariant[];
+  images: ProductImage[];
 };

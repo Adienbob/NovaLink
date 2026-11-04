@@ -1,10 +1,13 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { SearchSuggestion } from "../types/search";
+import { Locale } from "@/app/lib/types/general-types";
+import { localizeName } from "../../products/helpers/localize-name";
 
 const MAX_SUGGESTIONS = 8;
 
 export async function getSearchSuggestions(
-   query: string
+   query: string,
+   locale: Locale
 ): Promise<SearchSuggestion[]> {
    const normalizedQuery = query.trim();
 
@@ -56,7 +59,7 @@ export async function getSearchSuggestions(
       categoryIds.length > 0
          ? await supabaseAdmin
             .from("products")
-            .select("name")
+            .select("name_en, name_ar")
             .in("category_id", categoryIds)
             .eq("is_active", true)
             .limit(10)
@@ -82,7 +85,7 @@ for (const category of categoriesResult.data) {
 
 // Add products from matching categories.
 for (const product of categoryProducts ?? []) {
-   suggestions.add(product.name);
+   suggestions.add(localizeName(product, locale).name);
 }
 
 // Add matching product names.

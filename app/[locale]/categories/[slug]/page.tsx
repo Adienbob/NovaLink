@@ -12,10 +12,11 @@ import { getCategoryMetadata } from '@/features/catalog/categories/queries/get-c
 import { Metadata } from 'next';
 import { baseUrl } from "@/app/lib/utils/utils";
 import { getCategoryBySlug } from "@/features/catalog/categories/queries/get-category-by-slug";
+import { Locale } from "@/app/lib/types/general-types";
 
 type CategoryPageProps = {
    params: Promise<{
-      locale: string;
+      locale: Locale;
       slug: string;
    }>;
 };

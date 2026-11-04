@@ -13,10 +13,11 @@ import type { ProductFilters as ProductFiltersType } from "@/features/catalog/sh
 import type { Product } from "@/features/catalog/products/types/product";
 import { brandProductsQueryKey } from "@/shared/queries/brand-products-query-options";
 import ProductGrid from "@/components/storefront/product-grid";
+import { Locale } from "@/app/lib/types/general-types";
 
 type BrandProductsProps = {
    slug: string;
-   locale: string;
+   locale: Locale;
    availableCategories: {
       id: string;
       name: string;

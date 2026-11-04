@@ -1,8 +1,13 @@
 "use server";
 
 import { supabaseAdmin } from "@/app/lib/supabase/server";
+import { Locale } from "@/app/lib/types/general-types";
+import { localizeProduct } from "@/features/catalog/products/helpers/localize-product";
 
-export async function getGuestCartDetails(variantIds: string[]) {
+export async function getGuestCartDetails(
+   variantIds: string[],
+   locale: Locale
+) {
    if (variantIds.length === 0) {
       return [];
    }
@@ -20,19 +25,26 @@ export async function getGuestCartDetails(variantIds: string[]) {
          stock_quantity,
          is_active,
          product:products!inner (
-            id,
+         id,
+         name_en,
+         name_ar,
+         slug,
+         description_en,
+         description_ar,
+         seo_title_en,
+         seo_title_ar,
+         seo_description_en,
+         seo_description_ar,
+         is_active,
+         brand:brands (
             name,
-            slug,
-            is_active,
-            brand:brands (
-               name,
-               slug
-            ),
-            images:product_images (
-               url,
-               alt_text,
-               sort_order
-            )
+            slug
+         ),
+         images:product_images (
+            url,
+            alt_text,
+            sort_order
+         )
          )
       `)
       .in("id", uniqueVariantIds)
@@ -43,14 +55,18 @@ export async function getGuestCartDetails(variantIds: string[]) {
       console.error("Failed to fetch guest cart details:", error);
       throw new Error("GUEST_CART_DETAILS_FETCH_FAILED");
    }
-   
-   return data.map((variant) => ({
-      ...variant,
-      product: {
-         ...variant.product,
+
+   return data.map((variant) => {
+      const localizedProduct = localizeProduct(variant.product, locale);
+
+      return {
+         ...variant,
+         product: {
+         ...localizedProduct,
          images: [...variant.product.images].sort(
-            (a, b) => a.sort_order - b.sort_order,
+            (a, b) => a.sort_order - b.sort_order
          ),
-      },
-   }));
+         },
+      };
+   });
 }

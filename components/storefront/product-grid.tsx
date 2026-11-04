@@ -1,9 +1,10 @@
 import { ProductCardTypes } from "@/features/catalog/products/types/product-card";
 import { ProductCard } from "./product-card";
+import { Locale } from "@/app/lib/types/general-types";
 
 interface ProductGridProps {
    products: ProductCardTypes[];
-   locale: string;
+   locale: Locale;
 }
 
 export default function ProductGrid({

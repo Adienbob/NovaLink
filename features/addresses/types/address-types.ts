@@ -1,3 +1,5 @@
+import { Json } from "@/app/lib/supabase/database";
+
 export interface Governorate {
    id: string;
    name: string;

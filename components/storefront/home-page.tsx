@@ -7,23 +7,24 @@ import { StoreNavigation } from "../navigation/store-navigation";
 import BannersGrid from "./images-banner";
 import BuildNetworkSection from "./build-network-section";
 import { getPublicProducts } from "@/features/catalog/products/actions/get-public-products";
+import { Locale } from "@/app/lib/types/general-types";
 
 interface HomePageProps {
-   locale: string;
+   locale: Locale;
 }
 
 export async function StorefrontHomePage({ locale }: HomePageProps) {
    const brands = await getPublicBrands();
    const categories = await getPublicCategories();
-   const productsData = await getPublicProducts({limit: 4});
+   const productsData = await getPublicProducts({limit: 4, locale});
 
 
    return (
       <div className="space-y-16 pb-16">
          <StoreNavigation />
          <Hero />
-         <BuildNetworkSection products={productsData.data} locale={locale}  />
          <BrandsGrid brands={brands} locale={locale} />
+         <BuildNetworkSection products={productsData.data} locale={locale}  />
          <BannersGrid />
          <CategoriesGrid categories={categories} locale={locale} />
       </div>

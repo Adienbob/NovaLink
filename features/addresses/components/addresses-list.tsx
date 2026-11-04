@@ -37,7 +37,7 @@ type Props = {
    governorates: Governorate[];
    locale: string;
 };
-
+// desc x2 title x2 specs x1 key features x2 is active x1 stock x1 
 export default function AddressesList({ addresses, governorates, locale }: Props) {
    const router = useRouter();
    const [isPending, startTransition] = useTransition();

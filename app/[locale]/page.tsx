@@ -1,7 +1,8 @@
 import { StorefrontHomePage } from "@/components/storefront/home-page";
+import { Locale } from "../lib/types/general-types";
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }
 
 export default async function Page({ params }: PageProps) {

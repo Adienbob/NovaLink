@@ -12,10 +12,11 @@ import { brandProductsQueryKey } from "@/shared/queries/brand-products-query-opt
 import { getBrandMetadata } from "@/features/catalog/brands/queries/get-brand-metadata";
 import { getBrandsBySlug } from "@/features/catalog/brands/queries/get-brand-by-slug";
 import { baseUrl } from "@/app/lib/utils/utils";
+import { Locale } from "@/app/lib/types/general-types";
 
 type BrandPageProps = {
    params: Promise<{
-      locale: string;
+      locale: Locale;
       slug: string;
    }>;
 };

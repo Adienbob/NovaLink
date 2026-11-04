@@ -1,8 +1,12 @@
 import { getSearchSuggestions } from "@/features/catalog/search/queries/get-search-suggest";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(
+   request: NextRequest,
+) {
+
    const query = request.nextUrl.searchParams.get("q")?.trim() ?? "";
+   const locale = request.nextUrl.searchParams.get("locale") === "ar" ? "ar" : "en";
 
    if (query.length < 2) {
       return NextResponse.json({ suggestions: [] });
@@ -16,7 +20,7 @@ export async function GET(request: NextRequest) {
    }
 
    try {
-      const suggestions = await getSearchSuggestions(query);
+      const suggestions = await getSearchSuggestions(query, locale);
 
       return NextResponse.json(
          { suggestions },

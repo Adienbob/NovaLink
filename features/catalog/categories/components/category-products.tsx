@@ -9,10 +9,11 @@ import type { ProductFilters as ProductFiltersType } from "@/features/catalog/sh
 import { categoryProductsQueryKey } from "@/shared/queries/category-products-query-options";
 import type { Product } from "@/features/catalog/products/types/product";
 import ProductGrid from "@/components/storefront/product-grid";
+import { Locale } from "@/app/lib/types/general-types";
 
 type CategoryProductsProps = {
    slug: string;
-   locale: string;
+   locale: Locale;
    availableBrands: {
       id: string;
       name: string;

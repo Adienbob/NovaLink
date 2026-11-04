@@ -15,11 +15,12 @@ import { BreadcrumbJsonLd } from '@/features/seo/components/breadcrumb-json-ld';
 import { PDPAnalytics } from "@/features/seo/components/pdp-analytics";
 import { ProductKeyFeatures } from "@/features/catalog/products/components/key-features";
 import { ProductTechSpecs } from "@/features/catalog/products/components/tech-specs";
+import { Locale } from "@/app/lib/types/general-types";
 
 
 type ProductPageProps = {
    params: Promise<{
-      locale: string;
+      locale: Locale;
       slug: string;
    }>
 };
@@ -34,12 +35,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
    const { locale, slug } = await params;
    const isAr = locale === "ar";
 
-   const product = await getProductBySlug(slug);
+   const product = await getProductBySlug(slug, locale);
    
    if (!product || !product.category) {
       notFound();
    }
-   const relatedProductsData = await getRelatedProducts({categoryId: product.category.id, currentProductId: product.id, brandId: product.brand?.id, limit: 4})
+   const relatedProductsData = await getRelatedProducts({categoryId: product.category.id, currentProductId: product.id, brandId: product.brand?.id, limit: 4, locale: locale})
 
    // ترتيب الصور بحسب sort_order
    const sortedImages = product.images

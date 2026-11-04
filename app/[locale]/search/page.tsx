@@ -1,9 +1,10 @@
 import { searchProducts } from "@/features/catalog/search/queries/search-products";
 import ProductGrid from "@/components/storefront/product-grid";
 import { ProductFilters } from "@/features/catalog/shared/filters/components/product-filters";
+import { Locale } from "@/app/lib/types/general-types";
 
 type SearchPageProps = {
-   params: Promise<{ locale: string }>;
+   params: Promise<{ locale: Locale }>;
    searchParams: Promise<{ q?: string }>;
 };
 

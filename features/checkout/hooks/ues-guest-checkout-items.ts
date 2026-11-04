@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { getGuestCart } from "@/features/cart/lib/guest-cart-storage";
 import { getGuestCartDetails } from "@/features/cart/lib/get-guest-cart-details";
 import type { CartItemSummary } from "../components/checkout-form";
+import { Locale } from "@/app/lib/types/general-types";
 
 type Status = "loading" | "ready" | "error";
 
-export function useGuestCheckoutItems(enabled: boolean) {
+export function useGuestCheckoutItems(enabled: boolean, locale: Locale) {
    const [items, setItems] = useState<CartItemSummary[]>([]);
    const [status, setStatus] = useState<Status>("loading");
 
@@ -27,7 +28,7 @@ export function useGuestCheckoutItems(enabled: boolean) {
       
          console.log("1. stored guest cart:", stored);
 
-      getGuestCartDetails(stored.map((i) => i.variantId))
+      getGuestCartDetails(stored.map((i) => i.variantId), locale)
          .then((details) => {
             if (cancelled) return;
 

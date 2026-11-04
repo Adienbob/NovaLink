@@ -1,13 +1,14 @@
 'use client';
 
 import ProductGrid from '@/components/storefront/product-grid';
-import type { Product } from '../types/product';
+import { ProductCardTypes } from '../types/product-card';
+import { Locale } from '@/app/lib/types/general-types';
 
 interface RelatedProductsProps {
-   products: Product[];
+   products: ProductCardTypes[];
    title?: string;
    subtitle?: string;
-   locale?: string;
+   locale?: Locale;
 }
 
 export default function RelatedProducts({

@@ -30,20 +30,22 @@ import { mergeGuestCart } from "../actions/merge-guest-cart";
 
 import type { CartDisplayItem, CartItem } from "../types/cart-item";
 import { getGuestCartDetails } from "../lib/get-guest-cart-details";
+import { Locale } from "@/app/lib/types/general-types";
 
 type CartProviderProps = {
    children: ReactNode;
+   locale: Locale;
 };
 
 async function getGuestDisplayItems(
-   guestItems: CartItem[],
+   guestItems: CartItem[], locale: Locale
 ): Promise<CartDisplayItem[]> {
    if (guestItems.length === 0) {
       return [];
    }
 
    const variants = await getGuestCartDetails(
-      guestItems.map((item) => item.variantId),
+      guestItems.map((item) => item.variantId), locale
    );
 
    const guestItemsByVariantId = new Map(
@@ -68,8 +70,8 @@ async function getGuestDisplayItems(
    }) as CartDisplayItem[];
 }
 
-async function getServerDisplayItems(): Promise<CartDisplayItem[]> {
-   const items = await getCart();
+async function getServerDisplayItems(locale: Locale): Promise<CartDisplayItem[]> {
+   const items = await getCart(locale);
 
    return items.map((item) => ({
       id: item.id,
@@ -79,7 +81,7 @@ async function getServerDisplayItems(): Promise<CartDisplayItem[]> {
    })) as CartDisplayItem[];
 }
 
-export function CartProvider({ children }: CartProviderProps) {
+export function CartProvider({ children, locale }: CartProviderProps) {
    const { isLoaded, isSignedIn, userId } = useAuth();
 
    const [state, dispatch] = useReducer(
@@ -116,7 +118,7 @@ export function CartProvider({ children }: CartProviderProps) {
                      return;
                   }
 
-                  const items = await getServerDisplayItems();
+                  const items = await getServerDisplayItems(locale);
 
                   if (cancelled) {
                      return;
@@ -129,7 +131,7 @@ export function CartProvider({ children }: CartProviderProps) {
 
                   clearGuestCart();
                } else {
-                  const items = await getServerDisplayItems();
+                  const items = await getServerDisplayItems(locale);
 
                   if (cancelled) {
                      return;
@@ -143,7 +145,7 @@ export function CartProvider({ children }: CartProviderProps) {
             } else {
                const guestItems = getGuestCart();
                const displayItems =
-                  await getGuestDisplayItems(guestItems);
+                  await getGuestDisplayItems(guestItems, locale);
 
                if (cancelled) {
                   return;
@@ -193,7 +195,7 @@ export function CartProvider({ children }: CartProviderProps) {
                quantity,
             });
 
-            const items = await getServerDisplayItems();
+            const items = await getServerDisplayItems(locale);
 
             dispatch({
                type: "SET_CART",
@@ -229,7 +231,7 @@ export function CartProvider({ children }: CartProviderProps) {
          saveGuestCart(nextItems);
 
          const displayItems =
-            await getGuestDisplayItems(nextItems);
+            await getGuestDisplayItems(nextItems, locale);
 
          dispatch({
             type: "SET_CART",
@@ -256,7 +258,7 @@ export function CartProvider({ children }: CartProviderProps) {
                quantity,
             });
 
-            const items = await getServerDisplayItems();
+            const items = await getServerDisplayItems(locale);
 
             dispatch({
                type: "SET_CART",
@@ -288,7 +290,7 @@ export function CartProvider({ children }: CartProviderProps) {
          saveGuestCart(nextItems);
 
          const displayItems =
-            await getGuestDisplayItems(nextItems);
+            await getGuestDisplayItems(nextItems, locale);
 
          dispatch({
             type: "SET_CART",
@@ -310,7 +312,7 @@ export function CartProvider({ children }: CartProviderProps) {
                variantId,
             });
 
-            const items = await getServerDisplayItems();
+            const items = await getServerDisplayItems(locale);
 
             dispatch({
                type: "SET_CART",
@@ -329,7 +331,7 @@ export function CartProvider({ children }: CartProviderProps) {
          saveGuestCart(nextItems);
 
          const displayItems =
-            await getGuestDisplayItems(nextItems);
+            await getGuestDisplayItems(nextItems, locale);
 
          dispatch({
             type: "SET_CART",

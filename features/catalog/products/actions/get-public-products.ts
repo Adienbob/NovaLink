@@ -1,44 +1,34 @@
 "use server";
 
 import { supabaseAdmin } from "@/app/lib/supabase/server";
+import type { ProductCardTypes } from "@/features/catalog/products/types/product-card";
+import { localizeName } from "../helpers/localize-name";
 
-export async function getPublicProducts({
-   page = 1,
-   limit = 12,
-   search,
-   categoryId,
-   brandId,
+const LIST_SELECT = `
+   id, name_en, name_ar, slug,
+   category:categories ( name ),
+   brand:brands ( name ),
+   variants:product_variants ( id, price, stock_quantity, is_active ),
+   images:product_images ( url, alt_text, sort_order )
+`;
+
+export async function getPublicProducts({ page = 1, limit = 12, search, categoryId, brandId, locale,
 }: {
    page?: number;
    limit?: number;
    search?: string;
    categoryId?: string;
    brandId?: string;
-} = {}) {
-   const safeLimit = Math.min(Math.max(limit, 1), 48); // سقف أعلى للحماية
+   locale: "ar" | "en";
+}) {
+   const safeLimit = Math.min(Math.max(limit, 1), 48);
    const safePage = Math.max(page, 1);
    const offset = (safePage - 1) * safeLimit;
 
    let query = supabaseAdmin
       .from("products")
-      .select(
-      `
-      id,
-      name,
-      slug,
-      category:categories ( id, name ),
-      brand:brands ( id, name ),
-      variants:product_variants (
-         id, variant_name, price,
-         stock_quantity, is_active
-      ),
-      images:product_images (
-         id, url, alt_text, sort_order, variant_id
-      )
-      `,
-      { count: "exact" }
-      )
-      .eq("is_active", true); // المنتجات المفعّلة فقط
+      .select(LIST_SELECT, { count: "exact" })
+      .eq("is_active", true);
 
    if (categoryId && categoryId !== "all") {
       query = query.eq("category_id", categoryId);
@@ -49,9 +39,10 @@ export async function getPublicProducts({
    }
 
    if (search && search.trim() !== "") {
-      // تنظيف الحروف الخاصة بـ ilike/or عشان متكسرش الـ pattern
       const term = search.trim().replace(/[%_,()]/g, "");
-      if (term) query = query.ilike("name", `%${term}%`);
+      if (term) {
+         query = query.or(`name_en.ilike.%${term}%,name_ar.ilike.%${term}%`);
+      }
    }
 
    const { data, count, error } = await query
@@ -62,10 +53,13 @@ export async function getPublicProducts({
       console.error("Error fetching public products:", error);
       throw new Error("FAILED_TO_FETCH_PRODUCTS");
    }
-   
+
+   const products: ProductCardTypes[] = (data ?? []).map((p) =>
+      localizeName(p, locale)
+   );
 
    return {
-      data,
+      data: products,
       totalCount: count ?? 0,
       totalPages: Math.ceil((count ?? 0) / safeLimit),
       currentPage: safePage,

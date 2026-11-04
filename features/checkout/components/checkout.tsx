@@ -3,17 +3,18 @@
 import Link from "next/link";
 import { useGuestCheckoutItems } from "../hooks/ues-guest-checkout-items";
 import { CheckoutForm, type CartItemSummary, type GovernorateOption } from "./checkout-form";
+import { Locale } from "@/app/lib/types/general-types";
 import { Button } from "@/components/ui/button";
 
 interface CheckoutProps {
   governorates: GovernorateOption[];
   cartItems: CartItemSummary[] | null; // null = ضيف
   isAuthenticated: boolean;
-  locale?: string;
+  locale: Locale;
 }
 
-export function Checkout({ governorates, cartItems, isAuthenticated, locale = "ar" }: CheckoutProps) {
-  const { items: guestItems, status } = useGuestCheckoutItems(!isAuthenticated);
+export function Checkout({ governorates, cartItems, isAuthenticated, locale }: CheckoutProps) {
+  const { items: guestItems, status } = useGuestCheckoutItems(!isAuthenticated, locale);
   const isAr = locale === "ar";
 
   if (!isAuthenticated && status === "loading") {

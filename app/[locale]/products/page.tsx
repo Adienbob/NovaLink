@@ -1,9 +1,10 @@
+import { Locale } from "@/app/lib/types/general-types";
 import ProductGrid from "@/components/storefront/product-grid";
 import { getPublicProducts } from "@/features/catalog/products/actions/get-public-products";
 
 type ProductsPageProps = {
    params: Promise<{
-      locale: string;
+      locale: Locale;
    }>;
 };
 
@@ -27,7 +28,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
 
    // جلب كافة المنتجات المتاحة من السيرفر
    // 1. استدعاء الـ Server Action
-   const response = await getPublicProducts(); 
+   const response = await getPublicProducts({locale: locale}); 
 
    return (
       <main className="mx-auto max-w-7xl p-4 md:p-8 space-y-6">

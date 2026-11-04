@@ -1,22 +1,27 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { Product } from "../types/product";
-import { Json } from "@/app/lib/supabase/database";
-import { parseSpecs } from "../helpers/parse-specs";
-import { parseKeyFeatures } from "../helpers/parse-key-features";
+import { localizeProduct } from "../helpers/localize-product";
+import { Locale } from "@/app/lib/types/general-types";
 
-export async function getProductBySlug(slug: string): Promise<Product | null> {
+export async function getProductBySlug(slug: string, locale: Locale): Promise<Product | null> {
    const { data, error } = await supabaseAdmin
-      .from("products")
+      .from('products')
       .select(`
          id,
-         name,
+         name_ar,
+         name_en,
          slug,
-         description,
+         description_en,
+         description_ar,
          base_price,
-         seo_title,
-         key_features,
-         specs,
-         seo_description,
+         seo_title_ar,
+         seo_title_en,
+         key_features_ar,
+         key_features_en,
+         specs_ar,
+         specs_en,
+         seo_description_en,
+         seo_description_ar,
          created_at,
          brand:brands (
          id,
@@ -50,28 +55,16 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
          product_id
          )
       `)
-      .eq("slug", slug)
-      .eq("is_active", true)
-      .eq("variants.is_active", true)
-      .order("sort_order", {
-         referencedTable: "product_images",
+      .eq('slug', slug)
+      .eq('is_active', true)
+      .eq('variants.is_active', true)
+      .order('sort_order', {
+         referencedTable: 'product_images',
          ascending: true,
       })
       .maybeSingle();
 
-      
+   if (error || !data) return null;
 
-      const product = data
-         ? {
-               ...data,
-               key_features: parseKeyFeatures(data.key_features),
-               specs: parseSpecs(data.specs),
-            }
-         : null;
-
-   if (error) {
-      throw new Error(`Failed to fetch product: ${error.message}`);
-   }
-   return product;
+   return localizeProduct(data, locale);
 }
-

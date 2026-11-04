@@ -15,6 +15,7 @@ import "@/app/globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleTagManager } from '@next/third-parties/google';
+import { Locale } from "../lib/types/general-types";
 
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -73,7 +74,7 @@ export default async function LocaleLayout({
 
           <main className="bg-background w-full">
             <QueryProvider>
-              <CartProvider>
+              <CartProvider locale={locale}>
                 <NextIntlClientProvider messages={messages}>
                   <Header />
                   {children}

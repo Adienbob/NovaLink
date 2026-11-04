@@ -7,10 +7,11 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AddToCartButton } from "@/features/catalog/shared/components/add-to-cart-button";
 import { ProductCardTypes } from "@/features/catalog/products/types/product-card";
+import { Locale } from "@/app/lib/types/general-types";
 
 interface ProductCardProps {
   product: ProductCardTypes;
-  locale: string;
+  locale: Locale;
 }
 
 export function ProductCard({ product, locale }: ProductCardProps) {
