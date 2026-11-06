@@ -16,6 +16,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GoogleTagManager } from '@next/third-parties/google';
 import { Locale } from "../lib/types/general-types";
+import { AnnouncementBar } from "@/components/navigation/announcement-bar";
 
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -60,7 +61,6 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
-
   const font = locale === "ar" ? arabicFont : englishFont;
   const clerkLocalization = locale === "ar" ? arSA : undefined;
 
@@ -76,6 +76,7 @@ export default async function LocaleLayout({
             <QueryProvider>
               <CartProvider locale={locale}>
                 <NextIntlClientProvider messages={messages}>
+                  <AnnouncementBar />
                   <Header />
                   {children}
                   <Footer />

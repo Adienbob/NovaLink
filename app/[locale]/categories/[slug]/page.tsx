@@ -32,7 +32,7 @@ export default async function CategoryPage({
 }: CategoryPageProps) {
    const { locale, slug } = await params;
 
-   const products = await getProductsByCategory(slug);
+   const products = await getProductsByCategory(slug, locale);
    const category = await getCategoryBySlug(slug);
 
    if (products.length === 0) {

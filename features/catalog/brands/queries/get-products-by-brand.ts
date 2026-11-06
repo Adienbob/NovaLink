@@ -1,8 +1,30 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
+import { Locale } from "@/app/lib/types/general-types";
 import type { Product } from "@/features/catalog/products/types/product";
+import { localizeProduct } from "../../products/helpers/localize-product";
+
+type ProductRow = Omit<Product, LocalizedKeys> & {
+   name_en: string;
+   name_ar: string | null;
+   description_en: string;
+   description_ar: string | null;
+   seo_title_en: string | null;
+   seo_title_ar: string | null;
+   seo_description_en: string | null;
+   seo_description_ar: string | null;
+};
+
+type LocalizedKeys =
+   | "name"
+   | "description"
+   | "seo_title"
+   | "seo_description"
+   | "key_features"
+   | "specs";
 
 export async function getProductsByBrand(
    brandSlug: string,
+   locale: Locale,
 ): Promise<Product[]> {
    
    const { data: brand, error: brandError } = await supabaseAdmin
@@ -25,13 +47,16 @@ export async function getProductsByBrand(
       .from("products")
       .select(`
          id,
-         name,
+         name_en,
+         name_ar,
          slug,
-         description,
          base_price,
-         seo_title,
-         seo_description,
-         created_at,
+         description_en,
+         description_ar,
+         seo_title_en,
+         seo_title_ar,
+         seo_description_en,
+         seo_description_ar,
          brand:brands!products_brand_id_fkey (
             id,
             name,
@@ -78,5 +103,7 @@ export async function getProductsByBrand(
       );
    }
 
-   return (data ?? []) as unknown as Product[];
+   const rows = (data ?? []) as unknown as ProductRow[];
+
+   return rows.map((row) => localizeProduct(row, locale)) as unknown as Product[];
 }

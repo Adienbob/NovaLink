@@ -1,9 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Package } from "lucide-react";
+import { Locale } from "@/app/lib/types/general-types";
 
 interface Category {
   id: string;
   name: string;
   slug: string;
+  logo_url: string | null;
   parent?: {
     name: string;
   } | null;
@@ -11,7 +15,7 @@ interface Category {
 
 interface CategoriesGridProps {
   categories: Category[];
-  locale?: string;
+  locale?: Locale;
 }
 
 export function CategoriesGrid({
@@ -23,7 +27,7 @@ export function CategoriesGrid({
   return (
     <section
       dir={isRtl ? "rtl" : "ltr"}
-      className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+      className="mx-auto max-w-7xl px-4 py-0 sm:px-6 sm:py-5 lg:px-8"
     >
       {/* Section Header */}
       <div className="mb-8 flex items-end justify-between gap-4">
@@ -82,70 +86,66 @@ export function CategoriesGrid({
         </div>
       ) : (
         /* Categories Grid */
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:gap-6">
-          {categories.map((cat, index) => (
-            <Link
-              key={cat.id}
-              href={`/${locale}/categories/${cat.slug}`}
-              className="group relative flex min-h-48 flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:p-6"
-            >
-              {/* Subtle decorative accent */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -end-10 -top-10 h-32 w-32 rounded-full bg-primary/[0.04] transition-transform duration-500 group-hover:scale-150"
-              />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+  {categories.map((cat) => (
+    <Link
+      key={cat.id}
+      href={`/${locale}/categories/${cat.slug}`}
+      className="group flex min-h-[100px] items-center gap-3 overflow-hidden rounded-lg border border-border bg-card p-3 transition-colors duration-200 hover:border-primary/40 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    >
+      {/* Category Image */}
+      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted/50 p-2">
+        {cat.logo_url ? (
+          <Image
+            src={cat.logo_url}
+            alt={cat.name}
+            fill
+            sizes="64px"
+            className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
+          />
+        ) : (
+          <Package
+            className="h-8 w-8 text-muted-foreground"
+            strokeWidth={1.5}
+          />
+        )}
+      </div>
 
-              <div className="relative">
-                <div className="mb-5 flex items-start justify-between gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1.5 text-[11px] font-medium text-muted-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-                    {cat.parent ? "Subcategory" : "Main category"}
-                  </span>
+      {/* Category Info */}
+      <div className="min-w-0 flex-1">
+        <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
+          {cat.name}
+        </h3>
 
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-background text-muted-foreground transition-all duration-300 group-hover:border-primary/20 group-hover:bg-primary group-hover:text-primary-foreground">
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="h-4 w-4"
-                    >
-                      <path
-                        d={isRtl ? "M19 12H5m0 0 7-7m-7 7 7 7" : "M5 12h14m0 0-7-7m7 7-7 7"}
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </div>
+        {cat.parent && (
+          <p className="mt-1 truncate text-xs text-muted-foreground">
+            {cat.parent.name}
+          </p>
+        )}
+      </div>
 
-                <h3 className="text-lg font-semibold leading-snug tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:text-xl">
-                  {cat.name}
-                </h3>
-
-                {cat.parent && (
-                  <p className="mt-2 text-xs leading-5 text-muted-foreground">
-                    Part of{" "}
-                    <span className="font-medium text-foreground/80">
-                      {cat.parent.name}
-                    </span>
-                  </p>
-                )}
-              </div>
-
-              <div className="relative mt-6 flex items-center justify-between border-t border-border/70 pt-4">
-                <span className="text-sm font-medium text-muted-foreground transition-colors duration-200 group-hover:text-primary">
-                  Browse products
-                </span>
-
-                <span className="text-xs text-muted-foreground">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+      {/* Arrow */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="h-4 w-4 shrink-0 text-muted-foreground transition-all duration-200 group-hover:text-primary group-hover:translate-x-[-2px]"
+      >
+        <path
+          d={
+            isRtl
+              ? "M19 12H5m0 0 7-7m-7 7 7 7"
+              : "M5 12h14m0 0-7-7m7 7-7 7"
+          }
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </Link>
+  ))}
+</div>
       )}
     </section>
   );

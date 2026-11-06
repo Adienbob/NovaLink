@@ -1,4 +1,32 @@
 {
+   "WhyChooseUs": {
+      "genuineProducts": {
+         "title": "Genuine Products",
+         "description": "Quality products from trusted brands."
+      },
+      "warranty": {
+         "title": "Manufacturer Warranty",
+         "description": "Warranty coverage according to product terms."
+      },
+      "expertSupport": {
+         "title": "Expert Assistance",
+         "description": "Get help choosing the right networking equipment."
+      },
+      "delivery": {
+         "title": "Reliable Delivery",
+         "description": "Your orders delivered with care."
+      }
+   },
+   "AnnouncementBar": {
+      "genuineProducts": "Genuine products from trusted brands",
+      "manufacturerWarranty": "Manufacturer warranty on eligible products",
+      "delivery": "Delivery across Cairo & Giza",
+      "specialOffers": "Discover our latest offers",
+      "securePayment": "Secure payment options",
+      "support": "Dedicated customer support",
+      "installation": "Professional installation available",
+      "quickReplies": "Fast replies on WhatsApp"
+   },
    "Home": {
       "title": "Home"
    },

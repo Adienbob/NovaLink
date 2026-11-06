@@ -3,6 +3,7 @@
 import { supabaseAdmin } from "@/app/lib/supabase/server";
 import { localizeName } from "../helpers/localize-name";
 import { ProductCardTypes } from "../types/product-card";
+import { Locale } from "@/app/lib/types/general-types";
 
 const RELATED_SELECT = `
    id, name_en, name_ar, slug,
@@ -24,7 +25,7 @@ export async function getRelatedProducts({
    currentProductId: string;
    categoryId: string;
    brandId?: string;
-   locale: "ar" | "en";
+   locale: Locale;
    limit?: number;
 }) {
    let brandMatches: ProductCardTypes[] = [];  

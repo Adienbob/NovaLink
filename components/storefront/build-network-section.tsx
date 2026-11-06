@@ -42,7 +42,7 @@ export default function BuildNetworkSection({
             <ProductGrid 
                products={products}
                locale={locale}
-            
+               cols={5}
             />
 
          </div>

@@ -1,7 +1,9 @@
+import { Locale } from "@/app/lib/types/general-types";
+import Image from "next/image";
 import Link from "next/link";
 
 interface FooterProps {
-   locale?: string;
+   locale?: Locale;
 }
 
 export function Footer({ locale = "en" }: FooterProps) {
@@ -13,10 +15,12 @@ export function Footer({ locale = "en" }: FooterProps) {
             {/* Brand Column */}
             <div className="space-y-4 md:col-span-1">
                <Link href={`/${locale}`} className="text-xl font-bold tracking-tight flex items-center gap-2">
-               <span className="h-8 w-8 rounded-md bg-primary text-primary-foreground flex items-center justify-center font-extrabold text-sm shadow-sm">
-                  Z
-               </span>
-               <span>Zain</span>
+                  <Image 
+                     src={`/logo.png`}
+                     alt=""
+                     width={85}
+                     height={85}
+                  />
                </Link>
                <p className="text-xs text-secondary leading-relaxed">
                Your ultimate destination for high-quality electronics, appliances, and modern lifestyle products.

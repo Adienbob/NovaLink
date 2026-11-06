@@ -77,7 +77,7 @@ export function ProductCard({ product, locale }: ProductCardProps) {
 
         <div className="pt-1">
           <span className="text-base font-bold text-foreground font-mono">
-            {Number(displayPrice).toFixed(2)} SAR
+            {Number(displayPrice).toFixed(2)} EGP
           </span>
         </div>
       </CardContent>

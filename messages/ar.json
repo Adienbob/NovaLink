@@ -1,4 +1,32 @@
 {
+   "WhyChooseUs": {
+      "genuineProducts": {
+         "title": "منتجات أصلية",
+         "description": "منتجات عالية الجودة من علامات تجارية موثوقة."
+      },
+      "warranty": {
+         "title": "ضمان الشركة المصنعة",
+         "description": "تغطية الضمان وفقًا لشروط كل منتج."
+      },
+      "expertSupport": {
+         "title": "مساعدة متخصصة",
+         "description": "نساعدك في اختيار أجهزة الشبكات المناسبة."
+      },
+      "delivery": {
+         "title": "توصيل موثوق",
+         "description": "توصيل طلباتك بعناية حتى باب منزلك."
+      }
+   },
+   "AnnouncementBar": {
+      "genuineProducts": "منتجات أصلية من أفضل العلامات التجارية",
+      "manufacturerWarranty": "ضمان المصنّع على المنتجات المؤهلة",
+      "delivery": "توصيل داخل القاهرة والجيزة",
+      "specialOffers": "اكتشف أحدث عروضنا",
+      "securePayment": "خيارات دفع آمنة",
+      "support": "دعم عملاء مخصص",
+      "installation": "خدمة تركيب احترافية متاحة",
+      "quickReplies": "ردود سريعة على واتساب"
+   },
    "Home": {
       "title": "الرئيسية"
    },

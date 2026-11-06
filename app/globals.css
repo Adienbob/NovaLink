@@ -132,10 +132,6 @@
   min-width: 0 !important;
 }
 
-.main-component {
-  padding-bottom: ;
-}
-
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -203,4 +199,30 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@keyframes announcement-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes announcement-scroll-rtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(50%); }
+}
+
+.announcement-marquee {
+  animation: announcement-scroll 40s linear infinite;
+}
+
+[dir="rtl"] .announcement-marquee {
+  animation-name: announcement-scroll-rtl;
+}
+
+.announcement-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-marquee { animation: none; }
 }

@@ -31,7 +31,7 @@ export function AddToCartButton({
       setIsAdding(false);
     }
   }
-
+  
   return (
     <div className="space-y-2 w-full">
       <Button

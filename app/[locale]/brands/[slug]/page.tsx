@@ -32,7 +32,7 @@ export default async function BrandPage({
 }: BrandPageProps) {
    const { locale, slug } = await params;
 
-   const products = await getProductsByBrand(slug);
+   const products = await getProductsByBrand(slug, locale);
    const brand = await getBrandsBySlug(slug)
 
    if (products.length === 0) {
