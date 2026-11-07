@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { SearchSuggestions } from "./search-suggestions";
 import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export function SearchBar() {
    const [query, setQuery] = useState("");
@@ -10,6 +11,7 @@ export function SearchBar() {
    const [isLoading, setIsLoading] = useState(false);
    const [error, setError] = useState<string | null>(null);
    const router = useRouter();
+   const t = useTranslations('SearchBar');
 
    useEffect(() => {
       const normalizedQuery = query.trim();
@@ -34,7 +36,7 @@ export function SearchBar() {
             );
             if (!response.ok) {
                console.log(response)
-               throw new Error("Failed to load suggestions.");
+               throw new Error(t("errors.unableToLoad"));
             }
 
             const data: { suggestions: { text: string }[] } =
@@ -54,7 +56,7 @@ export function SearchBar() {
             }
 
             setSuggestions([]);
-            setError("Unable to load suggestions.");
+            setError(t("errors.unableToLoad"));
          } finally {
             if (!controller.signal.aborted) {
                setIsLoading(false);
@@ -66,7 +68,7 @@ export function SearchBar() {
          clearTimeout(timeoutId);
          controller.abort();
       };
-   }, [query]);
+   }, [query, t]);
 
    function handleSearch(searchQuery: string) {
       const normalizedQuery = searchQuery.trim();
@@ -95,10 +97,10 @@ export function SearchBar() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search products, brands, and categories..."
+            placeholder={t("placeholder")}   
             autoComplete="off"
             className="h-12 w-full rounded-xl border border-input bg-background ps-11 pe-4 text-start text-sm text-foreground shadow-sm transition-all duration-200 placeholder:text-muted-foreground/80 hover:border-ring/50 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/20 focus-visible:ring-offset-1"
-            aria-label="Search products"
+            aria-label={t("ariaLabel")}
          />
 
          <svg

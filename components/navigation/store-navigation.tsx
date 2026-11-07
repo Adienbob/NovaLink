@@ -1,3 +1,4 @@
+// Need Localizing 
 import Link from "next/link";
 
 const categories = [
@@ -5,12 +6,6 @@ const categories = [
    { label: "Access Points", href: "/categories/access-points" },
    { label: "Switches", href: "/categories/switches" },
    { label: "Range Extenders", href: "/categories/range-extenders" },
-];
-
-const brands = [
-   { label: "TP-Link", href: "/brands/tp-link" },
-   { label: "Tenda", href: "/brands/tenda" },
-   { label: "Ruijie", href: "/brands/ruijie" },
 ];
 
 export function StoreNavigation() {

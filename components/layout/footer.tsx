@@ -1,12 +1,16 @@
-import { Locale } from "@/app/lib/types/general-types";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { Locale } from "@/app/lib/types/general-types";
 interface FooterProps {
    locale?: Locale;
 }
 
 export function Footer({ locale = "en" }: FooterProps) {
+   const t = useTranslations("Footer");
+
    return (
       <footer className="w-full border-t border-border bg-surface text-foreground mt-auto">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -14,7 +18,7 @@ export function Footer({ locale = "en" }: FooterProps) {
             
             {/* Brand Column */}
             <div className="space-y-4 md:col-span-1">
-               <Link href={`/${locale}`} className="text-xl font-bold tracking-tight flex items-center gap-2">
+               <Link href="/" className="text-xl font-bold tracking-tight flex items-center gap-2">
                   <Image 
                      src={`/logo.png`}
                      alt=""
@@ -23,29 +27,29 @@ export function Footer({ locale = "en" }: FooterProps) {
                   />
                </Link>
                <p className="text-xs text-secondary leading-relaxed">
-               Your ultimate destination for high-quality electronics, appliances, and modern lifestyle products.
+                  {t("brandDescription")}
                </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-3">
                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
-               Quick Links
+               {t("quickLinks")}
                </h3>
                <ul className="space-y-2 text-xs text-secondary">
                <li>
-                  <Link href={`/${locale}`} className="hover:text-foreground transition-colors">
-                     Store Catalog
+                  <Link href={`/`} className="hover:text-foreground transition-colors">
+                     {t("links.catalog")}
                   </Link>
                </li>
                <li>
-                  <Link href={`/${locale}/categories`} className="hover:text-foreground transition-colors">
-                     Categories
+                  <Link href="/categories" className="hover:text-foreground transition-colors">
+                     {t("links.categories")}
                   </Link>
                </li>
                <li>
-                  <Link href={`/${locale}/cart`} className="hover:text-foreground transition-colors">
-                     Shopping Cart
+                  <Link href="/cart" className="hover:text-foreground transition-colors">
+                     {t("links.cart")}
                   </Link>
                </li>
                </ul>
@@ -54,22 +58,22 @@ export function Footer({ locale = "en" }: FooterProps) {
             {/* Customer Support */}
             <div className="space-y-3">
                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
-               Support
+                  {t("support")}
                </h3>
                <ul className="space-y-2 text-xs text-secondary">
                <li>
-                  <Link href={`/${locale}/account/orders`} className="hover:text-foreground transition-colors">
-                     Track Orders
+                  <Link href="/account/orders" className="hover:text-foreground transition-colors">
+                     {t("links.trackOrders")}
                   </Link>
                </li>
                <li>
                   <span className="cursor-pointer hover:text-foreground transition-colors">
-                     Shipping & Returns
+                     {t("links.shipping")}
                   </span>
                </li>
                <li>
                   <span className="cursor-pointer hover:text-foreground transition-colors">
-                     Contact Us
+                     {t("links.contact")}
                   </span>
                </li>
                </ul>
@@ -78,17 +82,17 @@ export function Footer({ locale = "en" }: FooterProps) {
             {/* Newsletter / Legal */}
             <div className="space-y-3">
                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
-               Legal & Privacy
+                  {t("legal")}
                </h3>
                <ul className="space-y-2 text-xs text-secondary">
                <li>
                   <span className="cursor-pointer hover:text-foreground transition-colors">
-                     Privacy Policy
+                     {t("links.privacy")}
                   </span>
                </li>
                <li>
                   <span className="cursor-pointer hover:text-foreground transition-colors">
-                     Terms of Service
+                     {t("links.terms")}
                   </span>
                </li>
                </ul>
@@ -98,11 +102,11 @@ export function Footer({ locale = "en" }: FooterProps) {
 
          {/* Bottom Bar */}
          <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-secondary gap-4">
-            <p>© {new Date().getFullYear()} Zain E-Commerce. All rights reserved.</p>
+            <p>{t("copyright", { year: new Date().getFullYear() })}</p>
             <div className="flex items-center gap-4">
-               <span>Secure Payments</span>
+               <span>{t("securePayments")}</span>
                <span>•</span>
-               <span>Fast Delivery</span>
+               <span>{t("fastDelivery")}</span>
             </div>
          </div>
          </div>

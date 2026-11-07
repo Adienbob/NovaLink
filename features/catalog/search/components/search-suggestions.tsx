@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 type SearchSuggestionsProps = {
    suggestions: string[];
    onSelect: (suggestion: string) => void;
@@ -15,6 +17,8 @@ export function SearchSuggestions({
    query,
    className,
 }: SearchSuggestionsProps) {
+   const t = useTranslations("searchSuggestions");
+
    if (query.trim().length < 2) {
       return null;
    }
@@ -27,7 +31,7 @@ export function SearchSuggestions({
       >
          {isLoading ? (
             <p className="px-4 py-3 text-sm text-muted-foreground">
-               Loading suggestions...
+               {t("loading")}
             </p>
          ) : suggestions.length > 0 ? (
             <ul className="py-1">
@@ -47,7 +51,7 @@ export function SearchSuggestions({
             </ul>
          ) : (
             <p className="px-4 py-3 text-sm text-muted-foreground">
-               No suggestions found.
+               {t("noResults")}
             </p>
          )}
       </div>

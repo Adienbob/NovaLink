@@ -1,0 +1,45 @@
+{
+   "BuildNetworkSection": {
+      "title": "Build Your Own Network",
+      "subtitle": "High-performance routers, switches, and access points configured for ultimate speed."
+   },
+   "WhyChooseUs": {
+      "genuineProducts": {
+         "title": "Genuine Products",
+         "description": "Quality products from trusted brands."
+      },
+      "warranty": {
+         "title": "Manufacturer Warranty",
+         "description": "Warranty coverage according to product terms."
+      },
+      "expertSupport": {
+         "title": "Expert Assistance",
+         "description": "Get help choosing the right networking equipment."
+      },
+      "delivery": {
+         "title": "Reliable Delivery",
+         "description": "Your orders delivered with care."
+      }
+   },
+   "AnnouncementBar": {
+      "genuineProducts": "Genuine products from trusted brands",
+      "manufacturerWarranty": "Manufacturer warranty on eligible products",
+      "delivery": "Delivery across Cairo & Giza",
+      "specialOffers": "Discover our latest offers",
+      "securePayment": "Secure payment options",
+      "support": "Dedicated customer support",
+      "installation": "Professional installation available",
+      "quickReplies": "Fast replies on WhatsApp"
+   },
+   "CategoriesGrid": {
+      "title": "Explore Categories",
+      "description": "Find the right networking equipment with our organized product categories.",
+      "empty": {
+         "title": "No categories available",
+         "description": "Categories will appear here once they become available."
+      }
+   },
+   "Home": {
+      "title": "Home"
+   }
+}

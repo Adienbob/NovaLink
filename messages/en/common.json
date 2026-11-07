@@ -1,0 +1,33 @@
+{
+   "searchSuggestions": {
+      "loading": "Loading suggestions...",
+      "noResults": "No suggestions found."
+   },
+   "SearchBar": {
+      "placeholder": "Search products, brands, and categories...",
+      "ariaLabel": "Search products",
+      "errors": {
+         "failedToLoad": "Failed to load suggestions.",
+         "unableToLoad": "Unable to load suggestions."
+      }
+   },
+   "Footer": {
+      "brandDescription": "Your ultimate destination for high-quality electronics, appliances, and modern lifestyle products.",
+      "quickLinks": "Quick Links",
+      "support": "Support",
+      "legal": "Legal & Privacy",
+      "links": {
+         "catalog": "Store Catalog",
+         "categories": "Categories",
+         "cart": "Shopping Cart",
+         "trackOrders": "Track Orders",
+         "shipping": "Shipping & Returns",
+         "contact": "Contact Us",
+         "privacy": "Privacy Policy",
+         "terms": "Terms of Service"
+      },
+      "copyright": "© {year} Zain E-Commerce. All rights reserved.",
+      "securePayments": "Secure Payments",
+      "fastDelivery": "Fast Delivery"
+   }
+}

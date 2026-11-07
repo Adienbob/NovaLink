@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
 import Image from "next/image";
 import { Package } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Locale } from "@/app/lib/types/general-types";
 
 interface Category {
@@ -23,6 +25,7 @@ export function CategoriesGrid({
   locale = "en",
 }: CategoriesGridProps) {
   const isRtl = locale === "ar";
+  const t = useTranslations("CategoriesGrid");
 
   return (
     <section
@@ -32,29 +35,14 @@ export function CategoriesGrid({
       {/* Section Header */}
       <div className="mb-8 flex items-end justify-between gap-4">
         <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="h-1 w-6 rounded-full bg-primary" />
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-              Explore
-            </span>
-          </div>
-
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Explore Categories
+            {t("title")}
           </h2>
 
           <p className="max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-            Find the right networking equipment with our organized product
-            categories.
+            {t("description")}
           </p>
         </div>
-
-        {categories.length > 0 && (
-          <span className="hidden shrink-0 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground sm:inline-flex">
-            {categories.length}{" "}
-            {categories.length === 1 ? "category" : "categories"}
-          </span>
-        )}
       </div>
 
       {/* Empty State */}
@@ -77,75 +65,62 @@ export function CategoriesGrid({
           </div>
 
           <h3 className="text-base font-semibold text-foreground">
-            No categories available
+            {t("empty.title")}
           </h3>
 
           <p className="mt-1 max-w-sm text-sm leading-6 text-muted-foreground">
-            Categories will appear here once they become available.
+            {t("empty.description")}
           </p>
         </div>
       ) : (
         /* Categories Grid */
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-  {categories.map((cat) => (
-    <Link
-      key={cat.id}
-      href={`/${locale}/categories/${cat.slug}`}
-      className="group flex min-h-[100px] items-center gap-3 overflow-hidden rounded-lg border border-border bg-card p-3 transition-colors duration-200 hover:border-primary/40 hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-    >
-      {/* Category Image */}
-      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted/50 p-2">
-        {cat.logo_url ? (
-          <Image
-            src={cat.logo_url}
-            alt={cat.name}
-            fill
-            sizes="64px"
-            className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
-          />
-        ) : (
-          <Package
-            className="h-8 w-8 text-muted-foreground"
-            strokeWidth={1.5}
-          />
-        )}
-      </div>
+        <div className="grid grid-cols-4 gap-3 sm:grid-cols-3 lg:grid-cols-7">
+          {categories.map((cat) => (
+            <Link
+              key={cat.id}
+              href={`/categories/${cat.slug}`}
+              className="group flex w-30 flex-col items-center gap-3
+                overflow-hidden rounded-lg
+                border border-border
+                bg-card p-3 
+                shadow-sm
+                transition-all duration-200
+                hover:border-primary/50
+                hover:shadow-md
+                hover:-translate-y-0.5
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-ring
+                focus-visible:ring-offset-2"
+              >
+              {/* Category Image */}
+              <div className="relative flex h-22 w-22 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted p-2">
+                {cat.logo_url ? (
+                  <Image
+                    src={cat.logo_url}
+                    alt={cat.name}
+                    fill
+                    sizes="64px"
+                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <Package
+                    className="h-8 w-8 text-muted-foreground"
+                    strokeWidth={1.5}
+                  />
+                )}
+              </div>
 
-      {/* Category Info */}
-      <div className="min-w-0 flex-1">
-        <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
-          {cat.name}
-        </h3>
-
-        {cat.parent && (
-          <p className="mt-1 truncate text-xs text-muted-foreground">
-            {cat.parent.name}
-          </p>
-        )}
-      </div>
-
-      {/* Arrow */}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        fill="none"
-        className="h-4 w-4 shrink-0 text-muted-foreground transition-all duration-200 group-hover:text-primary group-hover:translate-x-[-2px]"
-      >
-        <path
-          d={
-            isRtl
-              ? "M19 12H5m0 0 7-7m-7 7 7 7"
-              : "M5 12h14m0 0-7-7m7 7-7 7"
-          }
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </Link>
-  ))}
-</div>
+              {/* Category Info */}
+              <div className="flex h-10 w-full items-center justify-center">
+                <h3 className="text-center text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
+                  {cat.name}
+                </h3>
+              </div>
+              
+            </Link>
+          ))}
+        </div>
       )}
     </section>
   );
