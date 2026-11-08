@@ -1,8 +1,6 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
 interface InventoryAlert {
@@ -87,7 +85,7 @@ export default function StaffSidebar({
     },
   };
 
-  const basePath = `/${locale}/staff`;
+  const basePath = `/staff`;
 
   const navItems = [
     {
@@ -159,7 +157,7 @@ export default function StaffSidebar({
               Zain IT
             </h2>
             <p className="mt-0.5 truncate text-xs text-slate-500">
-              {locale === 'ar' ? 'إدارة المتجر' : 'Store Management'}
+              {t('brandSubtitle')}
             </p>
           </div>
         </div>
@@ -171,7 +169,7 @@ export default function StaffSidebar({
         className="flex-1 space-y-1 overflow-y-auto px-3 py-5"
       >
         <p className="mb-3 px-3 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-          {locale === 'ar' ? 'القائمة الرئيسية' : 'MAIN MENU'}
+          {t('mainMenu')}
         </p>
 
         {navItems.map((item) => {
@@ -233,14 +231,14 @@ export default function StaffSidebar({
       <div className="border-t border-slate-100 px-5 py-4">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-medium text-slate-600">Zain Store</p>
-            <p className="mt-1 text-[11px] text-slate-400">Admin Panel · v2.4</p>
+            <p className="text-xs font-medium text-slate-600">{t('storeName')}tsx</p>
+            <p className="mt-1 text-[11px] text-slate-400">{t('adminPanel')}</p>
           </div>
 
           <span
             className="size-2 rounded-full bg-emerald-500 ring-4 ring-emerald-50"
-            title="System operational"
-            aria-label="System operational"
+            title={t('systemOperational')}
+            aria-label={t('systemOperational')}
           />
         </div>
       </div>

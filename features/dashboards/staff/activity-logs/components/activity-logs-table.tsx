@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export interface ActivityLogItem {
    id: string;
@@ -25,25 +25,26 @@ interface ActivityLogsTableProps {
    onFilterChange: (filters: { entityType?: string; action?: string }) => void;
 }
 
-const ENTITY_TYPES = [
-   { value: "all", label: "All Entity Types" },
-   { value: "user", label: "Users" },
-   { value: "product", label: "Products" },
-   { value: "product_variant", label: "Product Variants" },
-   { value: "category", label: "Categories" },
-   { value: "brand", label: "Brands" },
-   { value: "order", label: "Orders" },
-   { value: "delivery", label: "Deliveries" },
-];
-
 export function ActivityLogsTable({
    logs,
    totalCount,
    onFilterChange,
 }: ActivityLogsTableProps) {
+   const t = useTranslations("StaffActivityLogs");
    const [selectedEntityType, setSelectedEntityType] = useState("all");
    const [actionSearch, setActionSearch] = useState("");
    const [expandedLogId, setExpandedLogId] = useState<string | null>(null);
+
+   const ENTITY_TYPES = [
+      { value: "all", label: t("entityTypes.all") },
+      { value: "user", label: t("entityTypes.user") },
+      { value: "product", label: t("entityTypes.product") },
+      { value: "product_variant", label: t("entityTypes.productVariant") },
+      { value: "category", label: t("entityTypes.category") },
+      { value: "brand", label: t("entityTypes.brand") },
+      { value: "order", label: t("entityTypes.order") },
+      { value: "delivery", label: t("entityTypes.delivery") },
+   ];
 
    const handleEntityChange = (type: string) => {
       setSelectedEntityType(type);
@@ -77,20 +78,20 @@ export function ActivityLogsTable({
                      type="text"
                      value={actionSearch}
                      onChange={(e) => setActionSearch(e.target.value)}
-                     placeholder="Search action (e.g. UPDATE_USER)..."
+                     placeholder={t("searchPlaceholder")}
                      className="rounded-md border bg-background px-3 py-1.5 text-xs outline-none focus:ring-2 focus:ring-ring"
                   />
                   <button
                      type="submit"
                      className="rounded-md bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground hover:bg-secondary/80"
                   >
-                     Search
+                     {t("searchButton")}
                   </button>
                </form>
             </div>
 
             <div className="text-xs text-muted-foreground font-mono">
-               Total Events: <strong>{totalCount}</strong>
+               {t("totalEvents")}: <strong>{totalCount}</strong>
             </div>
          </div>
 
@@ -99,12 +100,12 @@ export function ActivityLogsTable({
             <table className="w-full text-left text-sm">
                <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                   <tr>
-                     <th className="px-4 py-3">User / Staff</th>
-                     <th className="px-4 py-3">Action</th>
-                     <th className="px-4 py-3">Entity</th>
-                     <th className="px-4 py-3">Entity ID</th>
-                     <th className="px-4 py-3">Timestamp</th>
-                     <th className="px-4 py-3 text-right">Metadata</th>
+                     <th className="px-4 py-3">{t("tableHeaderUser")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderAction")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderEntity")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderEntityId")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderTimestamp")}</th>
+                     <th className="px-4 py-3 text-right">{t("tableHeaderMetadata")}</th>
                   </tr>
                </thead>
                <tbody className="divide-y">
@@ -114,7 +115,7 @@ export function ActivityLogsTable({
                            colSpan={6}
                            className="px-4 py-8 text-center text-muted-foreground"
                         >
-                           No activity logs found.
+                           {t("noLogs")}
                         </td>
                      </tr>
                   ) : (
@@ -126,7 +127,7 @@ export function ActivityLogsTable({
                               <tr className="hover:bg-muted/30">
                                  <td className="px-4 py-3">
                                     <div className="font-medium text-xs">
-                                       {log.user?.full_name || log.user?.email || "System"}
+                                       {log.user?.full_name || log.user?.email || t("system")}
                                     </div>
                                     {log.user?.role && (
                                        <span className="text-[10px] uppercase font-mono text-muted-foreground">
@@ -163,11 +164,11 @@ export function ActivityLogsTable({
                                           }
                                           className="text-xs font-medium text-primary hover:underline"
                                        >
-                                          {isExpanded ? "Hide JSON" : "View JSON"}
+                                          {isExpanded ? t("hideJson") : t("viewJson")}
                                        </button>
                                     ) : (
                                        <span className="text-xs text-muted-foreground italic">
-                                          None
+                                          {t("none")}
                                        </span>
                                     )}
                                  </td>

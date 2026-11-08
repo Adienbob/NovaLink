@@ -1,1 +1,448 @@
-{}
+{
+   "StaffNavigation": {
+      "sidebarAriaLabel": "تنقل الموظفين",
+      "dashboard": "لوحة التحكم",
+      "orders": "الطلبات",
+      "inventory": "المخزون",
+      "returns": "المرتجعات",
+      "deliveries": "التوصيلات",
+      "categories": "الفئات",
+      "brands": "العلامات التجارية",
+      "brandName": "زين آي تي",
+      "brandSubtitle": "إدارة المتجر",
+      "mainMenu": "القائمة الرئيسية",
+      "storeName": "متجر زين",
+      "adminPanel": "لوحة الإدارة · v2.4",
+      "systemOperational": "النظام يعمل"
+   },
+   "StaffOverview": {
+      "title": "نظرة عامة على النظام",
+      "description": "المقاييس التشغيلية في الوقت الفعلي عبر الطلبات والمخزون والعمليات الميدانية.",
+      "totalRevenueTitle": "إجمالي الإيرادات",
+      "totalRevenueDesc": "إجمالي الإيرادات من الطلبات المكتملة",
+      "totalOrdersTitle": "إجمالي الطلبات",
+      "totalOrdersDesc": "إجمالي الطلبات التي تم معالجتها",
+      "deliveredOrdersTitle": "الطلبات المُسلّمة",
+      "deliveredOrdersDesc": "الطلبات التي تم تنفيذها بنجاح",
+      "failedDeliveriesTitle": "التوصيلات الفاشلة",
+      "failedDeliveriesDesc": "التوصيلات التي تم تحديدها كفاشلة",
+      "lowStockTitle": "عناصر منخفضة المخزون",
+      "lowStockDesc": "المتغيرات التي تحتوي على 5 عناصر أو أقل",
+      "pendingReturnsTitle": "مرتجعات معلقة",
+      "pendingReturnsDesc": "طلبات الإرجاع التي تنتظر الموافقة"
+   },
+   "StaffOrders": {
+      "tableHeaderOrderNumber": "رقم الطلب",
+      "tableHeaderCustomer": "العميل",
+      "tableHeaderShippingAddress": "عنوان الشحن",
+      "tableHeaderTotalAmount": "إجمالي المبلغ",
+      "tableHeaderStatus": "الحالة",
+      "tableHeaderActions": "الإجراءات",
+      "noActiveOrders": "لم يتم العثور على طلبات نشطة.",
+      "assignDriver": "تعيين سائق",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "readOnly": "قراءة فقط",
+      "noDriversAvailable": "لا توجد سائقين متاحين",
+      "selectDriver": "اختر سائق",
+      "statuses": {
+         "pendingConfirmation": "قيد انتظار التأكيد",
+         "confirmed": "تم التأكيد",
+         "readyForPickup": "جاهز للاستلام",
+         "shipped": "تم الشحن",
+         "delivered": "تم التوصيل",
+         "returned": "مرتجع",
+         "cancelled": "ملغي"
+      },
+      "errors": {
+         "assignDriver": "فشل في تعيين سائق للطلب.",
+         "updateStatus": "فشل في تحديث حالة الطلب."
+      }
+   },
+   "StaffCategories": {
+      "addCategoryTitle": "إضافة تصنيف",
+      "categoryNameLabel": "اسم التصنيف",
+      "categoryNamePlaceholder": "مثال: أجهزة لابتوب",
+      "parentCategoryLabel": "التصنيف الأب",
+      "optional": "اختياري",
+      "noneTopLevel": "بدون (تصنيف رئيسي)",
+      "saving": "جاري الحفظ...",
+      "createCategory": "إنشاء التصنيف",
+      "tableHeaderName": "اسم التصنيف",
+      "tableHeaderSlug": "الرابط المختصر (Slug)",
+      "tableHeaderParent": "التصنيف الأب",
+      "tableHeaderActions": "الإجراءات",
+      "noCategories": "لم يتم العثور على تصنيفات.",
+      "topLevel": "رئيسي",
+      "deleting": "جاري الحذف...",
+      "delete": "حذف",
+      "viewOnly": "عرض فقط",
+      "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا التصنيف؟",
+      "errors": {
+         "create": "فشل في إنشاء التصنيف.",
+         "delete": "فشل في حذف التصنيف."
+      }
+   },
+   "StaffBrands": {
+      "addBrandTitle": "إضافة علامة تجارية جديدة",
+      "brandNameLabel": "اسم العلامة التجارية",
+      "brandNamePlaceholder": "مثال: Nike, Apple",
+      "logoUrlLabel": "رابط الشعار (Logo URL)",
+      "optional": "اختياري",
+      "logoUrlPlaceholder": "https://example.com/logo.png",
+      "saving": "جاري الحفظ...",
+      "createBrand": "إنشاء العلامة التجارية",
+      "tableHeaderLogo": "الشعار",
+      "tableHeaderName": "اسم العلامة التجارية",
+      "tableHeaderSlug": "الرابط المختصر (Slug)",
+      "tableHeaderActions": "الإجراءات",
+      "noBrands": "لم يتم العثور على علامات تجارية.",
+      "deleting": "جاري الحذف...",
+      "delete": "حذف",
+      "viewOnly": "عرض فقط",
+      "confirmDelete": "هل أنت متأكد أنك تريد حذف هذه العلامة التجارية؟",
+      "errors": {
+         "create": "فشل في إنشاء العلامة التجارية.",
+         "delete": "فشل في حذف العلامة التجارية."
+      }
+   },
+   "StaffActivityLogs": {
+      "entityTypes": {
+         "all": "جميع أنواع الكيانات",
+         "user": "المستخدمين",
+         "product": "المنتجات",
+         "productVariant": "متغيرات المنتجات",
+         "category": "التصنيفات",
+         "brand": "العلامات التجارية",
+         "order": "الطلبات",
+         "delivery": "التوصيلات"
+      },
+      "searchPlaceholder": "ابحث عن إجراء (مثل UPDATE_USER)...",
+      "searchButton": "بحث",
+      "totalEvents": "إجمالي الأحداث",
+      "tableHeaderUser": "المستخدم / الطاقم",
+      "tableHeaderAction": "الإجراء",
+      "tableHeaderEntity": "الكيان",
+      "tableHeaderEntityId": "معرف الكيان",
+      "tableHeaderTimestamp": "الطابع الزمنى",
+      "tableHeaderMetadata": "البيانات الوصفية",
+      "noLogs": "لم يتم العثور على سجلات نشاط.",
+      "system": "النظام",
+      "hideJson": "إخفاء JSON",
+      "viewJson": "عرض JSON",
+      "none": "لا يوجد"
+   },
+   "StaffUsers": {
+      "addStaffTitle": "إضافة موظف",
+      "clerkIdLabel": "معرف مستخدم Clerk *",
+      "clerkIdPlaceholder": "user_2x...",
+      "fullNameLabel": "الاسم الكامل *",
+      "fullNamePlaceholder": "محمد أحمد",
+      "emailLabel": "البريد الإلكتروني *",
+      "emailPlaceholder": "staff@company.com",
+      "phoneLabel": "الهاتف (اختياري)",
+      "phonePlaceholder": "+123456789",
+      "roleLabel": "الصلاحية",
+      "roles": {
+         "viewer": "مشاهد (قراءة فقط)",
+         "delivery": "موظف توصيل",
+         "admin": "مسؤول (Admin)",
+         "owner": "المالك (Owner)"
+      },
+      "saving": "جاري الحفظ...",
+      "addStaffButton": "إضافة موظف",
+      "tableHeaderMember": "عضو الطاقم",
+      "tableHeaderPhone": "الهاتف",
+      "tableHeaderRole": "الصلاحية",
+      "tableHeaderActions": "الإجراءات",
+      "noStaff": "لم يتم العثور على أعضاء طاقم نشطين.",
+      "youBadge": "أنت",
+      "protected": "محمي",
+      "remove": "إزالة",
+      "confirmRemove": "هل أنت متأكد أنك تريد إزالة هذا الموظف؟",
+      "errors": {
+         "updateRole": "فشل في تحديث الصلاحية.",
+         "remove": "فشل في إزالة موظف الطاقم.",
+         "create": "فشل في إنشاء موظف الطاقم."
+      }
+   },
+   "StaffDeliveries": {
+      "noDeliveries": "لم يتم العثور على مهام توصيل نشطة.",
+      "orderFallback": "طلب",
+      "driverLabel": "السائق:",
+      "unassigned": "غير معين",
+      "customerLabel": "العميل:",
+      "addressLabel": "العنوان:",
+      "failureReasonLabel": "سبب الفشل:",
+      "notesLabel": "ملاحظات:",
+      "markPickedUp": "تحديد كـ تم الاستلام",
+      "markDelivered": "تحديد كـ تم التوصيل",
+      "markFailed": "تحديد كـ فشل التوصيل",
+      "failureReasonPlaceholder": "السبب (مثل: العميل غير متاح)...",
+      "notesPlaceholder": "ملاحظات إضافية (اختياري)...",
+      "confirmFailure": "تأكيد فشل التوصيل",
+      "errors": {
+         "updateStatus": "فشل في تحديث حالة التوصيل."
+      }
+   },
+   "StaffCreateProduct": {
+      "title": "إنشاء منتج",
+      "subtitle": "إضافة منتج جديد مع المتغيرات والصور.",
+      "cancel": "إلغاء",
+      "save": "حفظ المنتج",
+      "saving": "جاري الحفظ...",
+      "validationError": "يرجى تصحيح الحقول المميزة.",
+      "basicInfo": {
+         "title": "المعلومات الأساسية",
+         "nameEn": "الاسم بالإنجليزية *",
+         "nameAr": "الاسم بالعربية *",
+         "slug": "الرابط المختصر (Slug) *",
+         "basePrice": "السعر الأساسي *",
+         "brandId": "معرف العلامة التجارية (UUID)",
+         "brandPlaceholder": "اختياري",
+         "categoryId": "معرف التصنيف (UUID)",
+         "categoryPlaceholder": "اختياري",
+         "isActive": "المنتج نشط (مرئي في المتجر)"
+      },
+      "description": {
+         "title": "الوصف",
+         "descEn": "الوصف بالإنجليزية *",
+         "descAr": "الوصف بالعربية *"
+      },
+      "seoDesc": {
+         "title": "وصف محركات البحث (SEO)",
+         "descEn": "الوصف بالإنجليزية *",
+         "descAr": "الوصف بالعربية *"
+      },
+      "seoTitle": {
+         "title": "عنوان محركات البحث (SEO)",
+         "titleEn": "العنوان بالإنجليزية *",
+         "titleAr": "العنوان بالعربية *"
+      },
+      "specs": {
+         "title": "المواصفات",
+         "english": "الإنجليزية",
+         "arabic": "العربية"
+      },
+      "keyFeatures": {
+         "title": "المميزات الرئيسية",
+         "english": "الإنجليزية",
+         "arabic": "العربية",
+         "placeholderEn": "e.g. Waterproof",
+         "placeholderAr": "مثال: مقاوم للماء"
+      },
+      "variants": {
+         "title": "المتغيرات"
+      },
+      "images": {
+         "title": "صور المنتج"
+      }
+   },
+   "StaffAddVariant": {
+      "title": "إضافة متغير جديد",
+      "optionalImages": "صور خاصة بالمتغير (اختياري)",
+      "cancel": "إلغاء",
+      "submit": "إضافة المتغير",
+      "submitting": "جاري الإضافة..."
+   },
+   "StaffAddImages": {
+      "titlePrefix": "إضافة صور إلى: ",
+      "cancel": "إلغاء",
+      "submit": "إضافة الصور",
+      "submitting": "جاري الإضافة..."
+   },
+   "StaffImageFields": {
+      "url": "رابط الصورة",
+      "altText": "النص البديل",
+      "mainImage": "الصورة الرئيسية",
+      "imageDescription": "وصف الصورة",
+      "preview": "معاينة",
+      "addImage": "إضافة صورة"
+   },
+   "StaffProductDetails": {
+      "backToProducts": "العودة إلى المنتجات",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "editProduct": "تعديل المنتج",
+      "warnings": {
+         "title": "مخفي من كتالوج المتجر",
+         "reasonIntro": "هذا المنتج مخفي حالياً من الكتالوج للأسباب التالية:",
+         "inactive": "تم ضبطه على وضع غير نشط.",
+         "zeroVariants": "لا يحتوي على متغيرات نشطة.",
+         "zeroImages": "لا يحتوي على صور للمنتج.",
+         "zeroStock": "إجمالي كمية المخزون هو صفر عبر جميع المتغيرات."
+      },
+      "cardPriceInfo": {
+         "title": "السعر والمعلومات الأساسية",
+         "basePrice": "السعر الأساسي",
+         "activeVariants": "المتغيرات النشطة",
+         "brandId": "معرف العلامة التجارية",
+         "categoryId": "معرف التصنيف"
+      },
+      "cardDescription": {
+         "title": "الوصف"
+      },
+      "variants": {
+         "titlePrefix": "المتغيرات (",
+         "titleSuffix": ")",
+         "addVariant": "إضافة متغير",
+         "tableStatus": "الحالة",
+         "tableVariantNameSku": "اسم المتغير / SKU",
+         "tablePrice": "السعر",
+         "tableUsd": "دولار",
+         "tableStock": "المخزون",
+         "tableAttributes": "الخصائص",
+         "tableActions": "الإجراءات",
+         "noVariants": "لم يتم إضافة متغيرات.",
+         "statusActive": "نشط",
+         "statusHidden": "مخفي",
+         "addImages": "إضافة صور"
+      },
+      "images": {
+         "titlePrefix": "صور المنتج الرئيسية (",
+         "titleSuffix": ")",
+         "addImages": "إضافة صور",
+         "noImages": "لم يتم رفع أي صور للمنتج.",
+         "mainBadge": "رئيسية"
+      }
+   },
+   "StaffProductsTable": {
+      "editProduct": "تعديل المنتج",
+      "addNewProduct": "إضافة منتج جديد",
+      "updateProductDescription": "قم بتحديث تفاصيل المنتج باللغتين العربية والإنجليزية.",
+      "createProductDescription": "أنشئ منتجًا جديدًا بمحتوى عربي وإنجليزي.",
+      "catalogTitle": "كتالوج المنتجات",
+      "catalogDescription": "إدارة المخزون وأسعار المتغيرات ومستويات الكميات ومعرض الصور.",
+      "addProduct": "إضافة منتج",
+      "deleteConfirmation": "هل أنت متأكد؟ سيؤدي ذلك إلى حذف جميع المتغيرات والصور المرتبطة بالمنتج.",
+      "deleteError": "فشل حذف المنتج.",
+      "image": "الصورة",
+      "productName": "اسم المنتج",
+      "category": "القسم",
+      "brand": "العلامة التجارية",
+      "basePrice": "السعر الأساسي",
+      "variants": "{count, plural, zero {لا توجد متغيرات} one {متغير واحد} two {متغيران} few {# متغيرات} many {# متغيرًا} other {# متغير}}",
+      "status": "الحالة",
+      "actions": "الإجراءات",
+      "noProducts": "لا توجد منتجات.",
+      "noImage": "بدون صورة",
+      "stock": "المخزون",
+      "active": "نشط",
+      "draft": "مسودة",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "deleting": "جارٍ الحذف...",
+      "viewOnly": "عرض فقط"
+   },
+   "SpecsFields": {
+      "key": "الخاصية",
+      "value": "القيمة",
+      "keyPlaceholder": "مثال: الخامة",
+      "valuePlaceholder": "مثال: قطن",
+      "addSpecification": "إضافة خاصية"
+   },
+   "StaffVariantFields": {
+      "attributesTitle": "الخصائص (مثل: اللون، الحجم)",
+      "addAttribute": "إضافة",
+      "noAttributes": "لم يتم إضافة خصائص.",
+      "keyPlaceholder": "المفتاح (مثل: الحجم)",
+      "valuePlaceholder": "القيمة (مثل: كبير)",
+      "variantNameLabel": "اسم المتغير *",
+      "variantNamePlaceholder": "مثال: أحمر / XL",
+      "skuLabel": "رمز التخزين (SKU) *",
+      "skuPlaceholder": "رمز تخزين فريد",
+      "priceLabel": "السعر *",
+      "basePriceUsdLabel": "السعر الأساسي (بالدولار الأمريكي)",
+      "basePriceUsdPlaceholder": "اختياري",
+      "stockQuantityLabel": "كمية المخزون *",
+      "variantTitlePrefix": "المتغير #",
+      "removeVariant": "إزالة",
+      "addVariant": "إضافة متغير"
+   },
+   "StaffKeyFeaturesFields": {
+      "feature": "الميزة {number}",
+      "defaultPlaceholder": "أدخل الميزة",
+      "addFeature": "إضافة ميزة"
+   },
+   "StaffReturnsTable": {
+      "pending": "قيد الانتظار",
+      "approved": "تمت الموافقة",
+      "rejected": "مرفوض",
+      "refunded": "تم رد المبلغ",
+      "returnId": "رقم طلب الإرجاع",
+      "orderId": "رقم الطلب",
+      "customer": "العميل",
+      "reason": "سبب الإرجاع",
+      "refundAmount": "مبلغ الاسترداد",
+      "status": "الحالة",
+      "actions": "الإجراءات",
+      "noReturns": "لا توجد طلبات إرجاع.",
+      "guestCustomer": "عميل زائر",
+      "notAvailable": "غير متاح",
+      "viewOnly": "عرض فقط",
+      "updateError": "فشل تحديث حالة طلب الإرجاع."
+   },
+   "InventoryTable": {
+      "stockLevels": "مستويات المخزون",
+      "auditLogs": "سجل التغييرات",
+      "productVariant": "المنتج / المتغير",
+      "sku": "رمز المنتج",
+      "price": "السعر",
+      "stockLevel": "الكمية المتاحة",
+      "actions": "الإجراءات",
+      "noInventory": "لا توجد منتجات في المخزون.",
+      "product": "منتج",
+      "units": "وحدة",
+      "adjustStock": "تعديل المخزون",
+      "readOnly": "للعرض فقط",
+      "change": "التغيير",
+      "previousToNew": "الكمية السابقة ← الجديدة",
+      "reason": "السبب",
+      "adjustedBy": "تم التعديل بواسطة",
+      "date": "التاريخ",
+      "noLogs": "لا توجد سجلات لتعديلات المخزون.",
+      "system": "النظام"
+   },
+   "StockAdjustmentDialog": {
+      "title": "تعديل المخزون",
+      "currentStock": "المخزون الحالي",
+      "addStock": "إضافة مخزون",
+      "reduceStock": "تقليل المخزون",
+      "quantity": "الكمية",
+      "reason": "السبب",
+      "notes": "ملاحظات (اختياري)",
+      "notesPlaceholder": "مثال: استلام شحنة PO-9982...",
+      "cancel": "إلغاء",
+      "saving": "جارٍ الحفظ...",
+      "confirmAdjustment": "تأكيد التعديل",
+      "invalidQuantity": "من فضلك أدخل كمية صحيحة أكبر من صفر.",
+      "adjustmentFailed": "فشل تعديل المخزون.",
+      "reasons": {
+         "RESTOCK": "إعادة تخزين / شحنة واردة",
+         "DAMAGE": "مخزون تالف",
+         "SHRINKAGE": "عجز / مخزون مفقود",
+         "AUDIT_CORRECTION": "تصحيح نتيجة الجرد",
+         "RETURN": "مرتجع من عميل"
+      }
+   },
+   "DeliveryCard": {
+      "order": "طلب",
+      "notAvailable": "غير محدد",
+      "customer": "العميل",
+      "unnamedCustomer": "عميل غير مسمى",
+      "contactPhone": "رقم التواصل",
+      "deliveryAddress": "عنوان التسليم",
+      "totalAmount": "المبلغ الإجمالي",
+      "sar": "ريال",
+      "markAsPickedUp": "تأكيد استلام الشحنة",
+      "completeDelivery": "تأكيد التسليم للعميل",
+      "confirmPickup": "تأكيد استلام الشحنة",
+      "confirmDelivery": "تأكيد التسليم للعميل",
+      "status": {
+         "assigned": "تم التعيين",
+         "picked_up": "تم الاستلام",
+         "delivered": "تم التسليم",
+         "failed": "فشل التسليم"
+      }
+   }
+}

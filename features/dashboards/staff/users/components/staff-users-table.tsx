@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
    StaffRole,
    updateUserRole,
@@ -33,6 +34,7 @@ export function StaffUsersTable({
    currentUserRole,
    onRefresh,
 }: StaffUsersTableProps) {
+   const t = useTranslations("StaffUsers");
    const [isPending, startTransition] = useTransition();
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -52,13 +54,13 @@ export function StaffUsersTable({
             await updateUserRole(targetUserId, newRole);
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to update role.");
+            setErrorMsg(err.message || t("errors.updateRole"));
          }
       });
    };
 
    const handleSoftDelete = (targetUserId: string) => {
-      if (!confirm("Are you sure you want to remove this staff user?")) return;
+      if (!confirm(t("confirmRemove"))) return;
 
       setErrorMsg(null);
       startTransition(async () => {
@@ -66,7 +68,7 @@ export function StaffUsersTable({
             await softDeleteUser(targetUserId);
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to remove staff user.");
+            setErrorMsg(err.message || t("errors.remove"));
          }
       });
    };
@@ -92,7 +94,7 @@ export function StaffUsersTable({
             setSelectedRole("viewer");
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to create staff user.");
+            setErrorMsg(err.message || t("errors.create"));
          }
       });
    };
@@ -102,7 +104,7 @@ export function StaffUsersTable({
          {canManage && (
             <div className="rounded-lg border bg-card p-5 shadow-sm h-fit">
                <h2 className="text-lg font-semibold tracking-tight mb-4">
-                  Add Staff Member
+                  {t("addStaffTitle")}
                </h2>
 
                {errorMsg && (
@@ -114,7 +116,7 @@ export function StaffUsersTable({
                <form onSubmit={handleCreate} className="space-y-4">
                   <div>
                      <label className="text-xs font-medium text-foreground">
-                        Clerk User ID *
+                        {t("clerkIdLabel")}
                      </label>
                      <input
                         type="text"
@@ -122,13 +124,13 @@ export function StaffUsersTable({
                         value={clerkId}
                         onChange={(e) => setClerkId(e.target.value)}
                         className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring font-mono"
-                        placeholder="user_2x..."
+                        placeholder={t("clerkIdPlaceholder")}
                      />
                   </div>
 
                   <div>
                      <label className="text-xs font-medium text-foreground">
-                        Full Name *
+                        {t("fullNameLabel")}
                      </label>
                      <input
                         type="text"
@@ -136,13 +138,13 @@ export function StaffUsersTable({
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-                        placeholder="John Doe"
+                        placeholder={t("fullNamePlaceholder")}
                      />
                   </div>
 
                   <div>
                      <label className="text-xs font-medium text-foreground">
-                        Email Address *
+                        {t("emailLabel")}
                      </label>
                      <input
                         type="email"
@@ -150,37 +152,37 @@ export function StaffUsersTable({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-                        placeholder="staff@company.com"
+                        placeholder={t("emailPlaceholder")}
                      />
                   </div>
 
                   <div>
                      <label className="text-xs font-medium text-foreground">
-                        Phone (Optional)
+                        {t("phoneLabel")}
                      </label>
                      <input
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-                        placeholder="+123456789"
+                        placeholder={t("phonePlaceholder")}
                      />
                   </div>
 
                   <div>
                      <label className="text-xs font-medium text-foreground">
-                        Role
+                        {t("roleLabel")}
                      </label>
                      <select
                         value={selectedRole}
                         onChange={(e) => setSelectedRole(e.target.value as StaffRole)}
                         className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
                      >
-                        <option value="viewer">Viewer (Read-only)</option>
-                        <option value="delivery">Delivery Staff</option>
-                        <option value="admin">Admin</option>
+                        <option value="viewer">{t("roles.viewer")}</option>
+                        <option value="delivery">{t("roles.delivery")}</option>
+                        <option value="admin">{t("roles.admin")}</option>
                         {currentUserRole === "owner" && (
-                           <option value="owner">Owner</option>
+                           <option value="owner">{t("roles.owner")}</option>
                         )}
                      </select>
                   </div>
@@ -190,7 +192,7 @@ export function StaffUsersTable({
                      disabled={isPending || !email.trim() || !fullName.trim() || !clerkId.trim()}
                      className="w-full rounded-md bg-primary py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 disabled:opacity-50"
                   >
-                     {isPending ? "Saving..." : "Add Staff Member"}
+                     {isPending ? t("saving") : t("addStaffButton")}
                   </button>
                </form>
             </div>
@@ -201,10 +203,10 @@ export function StaffUsersTable({
                <table className="w-full text-left text-sm">
                   <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                      <tr>
-                        <th className="px-4 py-3">Staff Member</th>
-                        <th className="px-4 py-3">Phone</th>
-                        <th className="px-4 py-3">Role</th>
-                        <th className="px-4 py-3 text-right">Actions</th>
+                        <th className="px-4 py-3">{t("tableHeaderMember")}</th>
+                        <th className="px-4 py-3">{t("tableHeaderPhone")}</th>
+                        <th className="px-4 py-3">{t("tableHeaderRole")}</th>
+                        <th className="px-4 py-3 text-right">{t("tableHeaderActions")}</th>
                      </tr>
                   </thead>
                   <tbody className="divide-y">
@@ -214,7 +216,7 @@ export function StaffUsersTable({
                               colSpan={4}
                               className="px-4 py-8 text-center text-muted-foreground"
                            >
-                              No active staff members found.
+                              {t("noStaff")}
                            </td>
                         </tr>
                      ) : (
@@ -233,7 +235,7 @@ export function StaffUsersTable({
                                        {user.full_name || "Unnamed Staff"}
                                        {isSelf && (
                                           <span className="ml-2 rounded bg-accent px-1.5 py-0.5 text-[10px] font-semibold text-accent-foreground">
-                                             You
+                                             {t("youBadge")}
                                           </span>
                                        )}
                                     </div>
@@ -262,7 +264,7 @@ export function StaffUsersTable({
                                  <td className="px-4 py-3 text-right">
                                     {cannotEdit ? (
                                        <span className="text-xs text-muted-foreground italic">
-                                          Protected
+                                          {t("protected")}
                                        </span>
                                     ) : (
                                        <button
@@ -270,7 +272,7 @@ export function StaffUsersTable({
                                           disabled={isPending}
                                           className="text-xs font-medium text-destructive hover:underline disabled:opacity-50"
                                        >
-                                          Remove
+                                          {t("remove")}
                                        </button>
                                     )}
                                  </td>

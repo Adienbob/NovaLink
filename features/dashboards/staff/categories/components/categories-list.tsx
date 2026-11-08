@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
    createCategory,
    deleteCategory,
@@ -30,6 +31,7 @@ export function CategoriesList({
    userRole,
    onRefresh,
 }: CategoriesListProps) {
+   const t = useTranslations("StaffCategories");
    const [isPending, startTransition] = useTransition();
    const [name, setName] = useState("");
    const [parentId, setParentId] = useState<string>("");
@@ -45,35 +47,35 @@ export function CategoriesList({
       setErrorMsg(null);
       startTransition(async () => {
          try {
-         const payload: CategoryPayload = {
-            name: name.trim(),
-            parent_id: parentId !== "" ? parentId : null,
-         };
-         await createCategory(payload);
-         setName("");
-         setParentId("");
-         onRefresh();
+            const payload: CategoryPayload = {
+               name: name.trim(),
+               parent_id: parentId !== "" ? parentId : null,
+            };
+            await createCategory(payload);
+            setName("");
+            setParentId("");
+            onRefresh();
          } catch (err: any) {
-         setErrorMsg(err.message || "Failed to create category.");
+            setErrorMsg(err.message || t("errors.create"));
          }
       });
    };
 
    const handleDelete = (categoryId: string) => {
       if (!canEdit) return;
-      if (!confirm("Are you sure you want to delete this category?")) return;
+      if (!confirm(t("confirmDelete"))) return;
 
       setDeletingId(categoryId);
       setErrorMsg(null);
 
       startTransition(async () => {
          try {
-         await deleteCategory(categoryId);
-         onRefresh();
+            await deleteCategory(categoryId);
+            onRefresh();
          } catch (err: any) {
-         setErrorMsg(err.message || "Failed to delete category.");
+            setErrorMsg(err.message || t("errors.delete"));
          } finally {
-         setDeletingId(null);
+            setDeletingId(null);
          }
       });
    };
@@ -82,128 +84,140 @@ export function CategoriesList({
       <div className="grid gap-6 md:grid-cols-3 items-start">
          {/* Form Section: Only accessible to Admin/Owner */}
          {canEdit && (
-         <div className="rounded-lg border border-border bg-surface p-5 shadow-sm h-fit space-y-4">
-            <h2 className="text-lg font-bold tracking-tight text-foreground border-b border-border pb-3">
-               Add Category
-            </h2>
+            <div className="rounded-lg border border-border bg-surface p-5 shadow-sm h-fit space-y-4">
+               <h2 className="text-lg font-bold tracking-tight text-foreground border-b border-border pb-3">
+                  {t("addCategoryTitle")}
+               </h2>
 
-            {errorMsg && (
-               <div className="rounded-md bg-destructive/10 border border-destructive/20 p-3 text-xs text-destructive font-medium">
-               {errorMsg}
-               </div>
-            )}
+               {errorMsg && (
+                  <div className="rounded-md bg-destructive/10 border border-destructive/20 p-3 text-xs text-destructive font-medium">
+                     {errorMsg}
+                  </div>
+               )}
 
-            <form onSubmit={handleCreate} className="space-y-4">
-               <div className="space-y-1.5">
-               <label className="text-xs font-semibold text-foreground">
-                  Category Name <span className="text-destructive">*</span>
-               </label>
-               <input
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                  placeholder="e.g. Laptops"
-               />
-               </div>
+               <form onSubmit={handleCreate} className="space-y-4">
+                  <div className="space-y-1.5">
+                     <label className="text-xs font-semibold text-foreground">
+                        {t("categoryNameLabel")}{" "}
+                        <span className="text-destructive">*</span>
+                     </label>
+                     <input
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        placeholder={t("categoryNamePlaceholder")}
+                     />
+                  </div>
 
-               <div className="space-y-1.5">
-               <label className="text-xs font-semibold text-foreground">
-                  Parent Category <span className="text-xs text-secondary font-normal">(Optional)</span>
-               </label>
-               <select
-                  value={parentId}
-                  onChange={(e) => setParentId(e.target.value)}
-                  className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-               >
-                  <option value="">None (Top-Level Category)</option>
-                  {categories.map((cat) => (
-                     <option key={cat.id} value={cat.id}>
-                     {cat.name}
-                     </option>
-                  ))}
-               </select>
-               </div>
+                  <div className="space-y-1.5">
+                     <label className="text-xs font-semibold text-foreground">
+                        {t("parentCategoryLabel")}{" "}
+                        <span className="text-xs text-secondary font-normal">
+                           ({t("optional")})
+                        </span>
+                     </label>
+                     <select
+                        value={parentId}
+                        onChange={(e) => setParentId(e.target.value)}
+                        className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                     >
+                        <option value="">{t("noneTopLevel")}</option>
+                        {categories.map((cat) => (
+                           <option key={cat.id} value={cat.id}>
+                              {cat.name}
+                           </option>
+                        ))}
+                     </select>
+                  </div>
 
-               <Button
-               type="submit"
-               disabled={isPending || !name.trim()}
-               className="w-full h-10 font-semibold text-sm mt-2"
-               >
-               {isPending ? "Saving..." : "Create Category"}
-               </Button>
-            </form>
-         </div>
+                  <Button
+                     type="submit"
+                     disabled={isPending || !name.trim()}
+                     className="w-full h-10 font-semibold text-sm mt-2"
+                  >
+                     {isPending ? t("saving") : t("createCategory")}
+                  </Button>
+               </form>
+            </div>
          )}
 
          {/* Categories Table View */}
-         <div className={canEdit ? "md:col-span-2" : "md:col-span-3" }>
+         <div className={canEdit ? "md:col-span-2" : "md:col-span-3"}>
             <div className="rounded-lg border border-border bg-surface shadow-sm overflow-hidden">
                <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm">
-                  <thead className="border-b border-border bg-muted/50 text-xs font-semibold text-secondary">
-                     <tr>
-                        <th className="px-4 py-3.5">Category Name</th>
-                        <th className="px-4 py-3.5">Slug</th>
-                        <th className="px-4 py-3.5">Parent Category</th>
-                        <th className="px-4 py-3.5 text-right">Actions</th>
-                     </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
-                     {categories.length === 0 ? (
+                     <thead className="border-b border-border bg-muted/50 text-xs font-semibold text-secondary">
                         <tr>
-                        <td
-                           colSpan={4}
-                           className="px-4 py-12 text-center text-secondary text-sm"
-                        >
-                           No categories found.
-                        </td>
+                           <th className="px-4 py-3.5">{t("tableHeaderName")}</th>
+                           <th className="px-4 py-3.5">{t("tableHeaderSlug")}</th>
+                           <th className="px-4 py-3.5">
+                              {t("tableHeaderParent")}
+                           </th>
+                           <th className="px-4 py-3.5 text-right">
+                              {t("tableHeaderActions")}
+                           </th>
                         </tr>
-                     ) : (
-                        categories.map((cat) => (
-                        <tr
-                           key={cat.id}
-                           className="transition-colors hover:bg-muted/30 text-foreground"
-                        >
-                           <td className="px-4 py-3 font-semibold text-foreground">
-                              {cat.name}
-                           </td>
-                           <td className="px-4 py-3 font-mono text-xs text-secondary">
-                              {cat.slug}
-                           </td>
-                           <td className="px-4 py-3 text-xs">
-                              {cat.parent ? (
-                              <span className="inline-flex items-center rounded-md border border-border bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground">
-                                 {cat.parent.name}
-                              </span>
-                              ) : (
-                              <span className="text-secondary italic">
-                                 Top-Level
-                              </span>
-                              )}
-                           </td>
-                           <td className="px-4 py-3 text-right">
-                              {canEdit ? (
-                              <Button
-                                 variant="ghost"
-                                 size="sm"
-                                 onClick={() => handleDelete(cat.id)}
-                                 disabled={isPending && deletingId === cat.id}
-                                 className="h-8 text-xs font-medium text-destructive hover:text-destructive hover:bg-destructive/10"
+                     </thead>
+                     <tbody className="divide-y divide-border">
+                        {categories.length === 0 ? (
+                           <tr>
+                              <td
+                                 colSpan={4}
+                                 className="px-4 py-12 text-center text-secondary text-sm"
                               >
-                                 {deletingId === cat.id ? "Deleting..." : "Delete"}
-                              </Button>
-                              ) : (
-                              <span className="text-xs text-secondary italic">
-                                 View only
-                              </span>
-                              )}
-                           </td>
-                        </tr>
-                        ))
-                     )}
-                  </tbody>
+                                 {t("noCategories")}
+                              </td>
+                           </tr>
+                        ) : (
+                           categories.map((cat) => (
+                              <tr
+                                 key={cat.id}
+                                 className="transition-colors hover:bg-muted/30 text-foreground"
+                              >
+                                 <td className="px-4 py-3 font-semibold text-foreground">
+                                    {cat.name}
+                                 </td>
+                                 <td className="px-4 py-3 font-mono text-xs text-secondary">
+                                    {cat.slug}
+                                 </td>
+                                 <td className="px-4 py-3 text-xs">
+                                    {cat.parent ? (
+                                       <span className="inline-flex items-center rounded-md border border-border bg-muted px-2.5 py-0.5 text-xs font-medium text-foreground">
+                                          {cat.parent.name}
+                                       </span>
+                                    ) : (
+                                       <span className="text-secondary italic">
+                                          {t("topLevel")}
+                                       </span>
+                                    )}
+                                 </td>
+                                 <td className="px-4 py-3 text-right">
+                                    {canEdit ? (
+                                       <Button
+                                          variant="ghost"
+                                          size="sm"
+                                          onClick={() => handleDelete(cat.id)}
+                                          disabled={
+                                             isPending && deletingId === cat.id
+                                          }
+                                          className="h-8 text-xs font-medium text-destructive hover:text-destructive hover:bg-destructive/10"
+                                       >
+                                          {deletingId === cat.id
+                                             ? t("deleting")
+                                             : t("delete")}
+                                       </Button>
+                                    ) : (
+                                       <span className="text-xs text-secondary italic">
+                                          {t("viewOnly")}
+                                       </span>
+                                    )}
+                                 </td>
+                              </tr>
+                           ))
+                        )}
+                     </tbody>
                   </table>
                </div>
             </div>

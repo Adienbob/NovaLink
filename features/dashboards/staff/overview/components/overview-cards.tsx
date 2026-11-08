@@ -1,45 +1,48 @@
 import { OverviewStats } from "../actions/get-overview-stats";
+import { useTranslations } from "next-intl"; // Or getTranslations if server component
 
 interface OverviewCardsProps {
    stats: OverviewStats;
 }
 
 export function OverviewCards({ stats }: OverviewCardsProps) {
+   const t = useTranslations("StaffOverview");
+
    const cards = [
       {
-         title: "Total Revenue",
+         title: t("totalRevenueTitle"),
          value: `$${stats.totalRevenue.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
          })}`,
-         description: "Lifetime revenue from completed orders",
+         description: t("totalRevenueDesc"),
       },
       {
-         title: "Total Orders",
+         title: t("totalOrdersTitle"),
          value: stats.totalOrders.toLocaleString(),
-         description: "Total orders processed",
+         description: t("totalOrdersDesc"),
       },
       {
-         title: "Delivered Orders",
+         title: t("deliveredOrdersTitle"),
          value: stats.deliveredOrders.toLocaleString(),
-         description: "Successfully fulfilled orders",
+         description: t("deliveredOrdersDesc"),
       },
       {
-         title: "Failed Deliveries",
+         title: t("failedDeliveriesTitle"),
          value: stats.failedDeliveries.toLocaleString(),
-         description: "Deliveries marked as failed",
+         description: t("failedDeliveriesDesc"),
          alert: stats.failedDeliveries > 0,
       },
       {
-         title: "Low Stock Items",
+         title: t("lowStockTitle"),
          value: stats.lowStockCount.toLocaleString(),
-         description: "Variants with 5 or fewer items",
+         description: t("lowStockDesc"),
          alert: stats.lowStockCount > 0,
       },
       {
-         title: "Pending Returns",
+         title: t("pendingReturnsTitle"),
          value: stats.pendingReturnsCount.toLocaleString(),
-         description: "Return requests awaiting approval",
+         description: t("pendingReturnsDesc"),
          alert: stats.pendingReturnsCount > 0,
       },
    ];

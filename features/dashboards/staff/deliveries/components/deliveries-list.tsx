@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
    DeliveryStatus,
    updateDeliveryStatus,
@@ -53,6 +54,7 @@ export function DeliveriesList({
    currentUserId,
    onRefresh,
 }: DeliveriesListProps) {
+   const t = useTranslations("StaffDeliveries");
    const [isPending, startTransition] = useTransition();
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -76,7 +78,7 @@ export function DeliveriesList({
             setNoteInput("");
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to update delivery status.");
+            setErrorMsg(err.message || t("errors.updateStatus"));
          }
       });
    };
@@ -92,7 +94,7 @@ export function DeliveriesList({
          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {deliveries.length === 0 ? (
                <div className="col-span-full rounded-lg border bg-card p-8 text-center text-muted-foreground">
-                  No active delivery assignments found.
+                  {t("noDeliveries")}
                </div>
             ) : (
                deliveries.map((item) => {
@@ -108,7 +110,7 @@ export function DeliveriesList({
                         <div className="space-y-2">
                            <div className="flex items-center justify-between">
                               <span className="font-mono text-sm font-bold">
-                                 #{item.orders?.order_number || "ORDER"}
+                                 #{item.orders?.order_number || t("orderFallback")}
                               </span>
                               <span
                                  className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
@@ -127,25 +129,25 @@ export function DeliveriesList({
 
                            <div className="text-xs space-y-1 text-muted-foreground">
                               <div>
-                                 <strong className="text-foreground">Driver:</strong>{" "}
-                                 {item.driver?.full_name || item.driver?.email || "Unassigned"}
+                                 <strong className="text-foreground">{t("driverLabel")}</strong>{" "}
+                                 {item.driver?.full_name || item.driver?.email || t("unassigned")}
                               </div>
                               <div>
-                                 <strong className="text-foreground">Customer:</strong>{" "}
+                                 <strong className="text-foreground">{t("customerLabel")}</strong>{" "}
                                  {item.orders?.customer_name} ({item.orders?.customer_phone})
                               </div>
                               <div>
-                                 <strong className="text-foreground">Address:</strong>{" "}
+                                 <strong className="text-foreground">{t("addressLabel")}</strong>{" "}
                                  {item.orders?.shipping_address}
                               </div>
                               {item.failure_reason && (
                                  <div className="rounded bg-destructive/10 p-2 text-destructive text-[11px] font-medium">
-                                    Failure Reason: {item.failure_reason}
+                                    {t("failureReasonLabel")} {item.failure_reason}
                                  </div>
                               )}
                               {item.notes && (
                                  <div className="rounded bg-muted p-2 italic text-[11px]">
-                                    Notes: {item.notes}
+                                    {t("notesLabel")} {item.notes}
                                  </div>
                               )}
                            </div>
@@ -162,7 +164,7 @@ export function DeliveriesList({
                                        }
                                        className="rounded bg-blue-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-blue-700 disabled:opacity-50"
                                     >
-                                       Mark Picked Up
+                                       {t("markPickedUp")}
                                     </button>
                                  )}
 
@@ -174,7 +176,7 @@ export function DeliveriesList({
                                        }
                                        className="rounded bg-green-600 px-2.5 py-1 text-xs font-medium text-white hover:bg-green-700 disabled:opacity-50"
                                     >
-                                       Mark Delivered
+                                       {t("markDelivered")}
                                     </button>
                                  )}
 
@@ -187,7 +189,7 @@ export function DeliveriesList({
                                     }
                                     className="rounded bg-destructive px-2.5 py-1 text-xs font-medium text-destructive-foreground hover:bg-destructive/90 disabled:opacity-50"
                                  >
-                                    Mark Failed
+                                    {t("markFailed")}
                                  </button>
                               </div>
 
@@ -200,13 +202,13 @@ export function DeliveriesList({
                                        onChange={(e) =>
                                           setFailureReasonInput(e.target.value)
                                        }
-                                       placeholder="Reason (e.g. customer unavailable)..."
+                                       placeholder={t("failureReasonPlaceholder")}
                                        className="w-full rounded border bg-background p-2 text-xs outline-none"
                                     />
                                     <textarea
                                        value={noteInput}
                                        onChange={(e) => setNoteInput(e.target.value)}
-                                       placeholder="Additional notes (optional)..."
+                                       placeholder={t("notesPlaceholder")}
                                        className="w-full rounded border bg-background p-2 text-xs outline-none"
                                        rows={2}
                                     />
@@ -220,7 +222,7 @@ export function DeliveriesList({
                                        }
                                        className="w-full rounded bg-destructive py-1 text-xs font-medium text-destructive-foreground disabled:opacity-50"
                                     >
-                                       Confirm Delivery Failure
+                                       {t("confirmFailure")}
                                     </button>
                                  </div>
                               )}

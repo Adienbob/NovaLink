@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { addImagesSchema } from "../schema/product-schemas"; // Schemas provided exists
+import { useTranslations } from "next-intl";
+import { addImagesSchema } from "../schema/product-schemas";
 import { addImages } from "../actions/add-images";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
@@ -16,14 +17,15 @@ import { ImageFields } from "./images-fields";
 
 interface AddImagesFormProps {
   productId: string;
-  variantId?: string | null; // Passed from context
-  targetDisplayName: string; // "Product", or specific variant name/SKU
+  variantId?: string | null;
+  targetDisplayName: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
 export function AddImagesForm({ productId, variantId = null, targetDisplayName, open, onOpenChange }: AddImagesFormProps) {
   const router = useRouter();
+  const t = useTranslations("StaffAddImages");
   const [serverError, setServerError] = useState<string | null>(null);
 
   const methods = useForm({
@@ -53,7 +55,10 @@ export function AddImagesForm({ productId, variantId = null, targetDisplayName, 
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Add images to: <span className="text-primary">{targetDisplayName}</span></DialogTitle>
+          <DialogTitle>
+            {t("titlePrefix")}
+            <span className="text-primary">{targetDisplayName}</span>
+          </DialogTitle>
         </DialogHeader>
 
         <FormProvider {...methods}>
@@ -67,11 +72,11 @@ export function AddImagesForm({ productId, variantId = null, targetDisplayName, 
 
             <DialogFooter className="gap-2 sm:gap-0 pt-4 border-t">
               <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isSubmitting}>
-                Cancel
+                {t("cancel")}
               </Button>
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
-                Add Images
+                {t("submit")}
               </Button>
             </DialogFooter>
           </form>

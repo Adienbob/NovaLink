@@ -19,10 +19,9 @@ export async function StorefrontHomePage({ locale }: HomePageProps) {
    const categories = await getPublicCategories();
    const productsData = await getPublicProducts({limit: 10, locale});
 
-
    return (
       <div className="space-y-2 sm:pb-4 md:pb-6 lg:pb-8">
-         <StoreNavigation /> 
+         <StoreNavigation />
          <Hero />
          <BrandsGrid brands={brands} locale={locale} />
          <BuildNetworkSection products={productsData.data} locale={locale}  />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { createBrand, deleteBrand, type BrandPayload } from "../actions/brands-actions";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,7 @@ interface BrandsListProps {
 }
 
 export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
+  const t = useTranslations("StaffBrands");
   const [isPending, startTransition] = useTransition();
   const [name, setName] = useState("");
   const [logoUrl, setLogoUrl] = useState("");
@@ -43,14 +45,14 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
         setLogoUrl("");
         onRefresh();
       } catch (err: any) {
-        setErrorMsg(err.message || "Failed to create brand.");
+        setErrorMsg(err.message || t("errors.create"));
       }
     });
   };
 
   const handleDelete = (brandId: string) => {
     if (!canEdit) return;
-    if (!confirm("Are you sure you want to delete this brand?")) return;
+    if (!confirm(t("confirmDelete"))) return;
 
     setDeletingId(brandId);
     setErrorMsg(null);
@@ -60,7 +62,7 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
         await deleteBrand(brandId);
         onRefresh();
       } catch (err: any) {
-        setErrorMsg(err.message || "Failed to delete brand.");
+        setErrorMsg(err.message || t("errors.delete"));
       } finally {
         setDeletingId(null);
       }
@@ -73,7 +75,7 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
       {canEdit && (
         <div className="rounded-lg border border-border bg-surface p-5 shadow-sm h-fit space-y-4">
           <h2 className="text-lg font-bold tracking-tight text-foreground border-b border-border pb-3">
-            Add New Brand
+            {t("addBrandTitle")}
           </h2>
 
           {errorMsg && (
@@ -85,7 +87,7 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
           <form onSubmit={handleCreate} className="space-y-4">
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-foreground">
-                Brand Name <span className="text-destructive">*</span>
+                {t("brandNameLabel")} <span className="text-destructive">*</span>
               </label>
               <input
                 type="text"
@@ -93,20 +95,23 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                placeholder="e.g. Nike, Apple"
+                placeholder={t("brandNamePlaceholder")}
               />
             </div>
 
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-foreground">
-                Logo URL <span className="text-xs text-secondary font-normal">(Optional)</span>
+                {t("logoUrlLabel")}{" "}
+                <span className="text-xs text-secondary font-normal">
+                  ({t("optional")})
+                </span>
               </label>
               <input
                 type="url"
                 value={logoUrl}
                 onChange={(e) => setLogoUrl(e.target.value)}
                 className="w-full h-10 px-3 rounded-md border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                placeholder="https://example.com/logo.png"
+                placeholder={t("logoUrlPlaceholder")}
               />
             </div>
 
@@ -115,7 +120,7 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
               disabled={isPending || !name.trim()}
               className="w-full h-10 font-semibold text-sm mt-2"
             >
-              {isPending ? "Saving..." : "Create Brand"}
+              {isPending ? t("saving") : t("createBrand")}
             </Button>
           </form>
         </div>
@@ -128,10 +133,12 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
             <table className="w-full text-left text-sm">
               <thead className="border-b border-border bg-muted/50 text-xs font-semibold text-secondary">
                 <tr>
-                  <th className="px-4 py-3.5">Logo</th>
-                  <th className="px-4 py-3.5">Brand Name</th>
-                  <th className="px-4 py-3.5">Slug</th>
-                  <th className="px-4 py-3.5 text-right">Actions</th>
+                  <th className="px-4 py-3.5">{t("tableHeaderLogo")}</th>
+                  <th className="px-4 py-3.5">{t("tableHeaderName")}</th>
+                  <th className="px-4 py-3.5">{t("tableHeaderSlug")}</th>
+                  <th className="px-4 py-3.5 text-right">
+                    {t("tableHeaderActions")}
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -141,7 +148,7 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
                       colSpan={4}
                       className="px-4 py-12 text-center text-secondary text-sm"
                     >
-                      No brands found.
+                      {t("noBrands")}
                     </td>
                   </tr>
                 ) : (
@@ -180,11 +187,13 @@ export function BrandsList({ brands, userRole, onRefresh }: BrandsListProps) {
                             disabled={isPending && deletingId === brand.id}
                             className="h-8 text-xs font-medium text-destructive hover:text-destructive hover:bg-destructive/10"
                           >
-                            {deletingId === brand.id ? "Deleting..." : "Delete"}
+                            {deletingId === brand.id
+                              ? t("deleting")
+                              : t("delete")}
                           </Button>
                         ) : (
                           <span className="text-xs text-secondary italic">
-                            View only
+                            {t("viewOnly")}
                           </span>
                         )}
                       </td>

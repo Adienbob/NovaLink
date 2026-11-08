@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { ReturnStatus, updateReturnStatus } from "../actions/returns-actions";
 
 interface ReturnItem {
@@ -27,14 +28,16 @@ interface ReturnsTableProps {
    onRefresh: () => void;
 }
 
-const STATUS_ACTIONS: { label: string; value: ReturnStatus }[] = [
-   { label: "Pending", value: "pending" },
-   { label: "Approved", value: "approved" },
-   { label: "Rejected", value: "rejected" },
-   { label: "Refunded", value: "refunded" },
+const STATUS_ACTIONS: { value: ReturnStatus }[] = [
+   { value: "pending" },
+   { value: "approved" },
+   { value: "rejected" },
+   { value: "refunded" },
 ];
 
 export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps) {
+   const t = useTranslations("ReturnsTable");
+
    const [isPending, startTransition] = useTransition();
    const [updatingId, setUpdatingId] = useState<string | null>(null);
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -52,7 +55,7 @@ export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps
             await updateReturnStatus(returnId, newStatus);
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to update return status.");
+            setErrorMsg(err.message || t("updateError"));
          } finally {
             setUpdatingId(null);
          }
@@ -71,20 +74,21 @@ export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps
             <table className="w-full text-left text-sm">
                <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                   <tr>
-                     <th className="px-4 py-3">Return ID</th>
-                     <th className="px-4 py-3">Order ID</th>
-                     <th className="px-4 py-3">Customer</th>
-                     <th className="px-4 py-3">Reason</th>
-                     <th className="px-4 py-3">Refund Amount</th>
-                     <th className="px-4 py-3">Status</th>
-                     <th className="px-4 py-3 text-right">Actions</th>
+                     <th className="px-4 py-3">{t("returnId")}</th>
+                     <th className="px-4 py-3">{t("orderId")}</th>
+                     <th className="px-4 py-3">{t("customer")}</th>
+                     <th className="px-4 py-3">{t("reason")}</th>
+                     <th className="px-4 py-3">{t("refundAmount")}</th>
+                     <th className="px-4 py-3">{t("status")}</th>
+                     <th className="px-4 py-3 text-right">{t("actions")}</th>
                   </tr>
                </thead>
+
                <tbody className="divide-y">
                   {returns.length === 0 ? (
                      <tr>
                         <td colSpan={7} className="px-4 py-8 text-center text-muted-foreground">
-                           No return requests found.
+                           {t("noReturns")}
                         </td>
                      </tr>
                   ) : (
@@ -93,23 +97,28 @@ export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps
                            <td className="px-4 py-3 font-mono text-xs font-medium">
                               #{item.id.slice(0, 8)}
                            </td>
+
                            <td className="px-4 py-3 font-mono text-xs">
                               #{item.order_id.slice(0, 8)}
                            </td>
+
                            <td className="px-4 py-3">
                               <div className="font-medium">
-                                 {item.orders?.users?.full_name || "Guest Customer"}
+                                 {item.orders?.users?.full_name || t("guestCustomer")}
                               </div>
                               <div className="text-xs text-muted-foreground">
-                                 {item.orders?.users?.phone || item.orders?.users?.email || "N/A"}
+                                 {item.orders?.users?.phone || item.orders?.users?.email || t("notAvailable")}
                               </div>
                            </td>
+
                            <td className="px-4 py-3 max-w-xs truncate text-xs">
                               {item.reason}
                            </td>
+
                            <td className="px-4 py-3 font-semibold">
                               ${item.refund_amount ? Number(item.refund_amount).toFixed(2) : "0.00"}
                            </td>
+
                            <td className="px-4 py-3">
                               <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase ${
                                  item.status === "approved"
@@ -120,9 +129,10 @@ export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps
                                     ? "bg-red-100 text-red-800"
                                     : "bg-yellow-100 text-yellow-800"
                               }`}>
-                                 {item.status}
+                                 {t(item.status)}
                               </span>
                            </td>
+
                            <td className="px-4 py-3 text-right">
                               {canEdit ? (
                                  <select
@@ -138,13 +148,13 @@ export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps
                                  >
                                     {STATUS_ACTIONS.map((opt) => (
                                        <option key={opt.value} value={opt.value}>
-                                          {opt.label}
+                                          {t(opt.value)}
                                        </option>
                                     ))}
                                  </select>
                               ) : (
                                  <span className="text-xs text-muted-foreground italic">
-                                    View only
+                                    {t("viewOnly")}
                                  </span>
                               )}
                            </td>

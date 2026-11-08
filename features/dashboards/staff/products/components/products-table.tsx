@@ -3,7 +3,7 @@
 import { useState, useTransition } from "react";
 import { deleteProduct, createProduct, updateProduct } from "../actions/products-actions";
 import type { ProductFormValues } from "@/features/catalog/products/schema/product-schema";
-
+import { useTranslations } from "next-intl";
 export interface ProductItem {
   id: string;
   name: string;               
@@ -58,6 +58,7 @@ export function ProductsTable({
   const [isPending, startTransition] = useTransition();
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const t = useTranslations("StaffProductsTable");
 
   // null = list, "create" = create form, ProductItem = edit form
   const [mode, setMode] = useState<"list" | "create" | ProductItem>("list");
@@ -66,7 +67,7 @@ export function ProductsTable({
 
   const handleDelete = (productId: string) => {
     if (!canEdit) return;
-    if (!confirm("Are you sure? This will delete all variants and images.")) return;
+    if (!confirm(t("deleteConfirmation"))) return;
 
     setDeletingId(productId);
     setErrorMsg(null);
@@ -76,7 +77,7 @@ export function ProductsTable({
         await deleteProduct(productId);
         onRefresh();
       } catch (err: any) {
-        setErrorMsg(err.message || "Failed to delete product.");
+        setErrorMsg(err.message || t("deleteError"));
       } finally {
         setDeletingId(null);
       }
@@ -128,12 +129,13 @@ export function ProductsTable({
       <div className="mx-auto max-w-3xl">
         <div className="mb-8">
           <h2 className="text-xl font-bold">
-            {isEdit ? "Edit Product" : "Add New Product"}
+            {isEdit ? t("editProduct") : t("addNewProduct")}
           </h2>
+
           <p className="mt-1 text-sm text-muted-foreground">
             {isEdit
-              ? "Update the product details in both languages."
-              : "Create a new product with Arabic and English content."}
+              ? t("updateProductDescription")
+              : t("createProductDescription")}
           </p>
         </div>
       </div>
@@ -147,11 +149,14 @@ export function ProductsTable({
     <div className="space-y-4">
       {/* Header with Add button */}
       <div className="flex items-center justify-between">
-         <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Products Catalog</h1>
+          <h1 className="text-2xl font-bold tracking-tight">
+            {t("catalogTitle")}
+          </h1>
+
           <p className="text-sm text-muted-foreground">
-            Manage inventory, multi-variant pricing, stock levels, and media galleries.
+            {t("catalogDescription")}
           </p>
         </div>
       </div>
@@ -162,7 +167,7 @@ export function ProductsTable({
             onClick={() => setMode("create")}
             className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
           >
-            + Add Product
+            + {t("addProduct")}
           </button>
         )}
       </div>
@@ -177,21 +182,21 @@ export function ProductsTable({
         <table className="w-full text-left text-sm">
           <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
             <tr>
-              <th className="px-4 py-3">Image</th>
-              <th className="px-4 py-3">Product Name</th>
-              <th className="px-4 py-3">Category</th>
-              <th className="px-4 py-3">Brand</th>
-              <th className="px-4 py-3">Base Price</th>
-              <th className="px-4 py-3">Variants</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3 text-right">Actions</th>
+              <th className="px-4 py-3">{t("image")}</th>
+              <th className="px-4 py-3">{t("productName")}</th>
+              <th className="px-4 py-3">{t("category")}</th>
+              <th className="px-4 py-3">{t("brand")}</th>
+              <th className="px-4 py-3">{t("basePrice")}</th>
+              <th className="px-4 py-3">{t("variants")}</th>
+              <th className="px-4 py-3">{t("status")}</th>
+              <th className="px-4 py-3 text-right">{t("actions")}</th>
             </tr>
           </thead>
           <tbody className="divide-y">
             {products.length === 0 ? (
               <tr>
                 <td colSpan={8} className="px-4 py-8 text-center text-muted-foreground">
-                  No products found.
+                  {t("noProducts")}
                 </td>
               </tr>
             ) : (
@@ -213,7 +218,7 @@ export function ProductsTable({
                         />
                       ) : (
                         <div className="h-10 w-10 rounded border bg-muted flex items-center justify-center text-[10px] font-bold text-muted-foreground">
-                          NO IMG
+                          {t("noImage")}
                         </div>
                       )}
                     </td>
@@ -233,9 +238,12 @@ export function ProductsTable({
                       ${Number(p.base_price).toFixed(2)}
                     </td>
                     <td className="px-4 py-3 text-xs">
-                      <div>{p.product_variants?.length || 0} variant(s)</div>
+                      <div>
+                        {t("variants", { count: p.product_variants?.length || 0 })}
+                      </div>
+
                       <div className="text-muted-foreground">
-                        Stock: {totalStock ?? 0}
+                        {t("stock")}: {totalStock ?? 0}
                       </div>
                     </td>
                     <td className="px-4 py-3">
@@ -246,7 +254,7 @@ export function ProductsTable({
                             : "bg-gray-100 text-gray-800"
                         }`}
                       >
-                        {p.is_active ? "Active" : "Draft"}
+                        {p.is_active ? t("active") : t("draft")}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-right">
@@ -256,19 +264,19 @@ export function ProductsTable({
                             onClick={() => setMode(p)}
                             className="text-xs font-medium text-primary hover:underline"
                           >
-                            Edit
+                            {t("edit")}
                           </button>
                           <button
                             onClick={() => handleDelete(p.id)}
                             disabled={isPending && deletingId === p.id}
                             className="text-xs font-medium text-destructive hover:underline disabled:opacity-50"
                           >
-                            {deletingId === p.id ? "Deleting..." : "Delete"}
+                            {deletingId === p.id ? t("deleting") : t("delete")}
                           </button>
                         </div>
                       ) : (
                         <span className="text-xs text-muted-foreground italic">
-                          View only
+                          {t("viewOnly")}
                         </span>
                       )}
                     </td>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { StockAdjustmentDialog } from "./stock-adjustment-dialog";
 
 export interface InventoryVariantItem {
@@ -42,6 +43,8 @@ export function InventoryTable({
    currentUserRole,
    onRefresh,
 }: InventoryTableProps) {
+   const t = useTranslations("StaffInventoryTable");
+
    const [activeTab, setActiveTab] = useState<"inventory" | "logs">("inventory");
    const [selectedVariant, setSelectedVariant] = useState<InventoryVariantItem | null>(null);
 
@@ -58,8 +61,9 @@ export function InventoryTable({
                      : "border-transparent text-muted-foreground hover:text-foreground"
                }`}
             >
-               Stock Levels ({variants.length})
+               {t("stockLevels")} ({variants.length})
             </button>
+
             <button
                onClick={() => setActiveTab("logs")}
                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
@@ -68,7 +72,7 @@ export function InventoryTable({
                      : "border-transparent text-muted-foreground hover:text-foreground"
                }`}
             >
-               Audit Logs ({logs.length})
+               {t("auditLogs")} ({logs.length})
             </button>
          </div>
 
@@ -77,18 +81,19 @@ export function InventoryTable({
                <table className="w-full text-left text-sm">
                   <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                      <tr>
-                        <th className="px-4 py-3">Product / Variant</th>
-                        <th className="px-4 py-3">SKU</th>
-                        <th className="px-4 py-3">Price</th>
-                        <th className="px-4 py-3">Stock Level</th>
-                        <th className="px-4 py-3 text-right">Actions</th>
+                        <th className="px-4 py-3">{t("productVariant")}</th>
+                        <th className="px-4 py-3">{t("sku")}</th>
+                        <th className="px-4 py-3">{t("price")}</th>
+                        <th className="px-4 py-3">{t("stockLevel")}</th>
+                        <th className="px-4 py-3 text-right">{t("actions")}</th>
                      </tr>
                   </thead>
+
                   <tbody className="divide-y">
                      {variants.length === 0 ? (
                         <tr>
                            <td colSpan={5} className="px-4 py-8 text-center text-muted-foreground">
-                              No inventory items found.
+                              {t("noInventory")}
                            </td>
                         </tr>
                      ) : (
@@ -100,7 +105,7 @@ export function InventoryTable({
                               <tr key={item.id} className="hover:bg-muted/30">
                                  <td className="px-4 py-3">
                                     <div className="font-medium">
-                                       {item.products?.name || "Product"}
+                                       {item.products?.name || t("product")}
                                     </div>
                                     <div className="text-xs text-muted-foreground">
                                        {item.variant_name}
@@ -125,7 +130,7 @@ export function InventoryTable({
                                              : "bg-green-100 text-green-800"
                                        }`}
                                     >
-                                       {item.stock_quantity} units
+                                       {item.stock_quantity} {t("units")}
                                     </span>
                                  </td>
 
@@ -135,11 +140,11 @@ export function InventoryTable({
                                           onClick={() => setSelectedVariant(item)}
                                           className="text-xs font-medium text-primary hover:underline"
                                        >
-                                          Adjust Stock
+                                          {t("adjustStock")}
                                        </button>
                                     ) : (
                                        <span className="text-xs text-muted-foreground italic">
-                                          Read-only
+                                          {t("readOnly")}
                                        </span>
                                     )}
                                  </td>
@@ -155,19 +160,20 @@ export function InventoryTable({
                <table className="w-full text-left text-sm">
                   <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                      <tr>
-                        <th className="px-4 py-3">SKU</th>
-                        <th className="px-4 py-3">Change</th>
-                        <th className="px-4 py-3">Previous $\rightarrow$ New</th>
-                        <th className="px-4 py-3">Reason</th>
-                        <th className="px-4 py-3">Adjusted By</th>
-                        <th className="px-4 py-3">Date</th>
+                        <th className="px-4 py-3">{t("sku")}</th>
+                        <th className="px-4 py-3">{t("change")}</th>
+                        <th className="px-4 py-3">{t("previousToNew")}</th>
+                        <th className="px-4 py-3">{t("reason")}</th>
+                        <th className="px-4 py-3">{t("adjustedBy")}</th>
+                        <th className="px-4 py-3">{t("date")}</th>
                      </tr>
                   </thead>
+
                   <tbody className="divide-y">
                      {logs.length === 0 ? (
                         <tr>
                            <td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">
-                              No stock adjustment logs recorded.
+                              {t("noLogs")}
                            </td>
                         </tr>
                      ) : (
@@ -192,13 +198,14 @@ export function InventoryTable({
                               </td>
 
                               <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
-                                 {log.previous_stock} $\rightarrow$ {log.new_stock}
+                                 {log.previous_stock} → {log.new_stock}
                               </td>
 
                               <td className="px-4 py-3">
                                  <span className="rounded bg-muted px-2 py-0.5 text-[11px] font-semibold">
                                     {log.reason}
                                  </span>
+
                                  {log.notes && (
                                     <div className="text-[10px] text-muted-foreground italic mt-0.5">
                                        {log.notes}
@@ -207,7 +214,7 @@ export function InventoryTable({
                               </td>
 
                               <td className="px-4 py-3 text-xs">
-                                 {log.user?.full_name || log.user?.email || "System"}
+                                 {log.user?.full_name || log.user?.email || t("system")}
                               </td>
 
                               <td className="px-4 py-3 text-xs text-muted-foreground">

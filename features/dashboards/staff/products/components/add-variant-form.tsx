@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { z } from "zod";
 import { variantSchema } from "../schema/variant-schema";
 import { addVariant } from "../actions/add-variant";
@@ -30,6 +31,7 @@ interface AddVariantFormProps {
 
 export function AddVariantForm({ productId, open, onOpenChange }: AddVariantFormProps) {
   const router = useRouter();
+  const t = useTranslations("StaffAddVariant");
   const [serverError, setServerError] = useState<string | null>(null);
 
   const methods = useForm({
@@ -58,7 +60,7 @@ export function AddVariantForm({ productId, open, onOpenChange }: AddVariantForm
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Add New Variant</DialogTitle>
+          <DialogTitle>{t("title")}</DialogTitle>
         </DialogHeader>
 
         <FormProvider {...methods}>
@@ -71,18 +73,18 @@ export function AddVariantForm({ productId, open, onOpenChange }: AddVariantForm
             <VariantFields name="variant" multiple={false} />
 
             <div className="pt-4 border-t">
-              <h4 className="text-sm font-semibold mb-3">Variant Specific Images (Optional)</h4>
+              <h4 className="text-sm font-semibold mb-3">{t("optionalImages")}</h4>
               {/* Optional here, minItems is 0 */}
               <ImageFields name="images" minItems={0} />
             </div>
 
             <DialogFooter className="gap-2 sm:gap-0 pt-4 border-t">
               <Button type="button" variant="outline" onClick={() => onOpenChange(false)} disabled={isSubmitting}>
-                Cancel
+                {t("cancel")}
               </Button>
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
-                Add Variant
+                {t("submit")}
               </Button>
             </DialogFooter>
           </form>

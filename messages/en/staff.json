@@ -1,1 +1,448 @@
-{}
+{
+   "StaffNavigation": {
+      "sidebarAriaLabel": "Staff navigation",
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "returns": "Returns",
+      "deliveries": "Deliveries",
+      "categories": "Categories",
+      "brands": "Brands",
+      "brandName": "Zain IT",
+      "brandSubtitle": "Store Management",
+      "mainMenu": "MAIN MENU",
+      "storeName": "Zain Store",
+      "adminPanel": "Admin Panel · v2.4",
+      "systemOperational": "System operational"
+   },
+   "StaffOverview": {
+      "title": "System Overview",
+      "description": "Real-time operational metrics across orders, inventory, and field operations.",
+      "totalRevenueTitle": "Total Revenue",
+      "totalRevenueDesc": "Lifetime revenue from completed orders",
+      "totalOrdersTitle": "Total Orders",
+      "totalOrdersDesc": "Total orders processed",
+      "deliveredOrdersTitle": "Delivered Orders",
+      "deliveredOrdersDesc": "Successfully fulfilled orders",
+      "failedDeliveriesTitle": "Failed Deliveries",
+      "failedDeliveriesDesc": "Deliveries marked as failed",
+      "lowStockTitle": "Low Stock Items",
+      "lowStockDesc": "Variants with 5 or fewer items",
+      "pendingReturnsTitle": "Pending Returns",
+      "pendingReturnsDesc": "Return requests awaiting approval"
+   },
+   "StaffOrders": {
+      "tableHeaderOrderNumber": "Order Number",
+      "tableHeaderCustomer": "Customer",
+      "tableHeaderShippingAddress": "Shipping Address",
+      "tableHeaderTotalAmount": "Total Amount",
+      "tableHeaderStatus": "Status",
+      "tableHeaderActions": "Actions",
+      "noActiveOrders": "No active orders found.",
+      "assignDriver": "Assign Driver",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "readOnly": "Read-only",
+      "noDriversAvailable": "No drivers available",
+      "selectDriver": "Select Driver",
+      "statuses": {
+         "pendingConfirmation": "Pending Confirmation",
+         "confirmed": "Confirmed",
+         "readyForPickup": "Ready for Pickup",
+         "shipped": "Shipped",
+         "delivered": "Delivered",
+         "returned": "Returned",
+         "cancelled": "Cancelled"
+      },
+      "errors": {
+         "assignDriver": "Failed to assign driver to order.",
+         "updateStatus": "Failed to update order status."
+      }
+   },
+   "StaffCategories": {
+      "addCategoryTitle": "Add Category",
+      "categoryNameLabel": "Category Name",
+      "categoryNamePlaceholder": "e.g. Laptops",
+      "parentCategoryLabel": "Parent Category",
+      "optional": "Optional",
+      "noneTopLevel": "None (Top-Level Category)",
+      "saving": "Saving...",
+      "createCategory": "Create Category",
+      "tableHeaderName": "Category Name",
+      "tableHeaderSlug": "Slug",
+      "tableHeaderParent": "Parent Category",
+      "tableHeaderActions": "Actions",
+      "noCategories": "No categories found.",
+      "topLevel": "Top-Level",
+      "deleting": "Deleting...",
+      "delete": "Delete",
+      "viewOnly": "View only",
+      "confirmDelete": "Are you sure you want to delete this category?",
+      "errors": {
+         "create": "Failed to create category.",
+         "delete": "Failed to delete category."
+      }
+   },
+   "StaffBrands": {
+      "addBrandTitle": "Add New Brand",
+      "brandNameLabel": "Brand Name",
+      "brandNamePlaceholder": "e.g. Nike, Apple",
+      "logoUrlLabel": "Logo URL",
+      "optional": "Optional",
+      "logoUrlPlaceholder": "https://example.com/logo.png",
+      "saving": "Saving...",
+      "createBrand": "Create Brand",
+      "tableHeaderLogo": "Logo",
+      "tableHeaderName": "Brand Name",
+      "tableHeaderSlug": "Slug",
+      "tableHeaderActions": "Actions",
+      "noBrands": "No brands found.",
+      "deleting": "Deleting...",
+      "delete": "Delete",
+      "viewOnly": "View only",
+      "confirmDelete": "Are you sure you want to delete this brand?",
+      "errors": {
+         "create": "Failed to create brand.",
+         "delete": "Failed to delete brand."
+      }
+   },
+   "StaffActivityLogs": {
+      "entityTypes": {
+         "all": "All Entity Types",
+         "user": "Users",
+         "product": "Products",
+         "productVariant": "Product Variants",
+         "category": "Categories",
+         "brand": "Brands",
+         "order": "Orders",
+         "delivery": "Deliveries"
+      },
+      "searchPlaceholder": "Search action (e.g. UPDATE_USER)...",
+      "searchButton": "Search",
+      "totalEvents": "Total Events",
+      "tableHeaderUser": "User / Staff",
+      "tableHeaderAction": "Action",
+      "tableHeaderEntity": "Entity",
+      "tableHeaderEntityId": "Entity ID",
+      "tableHeaderTimestamp": "Timestamp",
+      "tableHeaderMetadata": "Metadata",
+      "noLogs": "No activity logs found.",
+      "system": "System",
+      "hideJson": "Hide JSON",
+      "viewJson": "View JSON",
+      "none": "None"
+   },
+   "StaffUsers": {
+      "addStaffTitle": "Add Staff Member",
+      "clerkIdLabel": "Clerk User ID *",
+      "clerkIdPlaceholder": "user_2x...",
+      "fullNameLabel": "Full Name *",
+      "fullNamePlaceholder": "John Doe",
+      "emailLabel": "Email Address *",
+      "emailPlaceholder": "staff@company.com",
+      "phoneLabel": "Phone (Optional)",
+      "phonePlaceholder": "+123456789",
+      "roleLabel": "Role",
+      "roles": {
+         "viewer": "Viewer (Read-only)",
+         "delivery": "Delivery Staff",
+         "admin": "Admin",
+         "owner": "Owner"
+      },
+      "saving": "Saving...",
+      "addStaffButton": "Add Staff Member",
+      "tableHeaderMember": "Staff Member",
+      "tableHeaderPhone": "Phone",
+      "tableHeaderRole": "Role",
+      "tableHeaderActions": "Actions",
+      "noStaff": "No active staff members found.",
+      "youBadge": "You",
+      "protected": "Protected",
+      "remove": "Remove",
+      "confirmRemove": "Are you sure you want to remove this staff user?",
+      "errors": {
+         "updateRole": "Failed to update role.",
+         "remove": "Failed to remove staff user.",
+         "create": "Failed to create staff user."
+      }
+   },
+   "StaffDeliveries": {
+      "noDeliveries": "No active delivery assignments found.",
+      "orderFallback": "ORDER",
+      "driverLabel": "Driver:",
+      "unassigned": "Unassigned",
+      "customerLabel": "Customer:",
+      "addressLabel": "Address:",
+      "failureReasonLabel": "Failure Reason:",
+      "notesLabel": "Notes:",
+      "markPickedUp": "Mark Picked Up",
+      "markDelivered": "Mark Delivered",
+      "markFailed": "Mark Failed",
+      "failureReasonPlaceholder": "Reason (e.g. customer unavailable)...",
+      "notesPlaceholder": "Additional notes (optional)...",
+      "confirmFailure": "Confirm Delivery Failure",
+      "errors": {
+         "updateStatus": "Failed to update delivery status."
+      }
+   },
+   "StaffCreateProduct": {
+      "title": "Create Product",
+      "subtitle": "Add a new product with variants and images.",
+      "cancel": "Cancel",
+      "save": "Save Product",
+      "saving": "Saving...",
+      "validationError": "Please fix the highlighted fields.",
+      "basicInfo": {
+         "title": "Basic Information",
+         "nameEn": "English Name *",
+         "nameAr": "Arabic Name *",
+         "slug": "Slug (URL) *",
+         "basePrice": "Base Price *",
+         "brandId": "Brand ID (UUID)",
+         "brandPlaceholder": "Optional",
+         "categoryId": "Category ID (UUID)",
+         "categoryPlaceholder": "Optional",
+         "isActive": "Product Active (visible in store)"
+      },
+      "description": {
+         "title": "Description",
+         "descEn": "English Description *",
+         "descAr": "Arabic Description *"
+      },
+      "seoDesc": {
+         "title": "SEO Description",
+         "descEn": "English Description *",
+         "descAr": "Arabic Description *"
+      },
+      "seoTitle": {
+         "title": "SEO Title",
+         "titleEn": "English Title *",
+         "titleAr": "Arabic Title *"
+      },
+      "specs": {
+         "title": "Specifications",
+         "english": "English",
+         "arabic": "Arabic"
+      },
+      "keyFeatures": {
+         "title": "Key Features",
+         "english": "English",
+         "arabic": "Arabic",
+         "placeholderEn": "e.g. Waterproof",
+         "placeholderAr": "مثال: مقاوم للماء"
+      },
+      "variants": {
+         "title": "Variants"
+      },
+      "images": {
+         "title": "Product Images"
+      }
+   },
+   "StaffAddVariant": {
+      "title": "Add New Variant",
+      "optionalImages": "Variant Specific Images (Optional)",
+      "cancel": "Cancel",
+      "submit": "Add Variant",
+      "submitting": "Adding..."
+   },
+   "StaffAddImages": {
+      "titlePrefix": "Add images to: ",
+      "cancel": "Cancel",
+      "submit": "Add Images",
+      "submitting": "Adding..."
+   },
+   "StaffImageFields": {
+      "url": "URL",
+      "altText": "Alt Text",
+      "mainImage": "Main Image",
+      "imageDescription": "Image description",
+      "preview": "Preview",
+      "addImage": "Add Image"
+   },
+   "StaffProductDetails": {
+      "backToProducts": "Back to Products",
+      "active": "Active",
+      "inactive": "Inactive",
+      "editProduct": "Edit Product",
+      "warnings": {
+         "title": "Hidden from Store Catalog",
+         "reasonIntro": "This product is currently hidden catalog because:",
+         "inactive": "It is set to Inactive.",
+         "zeroVariants": "It has 0 active variants.",
+         "zeroImages": "It has 0 product images.",
+         "zeroStock": "Total stock quantity is 0 across all variants."
+      },
+      "cardPriceInfo": {
+         "title": "Price & Base Info",
+         "basePrice": "Base Price",
+         "activeVariants": "Active Variants",
+         "brandId": "Brand ID",
+         "categoryId": "Category ID"
+      },
+      "cardDescription": {
+         "title": "Description"
+      },
+      "variants": {
+         "titlePrefix": "Variants (",
+         "titleSuffix": ")",
+         "addVariant": "Add Variant",
+         "tableStatus": "Status",
+         "tableVariantNameSku": "Variant Name / SKU",
+         "tablePrice": "Price",
+         "tableUsd": "USD",
+         "tableStock": "Stock",
+         "tableAttributes": "Attributes",
+         "tableActions": "Actions",
+         "noVariants": "No variants added.",
+         "statusActive": "Active",
+         "statusHidden": "Hidden",
+         "addImages": "Add Images"
+      },
+      "images": {
+         "titlePrefix": "Main Product Images (",
+         "titleSuffix": ")",
+         "addImages": "Add Images",
+         "noImages": "No product images uploaded.",
+         "mainBadge": "Main"
+      }
+   },
+   "StaffProductsTable": {
+      "editProduct": "Edit Product",
+      "addNewProduct": "Add New Product",
+      "updateProductDescription": "Update the product details in both languages.",
+      "createProductDescription": "Create a new product with Arabic and English content.",
+      "catalogTitle": "Products Catalog",
+      "catalogDescription": "Manage inventory, multi-variant pricing, stock levels, and media galleries.",
+      "addProduct": "Add Product",
+      "deleteConfirmation": "Are you sure? This will delete all variants and images.",
+      "deleteError": "Failed to delete product.",
+      "image": "Image",
+      "productName": "Product Name",
+      "category": "Category",
+      "brand": "Brand",
+      "basePrice": "Base Price",
+      "variants": "{count, plural, =0 {No variants} one {# variant} other {# variants}}",
+      "status": "Status",
+      "actions": "Actions",
+      "noProducts": "No products found.",
+      "noImage": "NO IMG",
+      "stock": "Stock",
+      "active": "Active",
+      "draft": "Draft",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleting": "Deleting...",
+      "viewOnly": "View only"
+   },
+   "StaffSpecsFields": {
+      "key": "Key",
+      "value": "Value",
+      "keyPlaceholder": "e.g. Material",
+      "valuePlaceholder": "e.g. Cotton",
+      "addSpecification": "Add Specification"
+   },
+   "StaffVariantFields": {
+      "attributesTitle": "Attributes (e.g., Color, Size)",
+      "addAttribute": "Add",
+      "noAttributes": "No attributes added.",
+      "keyPlaceholder": "Key (e.g. Size)",
+      "valuePlaceholder": "Value (e.g. Large)",
+      "variantNameLabel": "Variant Name *",
+      "variantNamePlaceholder": "e.g. Red / XL",
+      "skuLabel": "SKU *",
+      "skuPlaceholder": "Unique SKU",
+      "priceLabel": "Price *",
+      "basePriceUsdLabel": "Base Price (USD)",
+      "basePriceUsdPlaceholder": "Optional",
+      "stockQuantityLabel": "Stock Quantity *",
+      "variantTitlePrefix": "Variant #",
+      "removeVariant": "Remove",
+      "addVariant": "Add Variant"
+   },
+   "StaffKeyFeaturesFields": {
+      "feature": "Feature {number}",
+      "defaultPlaceholder": "Enter a feature",
+      "addFeature": "Add Feature"
+   },
+   "StaffReturnsTable": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "refunded": "Refunded",
+      "returnId": "Return ID",
+      "orderId": "Order ID",
+      "customer": "Customer",
+      "reason": "Reason",
+      "refundAmount": "Refund Amount",
+      "status": "Status",
+      "actions": "Actions",
+      "noReturns": "No return requests found.",
+      "guestCustomer": "Guest Customer",
+      "notAvailable": "N/A",
+      "viewOnly": "View only",
+      "updateError": "Failed to update return status."
+   },
+   "StaffInventoryTable": {
+      "stockLevels": "Stock Levels",
+      "auditLogs": "Audit Logs",
+      "productVariant": "Product / Variant",
+      "sku": "SKU",
+      "price": "Price",
+      "stockLevel": "Stock Level",
+      "actions": "Actions",
+      "noInventory": "No inventory items found.",
+      "product": "Product",
+      "units": "units",
+      "adjustStock": "Adjust Stock",
+      "readOnly": "Read-only",
+      "change": "Change",
+      "previousToNew": "Previous → New",
+      "reason": "Reason",
+      "adjustedBy": "Adjusted By",
+      "date": "Date",
+      "noLogs": "No stock adjustment logs recorded.",
+      "system": "System"
+   },
+   "StaffStockAdjustmentDialog": {
+      "title": "Adjust Stock",
+      "currentStock": "Current Stock",
+      "addStock": "Add Stock",
+      "reduceStock": "Reduce Stock",
+      "quantity": "Quantity",
+      "reason": "Reason",
+      "notes": "Notes (Optional)",
+      "notesPlaceholder": "e.g. Received shipment PO-9982...",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "confirmAdjustment": "Confirm Adjustment",
+      "invalidQuantity": "Please enter a valid positive number.",
+      "adjustmentFailed": "Failed to adjust stock.",
+      "reasons": {
+         "RESTOCK": "Restock / Inbound Shipment",
+         "DAMAGE": "Damaged Stock",
+         "SHRINKAGE": "Shrinkage / Missing",
+         "AUDIT_CORRECTION": "Audit Correction",
+         "RETURN": "Customer Return"
+      }
+   },
+   "DeliveryCard": {
+      "order": "Order",
+      "notAvailable": "N/A",
+      "customer": "Customer",
+      "unnamedCustomer": "Unnamed Customer",
+      "contactPhone": "Contact Phone",
+      "deliveryAddress": "Delivery Address",
+      "totalAmount": "Total Amount",
+      "sar": "SAR",
+      "markAsPickedUp": "Mark as Picked Up",
+      "completeDelivery": "Complete Delivery",
+      "confirmPickup": "Confirm Shipment Pickup",
+      "confirmDelivery": "Confirm Delivery to Customer",
+      "status": {
+         "assigned": "Assigned",
+         "picked_up": "Picked Up",
+         "delivered": "Delivered",
+         "failed": "Failed"
+      }
+   }
+}

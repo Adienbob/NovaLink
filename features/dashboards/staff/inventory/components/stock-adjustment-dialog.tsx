@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { AdjustmentReason, adjustStock } from "../actions/inventory-actions";
 
 interface StockAdjustmentDialogProps {
@@ -15,12 +16,12 @@ interface StockAdjustmentDialogProps {
    onSuccess: () => void;
 }
 
-const REASONS: { value: AdjustmentReason; label: string }[] = [
-   { value: "RESTOCK", label: "Restock / Inbound Shipment" },
-   { value: "DAMAGE", label: "Damaged Stock" },
-   { value: "SHRINKAGE", label: "Shrinkage / Missing" },
-   { value: "AUDIT_CORRECTION", label: "Audit Correction" },
-   { value: "RETURN", label: "Customer Return" },
+const REASONS: AdjustmentReason[] = [
+   "RESTOCK",
+   "DAMAGE",
+   "SHRINKAGE",
+   "AUDIT_CORRECTION",
+   "RETURN",
 ];
 
 export function StockAdjustmentDialog({
@@ -29,6 +30,8 @@ export function StockAdjustmentDialog({
    onClose,
    onSuccess,
 }: StockAdjustmentDialogProps) {
+   const t = useTranslations("StockAdjustmentDialog");
+
    const [isPending, startTransition] = useTransition();
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -41,15 +44,18 @@ export function StockAdjustmentDialog({
 
    const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
+
       const qty = parseInt(quantityInput, 10);
+
       if (isNaN(qty) || qty <= 0) {
-         setErrorMsg("Please enter a valid positive number.");
+         setErrorMsg(t("invalidQuantity"));
          return;
       }
 
       const changeQuantity = adjustmentType === "add" ? qty : -qty;
 
       setErrorMsg(null);
+
       startTransition(async () => {
          try {
             await adjustStock({
@@ -58,10 +64,11 @@ export function StockAdjustmentDialog({
                reason,
                notes,
             });
+
             onSuccess();
             onClose();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to adjust stock.");
+            setErrorMsg(err.message || t("adjustmentFailed"));
          }
       });
    };
@@ -71,11 +78,15 @@ export function StockAdjustmentDialog({
          <div className="w-full max-w-md rounded-lg border bg-card p-6 shadow-lg space-y-4">
             <div className="flex items-center justify-between border-b pb-3">
                <div>
-                  <h3 className="text-lg font-semibold tracking-tight">Adjust Stock</h3>
+                  <h3 className="text-lg font-semibold tracking-tight">
+                     {t("title")}
+                  </h3>
+
                   <p className="text-xs text-muted-foreground font-mono">
                      {variant.sku} — {variant.variant_name}
                   </p>
                </div>
+
                <button
                   onClick={onClose}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground"
@@ -93,8 +104,9 @@ export function StockAdjustmentDialog({
             <form onSubmit={handleSubmit} className="space-y-4">
                <div>
                   <label className="text-xs font-medium text-foreground block mb-1">
-                     Current Stock
+                     {t("currentStock")}
                   </label>
+
                   <div className="text-2xl font-bold font-mono">
                      {variant.stock_quantity}
                   </div>
@@ -110,8 +122,9 @@ export function StockAdjustmentDialog({
                            : "bg-background text-foreground"
                      }`}
                   >
-                     + Add Stock
+                     + {t("addStock")}
                   </button>
+
                   <button
                      type="button"
                      onClick={() => setAdjustmentType("subtract")}
@@ -121,12 +134,15 @@ export function StockAdjustmentDialog({
                            : "bg-background text-foreground"
                      }`}
                   >
-                     - Reduce Stock
+                     - {t("reduceStock")}
                   </button>
                </div>
 
                <div>
-                  <label className="text-xs font-medium text-foreground">Quantity *</label>
+                  <label className="text-xs font-medium text-foreground">
+                     {t("quantity")} *
+                  </label>
+
                   <input
                      type="number"
                      min="1"
@@ -138,26 +154,32 @@ export function StockAdjustmentDialog({
                </div>
 
                <div>
-                  <label className="text-xs font-medium text-foreground">Reason *</label>
+                  <label className="text-xs font-medium text-foreground">
+                     {t("reason")} *
+                  </label>
+
                   <select
                      value={reason}
                      onChange={(e) => setReason(e.target.value as AdjustmentReason)}
                      className="mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
                   >
-                     {REASONS.map((r) => (
-                        <option key={r.value} value={r.value}>
-                           {r.label}
+                     {REASONS.map((value) => (
+                        <option key={value} value={value}>
+                           {t(`reasons.${value}`)}
                         </option>
                      ))}
                   </select>
                </div>
 
                <div>
-                  <label className="text-xs font-medium text-foreground">Notes (Optional)</label>
+                  <label className="text-xs font-medium text-foreground">
+                     {t("notes")}
+                  </label>
+
                   <textarea
                      value={notes}
                      onChange={(e) => setNotes(e.target.value)}
-                     placeholder="e.g. Received shipment PO-9982..."
+                     placeholder={t("notesPlaceholder")}
                      className="mt-1 w-full rounded-md border bg-background p-2 text-xs outline-none focus:ring-2 focus:ring-ring"
                      rows={2}
                   />
@@ -169,14 +191,15 @@ export function StockAdjustmentDialog({
                      onClick={onClose}
                      className="rounded-md border px-4 py-2 text-xs font-medium hover:bg-muted"
                   >
-                     Cancel
+                     {t("cancel")}
                   </button>
+
                   <button
                      type="submit"
                      disabled={isPending}
                      className="rounded-md bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow hover:bg-primary/90 disabled:opacity-50"
                   >
-                     {isPending ? "Saving..." : "Confirm Adjustment"}
+                     {isPending ? t("saving") : t("confirmAdjustment")}
                   </button>
                </div>
             </form>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { assignOrder, updateOrderStatus } from "../actions/orders-actions";
 
 export type OrderStatus =
@@ -31,20 +32,10 @@ export interface OrderItem {
 
 interface OrdersTableProps {
    orders: OrderItem[];
-   drivers: DriverOption[];
+   drivers?: DriverOption[];
    currentUserRole: "admin" | "owner" | "viewer";
    onRefresh: () => void;
 }
-
-const ORDER_STATUS_OPTIONS: { value: OrderStatus; label: string }[] = [
-   { value: "pending_confirmation", label: "Pending Confirmation" },
-   { value: "confirmed", label: "Confirmed" },
-   { value: "ready_for_pickup", label: "Ready for Pickup" },
-   { value: "shipped", label: "Shipped" },
-   { value: "delivered", label: "Delivered" },
-   { value: "returned", label: "Returned" },
-   { value: "cancelled", label: "Cancelled" },
-];
 
 export function OrdersTable({
    orders,
@@ -52,12 +43,23 @@ export function OrdersTable({
    currentUserRole,
    onRefresh,
 }: OrdersTableProps) {
+   const t = useTranslations("StaffOrders");
    const [isPending, startTransition] = useTransition();
    const [errorMsg, setErrorMsg] = useState<string | null>(null);
    const [assigningOrderId, setAssigningOrderId] = useState<string | null>(null);
    const [selectedDriverId, setSelectedDriverId] = useState<string>("");
 
    const canManage = currentUserRole === "admin" || currentUserRole === "owner";
+
+   const ORDER_STATUS_OPTIONS: { value: OrderStatus; label: string }[] = [
+      { value: "pending_confirmation", label: t("statuses.pendingConfirmation") },
+      { value: "confirmed", label: t("statuses.confirmed") },
+      { value: "ready_for_pickup", label: t("statuses.readyForPickup") },
+      { value: "shipped", label: t("statuses.shipped") },
+      { value: "delivered", label: t("statuses.delivered") },
+      { value: "returned", label: t("statuses.returned") },
+      { value: "cancelled", label: t("statuses.cancelled") },
+   ];
 
    const handleAssignDriver = (orderId: string) => {
       if (!selectedDriverId) return;
@@ -73,7 +75,7 @@ export function OrdersTable({
             setSelectedDriverId("");
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to assign driver to order.");
+            setErrorMsg(err.message || t("errors.assignDriver"));
          }
       });
    };
@@ -85,7 +87,7 @@ export function OrdersTable({
             await updateOrderStatus(orderId, newStatus);
             onRefresh();
          } catch (err: any) {
-            setErrorMsg(err.message || "Failed to update order status.");
+            setErrorMsg(err.message || t("errors.updateStatus"));
          }
       });
    };
@@ -108,6 +110,19 @@ export function OrdersTable({
       }
    };
 
+   const getStatusLabel = (status: OrderStatus) => {
+      switch (status) {
+         case "pending_confirmation": return t("statuses.pendingConfirmation");
+         case "confirmed": return t("statuses.confirmed");
+         case "ready_for_pickup": return t("statuses.readyForPickup");
+         case "shipped": return t("statuses.shipped");
+         case "delivered": return t("statuses.delivered");
+         case "returned": return t("statuses.returned");
+         case "cancelled": return t("statuses.cancelled");
+         default: return status
+      }
+   };
+
    return (
       <div className="space-y-4">
          {errorMsg && (
@@ -120,12 +135,12 @@ export function OrdersTable({
             <table className="w-full text-left text-sm">
                <thead className="border-b bg-muted/50 text-xs font-semibold uppercase text-muted-foreground">
                   <tr>
-                     <th className="px-4 py-3">Order Number</th>
-                     <th className="px-4 py-3">Customer</th>
-                     <th className="px-4 py-3">Shipping Address</th>
-                     <th className="px-4 py-3">Total Amount</th>
-                     <th className="px-4 py-3">Status</th>
-                     <th className="px-4 py-3 text-right">Actions</th>
+                     <th className="px-4 py-3">{t("tableHeaderOrderNumber")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderCustomer")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderShippingAddress")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderTotalAmount")}</th>
+                     <th className="px-4 py-3">{t("tableHeaderStatus")}</th>
+                     <th className="px-4 py-3 text-right">{t("tableHeaderActions")}</th>
                   </tr>
                </thead>
                <tbody className="divide-y">
@@ -135,7 +150,7 @@ export function OrdersTable({
                            colSpan={6}
                            className="px-4 py-8 text-center text-muted-foreground"
                         >
-                           No active orders found.
+                           {t("noActiveOrders")}
                         </td>
                      </tr>
                   ) : (
@@ -143,7 +158,7 @@ export function OrdersTable({
                         const isAssigningThis = assigningOrderId === order.id;
 
                         return (
-                          <tr key={order.id} className="hover:bg-muted/30">
+                           <tr key={order.id} className="hover:bg-muted/30">
                               <td className="px-4 py-3 font-mono font-bold text-xs uppercase">
                                  #{order.id.slice(0, 8)}
                               </td>
@@ -167,11 +182,11 @@ export function OrdersTable({
                               
                               <td className="px-4 py-3">
                                  <span
-                                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${getBadgeColor(
+                                    className={`inline-flex text-center items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${getBadgeColor(
                                        order.status
                                     )}`}
                                  >
-                                    {order.status.replace(/_/g, " ")}
+                                    {getStatusLabel(order.status)}
                                  </span>
                               </td>
 
@@ -189,8 +204,8 @@ export function OrdersTable({
                                              >
                                                 <option value="">
                                                    {drivers.length === 0
-                                                      ? "No drivers available"
-                                                      : "Select Driver"}
+                                                      ? t("noDriversAvailable")
+                                                      : t("selectDriver")}
                                                 </option>
                                                 {drivers.map((d) => (
                                                    <option key={d.id} value={d.id}>
@@ -203,13 +218,13 @@ export function OrdersTable({
                                                 onClick={() => handleAssignDriver(order.id)}
                                                 className="rounded bg-primary px-2 py-1 text-xs text-primary-foreground disabled:opacity-50"
                                              >
-                                                Confirm
+                                                {t("confirm")}
                                              </button>
                                              <button
                                                 onClick={() => setAssigningOrderId(null)}
                                                 className="text-xs text-muted-foreground hover:underline"
                                              >
-                                                Cancel
+                                                {t("cancel")}
                                              </button>
                                           </div>
                                        ) : (
@@ -222,7 +237,7 @@ export function OrdersTable({
                                                 }}
                                                 className="text-xs font-medium text-primary hover:underline"
                                              >
-                                                Assign Driver
+                                                {t("assignDriver")}
                                              </button>
                                              <span className="text-muted-foreground">|</span>
                                              <select
@@ -247,7 +262,7 @@ export function OrdersTable({
                                     </div>
                                  ) : (
                                     <span className="text-xs text-muted-foreground italic">
-                                       Read-only
+                                       {t("readOnly")}
                                     </span>
                                  )}
                               </td>
