@@ -5,7 +5,7 @@ interface Brand {
   id: string;
   name: string;
   slug: string;
-  logo_url: string;
+  logo_url: string | null;
 }
 
 interface BrandsGridProps {
@@ -48,7 +48,9 @@ export function BrandsGrid({
           aria-label={brand.name}
           className="group flex h-16 items-center justify-center rounded-lg p-2 transition-all duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-[72px]"
         >
-        <div className="flex h-full w-full items-center justify-center rounded-md bg-gradient-to-b from-slate-300 from-0% via-slate-100 via-75% to-white to-100% p-2">    <Image
+        <div className="flex h-full w-full items-center justify-center rounded-md bg-gradient-to-b from-slate-300 from-0% via-slate-100 via-75% to-white to-100% p-2">    
+          {brand.logo_url ? (
+            <Image
               src={brand.logo_url}
               alt={brand.name}
               width={120}
@@ -56,6 +58,11 @@ export function BrandsGrid({
               sizes="(max-width: 640px) 100px, 120px"
               className="h-full w-full max-w-[110px] object-contain"
             />
+          ) : (
+            <span className="truncate text-xs font-semibold text-slate-700">
+              {brand.name}
+            </span>
+          )}
           </div>
         </Link>
           ))}
