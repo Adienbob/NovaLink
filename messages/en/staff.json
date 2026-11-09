@@ -364,6 +364,10 @@
       "defaultPlaceholder": "Enter a feature",
       "addFeature": "Add Feature"
    },
+   "StaffReturnsHeader": {
+      "title": "Returns Management",
+      "subtitle": "Review, approve, or reject customer return requests and handle refund workflows."
+   },
    "StaffReturnsTable": {
       "pending": "Pending",
       "approved": "Approved",
@@ -402,6 +406,10 @@
       "date": "Date",
       "noLogs": "No stock adjustment logs recorded.",
       "system": "System"
+   },
+   "StaffDeliveriesPage": {
+      "title": "Deliveries & Logistics",
+      "subtitle": "Track dispatch lifecycle, log driver failure reasons, and view order fulfillment status."
    },
    "StaffStockAdjustmentDialog": {
       "title": "Adjust Stock",

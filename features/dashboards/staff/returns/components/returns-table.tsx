@@ -36,7 +36,7 @@ const STATUS_ACTIONS: { value: ReturnStatus }[] = [
 ];
 
 export function ReturnsTable({ returns, userRole, onRefresh }: ReturnsTableProps) {
-   const t = useTranslations("ReturnsTable");
+   const t = useTranslations("StaffReturnsTable");
 
    const [isPending, startTransition] = useTransition();
    const [updatingId, setUpdatingId] = useState<string | null>(null);

@@ -364,6 +364,10 @@
       "defaultPlaceholder": "أدخل الميزة",
       "addFeature": "إضافة ميزة"
    },
+   "StaffReturnsHeader": {
+      "title": "إدارة المرتجعات",
+      "subtitle": "مراجعة أو الموافقة على أو رفض طلبات إرجاع العملاء وإدارة عمليات الاسترداد."
+   },
    "StaffReturnsTable": {
       "pending": "قيد الانتظار",
       "approved": "تمت الموافقة",
@@ -382,7 +386,7 @@
       "viewOnly": "عرض فقط",
       "updateError": "فشل تحديث حالة طلب الإرجاع."
    },
-   "InventoryTable": {
+   "StaffInventoryTable": {
       "stockLevels": "مستويات المخزون",
       "auditLogs": "سجل التغييرات",
       "productVariant": "المنتج / المتغير",
@@ -403,7 +407,11 @@
       "noLogs": "لا توجد سجلات لتعديلات المخزون.",
       "system": "النظام"
    },
-   "StockAdjustmentDialog": {
+   "StaffDeliveriesPage": {
+      "title": "التوصيل والخدمات اللوجستية",
+      "subtitle": "تتبع دورة حياة الشحن، وتنسيق أسباب أعطال السائقين، وعرض حالة إتمام الطلبات."
+   },
+   "StaffStockAdjustmentDialog": {
       "title": "تعديل المخزون",
       "currentStock": "المخزون الحالي",
       "addStock": "إضافة مخزون",

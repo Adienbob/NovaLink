@@ -1,4 +1,5 @@
 import { revalidatePath } from "next/cache";
+import { useTranslations } from "next-intl";
 import { requireRole } from "@/app/lib/auth/require-role";
 import {
    getDeliveries,
@@ -7,6 +8,7 @@ import {
 import { DeliveriesList } from "@/features/dashboards/staff/deliveries/components/deliveries-list";
 
 export default async function StaffDeliveriesPage() {
+   const t = useTranslations("StaffDeliveriesPage");
    const currentUser = await requireRole(["admin", "owner", "delivery", "viewer"]);
 
    const [deliveries, drivers] = await Promise.all([
@@ -23,10 +25,10 @@ export default async function StaffDeliveriesPage() {
       <div className="space-y-6 p-6">
          <div>
             <h1 className="text-2xl font-bold tracking-tight">
-               Deliveries & Logistics
+               {t("title")}
             </h1>
             <p className="text-sm text-muted-foreground">
-               Track dispatch lifecycle, log driver failure reasons, and view order fulfillment status.
+               {t("subtitle")}
             </p>
          </div>
 

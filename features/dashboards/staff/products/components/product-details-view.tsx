@@ -60,7 +60,7 @@ export function ProductDetailsView({ product, variants, images, canManage }: Pro
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
-          <Link href="/dashboard/products" className="text-sm text-muted-foreground flex items-center gap-1.5 hover:text-foreground">
+          <Link href="/staff/products" className="text-sm text-muted-foreground flex items-center gap-1.5 hover:text-foreground">
             <ArrowLeft className="h-4 w-4" /> {t("backToProducts")}
           </Link>
           <div className="flex items-center gap-3 pt-1">

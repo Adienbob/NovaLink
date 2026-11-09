@@ -21,7 +21,7 @@ export async function StorefrontHomePage({ locale }: HomePageProps) {
 
    return (
       <div className="space-y-2 sm:pb-4 md:pb-6 lg:pb-8">
-         <StoreNavigation />
+         <StoreNavigation categories={categories} />
          <Hero />
          <BrandsGrid brands={brands} locale={locale} />
          <BuildNetworkSection products={productsData.data} locale={locale}  />

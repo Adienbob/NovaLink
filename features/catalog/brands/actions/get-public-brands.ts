@@ -6,7 +6,7 @@ export async function getPublicBrands() {
 
    const { data, error } = await supabaseAdmin
       .from("brands")
-      .select("id, name, slug")
+      .select("id, name, slug, logo_url")
       .order("name", { ascending: true });
 
    if (error) {

@@ -5,6 +5,7 @@ interface Brand {
   id: string;
   name: string;
   slug: string;
+  logo_url: string;
 }
 
 interface BrandsGridProps {
@@ -48,7 +49,7 @@ export function BrandsGrid({
           className="group flex h-16 items-center justify-center rounded-lg p-2 transition-all duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:h-[72px]"
         >
         <div className="flex h-full w-full items-center justify-center rounded-md bg-gradient-to-b from-slate-300 from-0% via-slate-100 via-75% to-white to-100% p-2">    <Image
-              src={`/${brand.name.toLowerCase()}.webp`}
+              src={brand.logo_url}
               alt={brand.name}
               width={120}
               height={60}
